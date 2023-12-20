@@ -15,6 +15,7 @@
     "build:alias": "tsc-alias -p tsconfig.build.json",
     "build:css": "postcss src/theme/main.css -o dist/theme/main.css --minify; cpx 'src/theme/*[.]css' 'lib/theme/tailwindcss'",
     "build": "rm -rf lib; tsc -p tsconfig.build.json; npm run build:alias; npm run build:css",
+    "chromatic": "chromatic --only-changed true",
     "dev:css": "postcss src/theme/main.css -o dist/theme/main.css --watch",
     "release": "npm publish --access public",
     "storybook": "storybook dev -p 6006"
@@ -35,6 +36,7 @@
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
     "autoprefixer": "^10.4.16",
+    "chromatic": "^10.1.0",
     "cpx2": "6.0.1",
     "daisyui": "4.4.21",
     "eslint": "8.56.0",
