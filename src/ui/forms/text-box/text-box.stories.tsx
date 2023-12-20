@@ -6,10 +6,29 @@ const meta: Meta<typeof TextBox> = {
   title: "CreativeCode.com.co/UI/Form/TextBox",
   component: TextBox,
   argTypes: {
-    label: {
-      name: "label",
-      type: { name: "string" },
+    name: {
+      description: "Unique Name",
+      type: { name: "string", required: true },
     },
+    label: {
+      description: "Label",
+      type: "string",
+    },
+    isError: {
+      description: "TextBox has error",
+      type: "boolean",
+    },
+    error: {
+      description: "Error message",
+      type: "string",
+    },
+    disabled: {
+      description: "Disabled",
+      type: "boolean",
+    },
+  },
+  args: {
+    name: "text-box",
   },
 };
 

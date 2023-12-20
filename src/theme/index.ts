@@ -7,7 +7,7 @@ export const creativeCodeTheme = {
     extend: {},
   },
   daisyui: {
-    themes: ["light", "dark"],
+    themes: ["light"],
   },
   plugins: [require("daisyui")],
 };
