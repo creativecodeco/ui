@@ -12,6 +12,7 @@
     "**/*.stories.tsx",
     "*.config.ts",
     "*.config.js",
+    "*.setup.ts",
     "lib"
   ],
   "include": [
