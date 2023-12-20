@@ -1,5 +1,5 @@
 {
-  "name": "creativecodeco/ui",
+  "name": "@creativecodeco/ui",
   "description": "CreativeCode.com.co UI",
   "version": "0.0.1",
   "homepage": "https://github.com/creativecodeco/ui",
@@ -16,7 +16,7 @@
     "build:css": "postcss src/theme/main.css -o dist/theme/main.css --minify; cpx 'src/theme/*[.]css' 'lib/theme/tailwindcss'",
     "build": "rm -rf lib; tsc -p tsconfig.build.json; npm run build:alias; npm run build:css",
     "dev:css": "postcss src/theme/main.css -o dist/theme/main.css --watch",
-    "release": "npm publish",
+    "release": "npm publish --access public",
     "storybook": "storybook dev -p 6006"
   },
   "peerDependencies": {
