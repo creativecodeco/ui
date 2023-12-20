@@ -26,13 +26,7 @@ export default function Controller<
       shouldUnregister={shouldUnregister}
       rules={rules}
       render={({ field, fieldState: { error } }) => (
-        <Input
-          {...field}
-          isError={!!error}
-          error={!!error}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          {...(rest as any)}
-        />
+        <Input {...field} isError={!!error} error={error?.message} {...rest} />
       )}
     />
   );
