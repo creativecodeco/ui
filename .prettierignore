@@ -1,5 +1,11 @@
 # Ignore artifacts:
-.vscode
-dist
-lib
-node_modules
+coverage/
+dist/
+lib/
+node_modules/
+.snapshots/
+
+*.min.js
+*.log
+*.d.ts
+coverage.txt

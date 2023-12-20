@@ -1,3 +1,3 @@
-import CreativeCodeUIProvider from "./creativecode-ui.provider";
+import CreativeCodeUIProvider from './creativecode-ui.provider';
 
-export default CreativeCodeUIProvider;
+export { CreativeCodeUIProvider };
