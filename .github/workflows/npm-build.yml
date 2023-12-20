@@ -17,18 +17,19 @@ jobs:
         run: npm run build
 
       - name: Run tests
-        run: |
-          npx jest --coverage --coverageReporters json-summary --updateSnapshot
+        run: npm run test:action
 
       - name: Jest coverage comment
-        id: coverageComment
         uses: MishaKav/jest-coverage-comment@main
         with:
-          hide-comment: true
           coverage-summary-path: ./coverage/coverage-summary.json
-
-      - name: Check the output coverage
-        run: |
-          echo "Coverage Percantage - ${{ steps.coverageComment.outputs.coverage }}"
-          echo "Coverage Color - ${{ steps.coverageComment.outputs.color }}"
-          echo "Summary Html - ${{ steps.coverageComment.outputs.summaryHtml }}"
+          title: Pull Request Coverage - By CreativeCode.com.co
+          summary-title: Pull Request Summary
+          badge-title: Coverage
+          hide-comment: false
+          create-new-comment: false
+          hide-summary: false
+          junitxml-title: Tests Details
+          junitxml-path: ./junit.xml
+          coverage-title: Coverage by file
+          coverage-path: ./coverage.txt

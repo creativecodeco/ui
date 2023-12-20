@@ -17,16 +17,17 @@
     "build": "rm -rf lib; tsc -p tsconfig.build.json; npm run build:alias; npm run build:css",
     "chromatic": "chromatic --only-changed true",
     "dev:css": "postcss src/theme/main.css -o dist/theme/main.css --watch",
-    "lint": "npm run lint:eslint",
-    "lint:fix": "npm run lint:eslint --fix --quiet",
     "lint:eslint": "eslint .",
+    "lint:fix": "npm run lint:eslint --fix --quiet",
+    "lint": "npm run lint:eslint",
     "prepack": "npm run build",
+    "prepare": "husky install",
     "release": "npm publish --access public",
     "storybook": "storybook dev -p 6006",
-    "test": "jest .",
-    "test:watch": "jest --watch",
+    "test:action": "jest --coverage | tee ./coverage.txt && jest --ci --reporters=default --reporters=jest-junit",
     "test:update": "jest --updateSnapshot",
-    "prepare": "husky install"
+    "test:watch": "jest --watch",
+    "test": "jest ."
   },
   "peerDependencies": {
     "react": "18.2.0"
@@ -54,7 +55,7 @@
     "@typescript-eslint/eslint-plugin": "6.15.0",
     "autoprefixer": "10.4.16",
     "chromatic": "10.1.0",
-    "classnames": "^2.3.2",
+    "classnames": "2.3.2",
     "cpx2": "6.0.1",
     "daisyui": "4.4.22",
     "eslint": "8.56.0",
@@ -63,7 +64,7 @@
     "eslint-config-standard-react": "13.0.0",
     "eslint-config-standard-with-typescript": "43.0.0",
     "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-import-order": "^2.1.4",
+    "eslint-plugin-import-order": "2.1.4",
     "eslint-plugin-n": "16.5.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "5.1.0",
@@ -98,6 +99,6 @@
     "lib"
   ],
   "dependencies": {
-    "react-hook-form": "^7.49.2"
+    "react-hook-form": "7.49.2"
   }
 }
