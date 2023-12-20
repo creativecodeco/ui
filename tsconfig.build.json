@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "sourceMap": false,
+    "removeComments": true,
+    "baseUrl": "."
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx",
+    "*.config.ts",
+    "*.config.js",
+    "lib"
+  ],
+  "include": [
+    "."
+  ]
+}

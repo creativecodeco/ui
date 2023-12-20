@@ -1,0 +1,67 @@
+{
+  "name": "@creativecodeco/ui",
+  "description": "CreativeCode.com.co UI",
+  "version": "0.0.1",
+  "homepage": "https://github.com/creativecodeco/ui",
+  "author": {
+    "name": "John Toro",
+    "email": "joaltoroc@creativecode.com.co"
+  },
+  "license": "MIT",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "scripts": {
+    "build": "rm -rf lib; tsc -p tsconfig.build.json; yarn build:alias; yarn build:css",
+    "build:alias": "tsc-alias -p tsconfig.build.json",
+    "build:css": "postcss src/theme/main.css -o lib/theme/tailwindcss/main.css --minify; cpx 'src/theme/*[.]css' 'lib/theme/tailwindcss'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "yarn build; storybook build"
+  },
+  "peerDependencies": {
+    "react": "18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.6.6",
+    "@storybook/addon-interactions": "7.6.6",
+    "@storybook/addon-links": "7.6.6",
+    "@storybook/addon-onboarding": "1.0.10",
+    "@storybook/blocks": "7.6.6",
+    "@storybook/react": "7.6.6",
+    "@storybook/react-webpack5": "7.6.6",
+    "@storybook/test": "7.6.6",
+    "@types/node": "20.10.5",
+    "@types/react": "18.2.45",
+    "@types/react-dom": "18.2.18",
+    "autoprefixer": "^10.4.16",
+    "cpx2": "6.0.1",
+    "daisyui": "4.4.21",
+    "eslint": "8.56.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-config-standard-react": "13.0.0",
+    "eslint-config-standard-with-typescript": "43.0.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "16.4.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "5.1.0",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-standard": "5.0.0",
+    "eslint-plugin-storybook": "0.6.15",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "postcss": "8.4.32",
+    "postcss-cli": "11.0.0",
+    "postcss-import": "15.1.0",
+    "prettier": "3.1.1",
+    "prop-types": "15.8.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "storybook": "7.6.6",
+    "tailwindcss": "3.4.0",
+    "tsc-alias": "1.8.8",
+    "typescript": "5.3.3"
+  },
+  "files": [
+    "lib"
+  ]
+}
