@@ -12,7 +12,7 @@
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
-    "rootDir": "./src/",
+    "rootDir": "./",
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "Node",
