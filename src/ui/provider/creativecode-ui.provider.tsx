@@ -1,7 +1,7 @@
-import { PropsWithChildren } from "react";
+import { Fragment, PropsWithChildren } from "react";
 
 export default function CreativeCodeUIProvider({
   children,
-}: PropsWithChildren<unknown>) {
-  return { children };
+}: PropsWithChildren<unknown>): JSX.Element {
+  return <Fragment>{children}</Fragment>;
 }

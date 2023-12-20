@@ -1,3 +1,5 @@
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+
 import type { StorybookConfig } from "@storybook/react-webpack5";
 
 const config: StorybookConfig = {
@@ -15,6 +17,10 @@ const config: StorybookConfig = {
         useSWC: true,
       },
     },
+  },
+  webpackFinal: async (config, options) => {
+    config.resolve?.plugins?.push(new TsconfigPathsPlugin());
+    return config;
   },
   docs: {
     autodocs: true,

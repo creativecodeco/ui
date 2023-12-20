@@ -1,6 +1,2 @@
-import CreativeCodeUIProvider from "@/ui/provider";
-
-export {
-  // Provider
-  CreativeCodeUIProvider,
-};
+export * from "@/ui";
+export * from "@/types";
