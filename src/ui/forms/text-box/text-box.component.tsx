@@ -1,9 +1,13 @@
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { forwardRef, useImperativeHandle, useRef } from 'react';
+import cls from 'classnames';
 
 import type { TextBoxRef, TextBoxType } from '@/types/ui/forms';
 
 const TextBox = forwardRef<TextBoxRef, TextBoxType>(
-  ({ name, label, isError, error, disabled, ...otherProps }, ref) => {
+  (
+    { name, label, isError, error, disabled, size = 'md', ...otherProps },
+    ref
+  ) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     useImperativeHandle(ref, () => inputRef.current as TextBoxRef);
@@ -22,7 +26,9 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
           id={name}
           name={name}
           {...otherProps}
-          className='input input-bordered w-full'
+          className={cls('input input-bordered w-full', `input-${size}`, {
+            'input-error': isError
+          })}
           disabled={disabled}
         />
         {isError && <p className='text-red-500'>{error}</p>}

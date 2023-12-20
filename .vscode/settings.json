@@ -3,6 +3,8 @@
     "autodocs",
     "creativecode",
     "daisyui",
-    "tailwindcss"
+    "tailwindcss",
+    "testid",
+    "theming"
   ]
 }
