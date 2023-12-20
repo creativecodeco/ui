@@ -17,6 +17,7 @@
     "build": "rm -rf lib; tsc -p tsconfig.build.json; npm run build:alias; npm run build:css",
     "chromatic": "chromatic --only-changed true",
     "dev:css": "postcss src/theme/main.css -o dist/theme/main.css --watch",
+    "prepack": "npm run build",
     "release": "npm publish --access public",
     "storybook": "storybook dev -p 6006"
   },
