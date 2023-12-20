@@ -3,3 +3,5 @@ lib
 dist
 build-storybook.log
 coverage
+coverage.txt
+junit.xml

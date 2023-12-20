@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  pull_request:
+    types: [ready_for_review]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Clean and Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Run tests
+        run: npm run test:action
+
+      - name: Jest coverage comment
+        uses: MishaKav/jest-coverage-comment@main
+        with:
+          coverage-summary-path: ./coverage/coverage-summary.json
+          title: Pull Request Coverage - By CreativeCode.com.co
+          summary-title: Pull Request Summary
+          badge-title: Coverage
+          hide-comment: false
+          create-new-comment: false
+          hide-summary: false
+          junitxml-title: Tests Details
+          junitxml-path: ./junit.xml
+          coverage-title: Coverage by file
+          coverage-path: ./coverage.txt

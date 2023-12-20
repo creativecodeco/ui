@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useRef } from 'react';
+import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import cls from 'classnames';
 
 import type { TextBoxRef, TextBoxType } from '@/types/ui/forms';
