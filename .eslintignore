@@ -1,0 +1,10 @@
+coverage/
+dist/
+lib/
+node_modules/
+.snapshots/
+
+*.min.js
+*.log
+*.d.ts
+coverage.txt

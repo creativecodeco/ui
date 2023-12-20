@@ -27,7 +27,7 @@ jobs:
         with:
           # 👇 Chromatic projectToken, refer to the manage page to obtain it.
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           onlyChanged: true
           autoAcceptChanges: true
         env:

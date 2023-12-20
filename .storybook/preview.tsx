@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
 
-import type { Preview } from "@storybook/react";
-import { themes } from "@storybook/theming";
+import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
 
-import "../dist/theme/main.css";
-import { CreativeCodeUIProvider } from "../lib";
+import '../dist/theme/main.css';
+import CreativeCodeUIProvider from '../lib/ui/provider';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+        date: /Date$/i
+      }
     },
     docs: {
-      theme: themes.light,
-    },
+      theme: themes.light
+    }
   },
   decorators: [
     (Story) => (
       <CreativeCodeUIProvider>
         <Story />
       </CreativeCodeUIProvider>
-    ),
-  ],
+    )
+  ]
 };
 
 export default preview;

@@ -12,12 +12,14 @@
     "declaration": true,
     "sourceMap": true,
     "outDir": "./lib",
-    "rootDir": "./src/",
+    "rootDir": "./",
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "Node",
     "types": [
-      "node"
+      "node",
+      "jest",
+      "@testing-library/jest-dom"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -35,11 +37,12 @@
   },
   "include": [
     "src",
-    "**.d.ts"
+    "typings.d.ts"
   ],
   "exclude": [
     "node_modules",
     "lib",
-    "dist"
+    "dist",
+    "coverage"
   ]
 }

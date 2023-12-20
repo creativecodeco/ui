@@ -4,7 +4,8 @@
     "module": "ESNext",
     "sourceMap": false,
     "removeComments": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "rootDir": "./src",
   },
   "exclude": [
     "**/*.test.ts",
@@ -12,7 +13,9 @@
     "**/*.stories.tsx",
     "*.config.ts",
     "*.config.js",
-    "lib"
+    "*.setup.ts",
+    "lib",
+    "coverage"
   ],
   "include": [
     "."
