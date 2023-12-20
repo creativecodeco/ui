@@ -1,0 +1,31 @@
+name: Publish Version
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      # Setup .npmrc file to publish to npm
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Clean and Install
+        run: npm ci
+
+      - name: Configure git
+        run: |
+          git config user.email "joaltoroc@creativecode.com.co"
+          git config user.name "John Toro"
+
+      - name: Publish package
+        run: npm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
