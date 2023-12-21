@@ -5,7 +5,19 @@ import type { TextBoxRef, TextBoxType } from '@/types/ui/forms';
 
 const TextBox = forwardRef<TextBoxRef, TextBoxType>(
   (
-    { name, label, isError, error, disabled, size = 'md', ...otherProps },
+    {
+      name,
+      label,
+      isError,
+      error,
+      disabled,
+      size = 'md',
+      leftIcon: LeftIcon,
+      rightIcon: RightIcon,
+      rightButton,
+      onClick,
+      ...otherProps
+    },
     ref
   ) => {
     const inputRef = useRef<HTMLInputElement>(null);
@@ -21,16 +33,39 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
             </label>
           </div>
         )}
+        {LeftIcon && (
+          <LeftIcon
+            className={cls('text-box-left-icon', {
+              [`text-box-left-icon-size-${size}`]: size
+            })}
+          />
+        )}
         <input
           ref={inputRef}
           id={name}
           name={name}
           {...otherProps}
-          className={cls('input input-bordered w-full', `input-${size}`, {
-            'input-error': isError
-          })}
+          onClick={onClick}
+          className={cls(
+            'input input-bordered w-full',
+            `text-box-size-${size}`,
+            {
+              'input-error': isError,
+              'text-box-with-left-icon': LeftIcon,
+              'text-box-with-right-icon': RightIcon
+            }
+          )}
           disabled={disabled}
         />
+        {RightIcon && (
+          <RightIcon
+            className={cls('text-box-right-icon', {
+              [`text-box-right-icon-size-${size}`]: size,
+              'cursor-pointer': rightButton
+            })}
+            onClick={() => rightButton && inputRef.current?.click()}
+          />
+        )}
         {isError && <p className='text-red-500'>{error}</p>}
       </div>
     );

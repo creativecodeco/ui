@@ -1,4 +1,5 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
+import { FaAdn } from 'react-icons/fa';
 
 import TextBox from './text-box.component';
 
@@ -29,5 +30,36 @@ describe('<TextBox />', () => {
     );
 
     expect(getByTestId('test')).toHaveProperty('disabled', true);
+  });
+
+  it('leftIcon', () => {
+    const { container } = render(<TextBox name='test' leftIcon={FaAdn} />);
+
+    expect(container.querySelector('svg')).toBeInTheDocument();
+    expect(container.querySelector('input')?.className).toEqual(
+      'input input-bordered w-full text-box-size-md text-box-with-left-icon'
+    );
+  });
+
+  it('rightIcon', () => {
+    const { container } = render(<TextBox name='test' rightIcon={FaAdn} />);
+
+    expect(container.querySelector('svg')).toBeInTheDocument();
+    expect(container.querySelector('input')?.className).toEqual(
+      'input input-bordered w-full text-box-size-md text-box-with-right-icon'
+    );
+  });
+
+  it('rightIcon typeButton onClick', () => {
+    const onClick = jest.fn();
+    const { container } = render(
+      <TextBox name='test' rightIcon={FaAdn} rightButton onClick={onClick} />
+    );
+
+    const svgRight = container.querySelector('svg');
+
+    fireEvent.click(svgRight as SVGSVGElement);
+
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 });

@@ -6,7 +6,7 @@ exports[`<TextBox /> snapshot 1`] = `
     class="form-control w-full"
   >
     <input
-      class="input input-bordered w-full input-md"
+      class="input input-bordered w-full text-box-size-md"
       id="test"
       name="test"
     />
