@@ -1,3 +1,4 @@
-import { TextBoxType, TextBoxRef } from "./text-box.types";
+import { DropDownOption, DropDownType } from './drop-down.types';
+import { TextBoxType, TextBoxRef } from './text-box.types';
 
-export type { TextBoxType, TextBoxRef };
+export type { DropDownOption, DropDownType, TextBoxType, TextBoxRef };

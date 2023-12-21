@@ -25,7 +25,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
     useImperativeHandle(ref, () => inputRef.current as TextBoxRef);
 
     return (
-      <div className='form-control w-full'>
+      <div className='form-control w-full flex'>
         {label && (
           <div className='label'>
             <label htmlFor={name} className='label-text'>

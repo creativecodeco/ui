@@ -67,7 +67,7 @@
 }
 
 .text-box-right-icon {
-  @apply absolute;
+  @apply fixed;
 
   &-size-xs {
     @apply top-[14px] right-5;
