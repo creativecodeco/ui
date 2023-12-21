@@ -34,7 +34,7 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
         />
         <ul
           tabIndex={0}
-          className='dropdown-content z-[1] menu w-[95%] bg-base-100'
+          className='dropdown-content z-[1] menu w-full bg-base-100'
         >
           {options.map((option) => (
             <li key={option.value} value={option.value}>

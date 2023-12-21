@@ -3,7 +3,7 @@
 exports[`<TextBox /> snapshot 1`] = `
 <div>
   <div
-    class="form-control w-full"
+    class="form-control w-full flex"
   >
     <input
       class="input input-bordered w-full text-box-size-md"
