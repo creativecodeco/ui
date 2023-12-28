@@ -9,4 +9,5 @@ export interface DropDownOption {
 export interface DropDownType extends TextBoxType {
   options?: DropDownOption[];
   onChange?: (option: React.ChangeEvent<HTMLInputElement>) => void;
+  onTextChange?: (text?: string) => void;
 }

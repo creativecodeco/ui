@@ -1,4 +1,5 @@
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+import path from 'path';
+import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
 import type { StorybookConfig } from '@storybook/react-webpack5';
 
@@ -18,8 +19,25 @@ const config: StorybookConfig = {
       }
     }
   },
-  webpackFinal: async (config, options) => {
-    config.resolve?.plugins?.push(new TsconfigPathsPlugin());
+  webpackFinal: async (config, _options) => {
+    if (!config.resolve) {
+      return config;
+    }
+
+    config.resolve.plugins?.push(
+      new TsconfigPathsPlugin({
+        extensions: config.resolve.extensions,
+        configFile: '../tsconfig.json'
+      })
+    );
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, '../src')
+    };
+
+    console.log(config);
+
     return config;
   },
   docs: {
