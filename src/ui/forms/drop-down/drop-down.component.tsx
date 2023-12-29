@@ -1,5 +1,12 @@
-import React, { forwardRef, useCallback, useMemo, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useMemo,
+  useRef,
+  useState
+} from 'react';
 import { FaSortDown } from 'react-icons/fa';
+import { useOnClickOutside } from 'usehooks-ts';
 
 import { TextBox } from '@/ui/forms';
 import type { DropDownOption, DropDownType, TextBoxRef } from '@/types';
@@ -12,6 +19,14 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
     const [label, setLabel] = useState('');
     const [open, setOpen] = useState(false);
     const [valueFilter, setValueFilter] = useState<string | undefined>();
+
+    const refOutside = useRef(null);
+
+    const handleClickOutside = () => {
+      setOpen(false);
+    };
+
+    useOnClickOutside(refOutside, handleClickOutside);
 
     const handleFocus = useCallback(() => {
       if (disabled) {
@@ -55,7 +70,6 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
         <TextBox
           name={name}
           tabIndex={0}
-          role='button'
           ref={ref}
           disabled={disabled}
           rightButton
@@ -69,10 +83,16 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
           <ul
             tabIndex={0}
             className='dropdown-content z-[1] menu w-full bg-base-100'
+            id={`options-${name}`}
+            ref={refOutside}
           >
             {filterOptions.map((option) => (
-              <li key={option.value} value={option.value}>
-                <a onClick={() => handleSelect(option)}>{option.label}</a>
+              <li
+                key={option.value}
+                value={option.value}
+                onClick={() => handleSelect(option)}
+              >
+                <a>{option.label}</a>
               </li>
             ))}
           </ul>

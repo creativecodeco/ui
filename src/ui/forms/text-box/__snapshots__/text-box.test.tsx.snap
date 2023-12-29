@@ -5,11 +5,77 @@ exports[`<TextBox /> snapshot 1`] = `
   <div
     class="form-control w-full flex"
   >
-    <input
-      class="input input-bordered w-full text-box-size-md"
-      id="test"
-      name="test"
-    />
+    <div
+      class="relative"
+    >
+      <input
+        class="input input-bordered w-full text-box-size-md"
+        id="test"
+        name="test"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<TextBox /> snapshot full 1`] = `
+<div>
+  <div
+    class="form-control w-full flex"
+  >
+    <div
+      class="label"
+    >
+      <label
+        class="label-text"
+        for="test"
+      >
+        Label
+      </label>
+    </div>
+    <div
+      class="relative"
+    >
+      <svg
+        class="text-box-left-icon text-box-left-icon-size-lg"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 496 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M248 167.5l64.9 98.8H183.1l64.9-98.8zM496 256c0 136.9-111.1 248-248 248S0 392.9 0 256 111.1 8 248 8s248 111.1 248 248zm-99.8 82.7L248 115.5 99.8 338.7h30.4l33.6-51.7h168.6l33.6 51.7h30.2z"
+        />
+      </svg>
+      <input
+        class="input input-bordered w-full text-box-size-lg input-error text-box-with-left-icon text-box-with-right-icon"
+        disabled=""
+        id="test"
+        name="test"
+      />
+      <svg
+        class="text-box-right-icon text-box-right-icon-size-lg cursor-pointer"
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 496 512"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M248 167.5l64.9 98.8H183.1l64.9-98.8zM496 256c0 136.9-111.1 248-248 248S0 392.9 0 256 111.1 8 248 8s248 111.1 248 248zm-99.8 82.7L248 115.5 99.8 338.7h30.4l33.6-51.7h168.6l33.6 51.7h30.2z"
+        />
+      </svg>
+    </div>
+    <p
+      class="text-red-500"
+    >
+      Error
+    </p>
   </div>
 </div>
 `;

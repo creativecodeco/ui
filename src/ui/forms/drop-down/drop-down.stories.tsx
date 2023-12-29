@@ -61,3 +61,23 @@ type Story = StoryObj<typeof DropDown>;
 export const Primary: Story = {
   args: {}
 };
+
+export const Label: Story = {
+  args: {
+    label: 'Label'
+  }
+};
+
+export const WithError: Story = {
+  args: {
+    label: 'Label',
+    isError: true,
+    error: 'Error DropDown'
+  }
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true
+  }
+};
