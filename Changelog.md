@@ -1,6 +1,14 @@
 <!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
 # Changelog
 
+## v0.0.5 - DropDown (Jan 2 - 2021)
+
+### 🐛 Bugs
+
+- DropDown - Label default value
+- Storybook config
+- Changelog - Version in Storybook
+
 ## v0.0.4 - DropDown (Jan 2 - 2021)
 
 ### 🐛 Bugs
