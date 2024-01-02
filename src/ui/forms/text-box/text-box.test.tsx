@@ -10,6 +10,24 @@ describe('<TextBox />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('snapshot full', () => {
+    const { container } = render(
+      <TextBox
+        name='test'
+        label='Label'
+        isError
+        error='Error'
+        disabled
+        size='lg'
+        leftIcon={FaAdn}
+        rightIcon={FaAdn}
+        rightButton
+      />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('label', () => {
     const label = 'Hello Word';
     const { getByText } = render(<TextBox name='test' label={label} />);
@@ -25,9 +43,7 @@ describe('<TextBox />', () => {
   });
 
   it('disabled', () => {
-    const { getByTestId } = render(
-      <TextBox name='test' disabled data-testid='test' />
-    );
+    const { getByTestId } = render(<TextBox name='test' disabled />);
 
     expect(getByTestId('test')).toHaveProperty('disabled', true);
   });

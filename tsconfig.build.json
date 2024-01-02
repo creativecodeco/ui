@@ -16,8 +16,5 @@
     "*.setup.ts",
     "lib",
     "coverage"
-  ],
-  "include": [
-    "."
   ]
 }

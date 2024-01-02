@@ -5,6 +5,7 @@
     "daisyui",
     "tailwindcss",
     "testid",
-    "theming"
+    "theming",
+    "usehooks"
   ]
 }

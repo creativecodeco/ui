@@ -75,7 +75,7 @@ Add on layout `layout.tsx`
 ```tsx
 import { CreativeCodeUIProvider } from '@creativecodeco/ui';
 
-import '@creativecodeco/ui/lib/theme/tailwindcss/main.css';
+import '@creativecodeco/ui/lib/theme/main.css';
 
 export default function RootLayout({ children }) {
   return (

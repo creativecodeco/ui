@@ -18,8 +18,7 @@
     "moduleResolution": "Node",
     "types": [
       "node",
-      "jest",
-      "@testing-library/jest-dom"
+      "jest"
     ],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -37,7 +36,8 @@
   },
   "include": [
     "src",
-    "typings.d.ts"
+    "**.d.ts",
+    "./jest.setup.ts"
   ],
   "exclude": [
     "node_modules",
