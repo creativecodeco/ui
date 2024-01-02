@@ -4,7 +4,7 @@ import {
   Controller as RHFController
 } from 'react-hook-form';
 
-import { ControllerType } from '@/types/helpers/controller.types';
+import type { ControllerType } from '@/types/helpers/controller.types';
 
 export default function Controller<
   TFieldValues extends FieldValues = FieldValues,
