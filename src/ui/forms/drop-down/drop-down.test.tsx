@@ -67,12 +67,14 @@ describe('<DropDown />', () => {
 
   it('closes the dropdown on click outside', () => {
     const { getByTestId } = render(
-      <DropDown name='test' data-testid='textbox' />
+      <DropDown name='test' data-testid='textbox' options={options} />
     );
 
     const textBox = getByTestId('textbox');
 
     fireEvent.focus(textBox);
+
+    fireEvent.change(textBox, { target: { value: 'NuevoValor' } });
 
     expect(screen.getByTestId('options-test')).toBeInTheDocument();
 
@@ -91,7 +93,7 @@ describe('<DropDown />', () => {
   it('handles change correctly', () => {
     const onTextChangeMock = jest.fn();
     const { getByTestId } = render(
-      <DropDown name='test' onTextChange={onTextChangeMock} />
+      <DropDown name='test' onTextChange={onTextChangeMock} options={options} />
     );
     const textBox = getByTestId('test');
 

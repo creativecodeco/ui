@@ -23,6 +23,15 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
     const refOutside = useRef(null);
 
     const handleClickOutside = () => {
+      const option = options.find(
+        ({ label }) => String(label) === String(valueFilter)
+      );
+
+      if (!option) {
+        setLabel('');
+        onTextChange?.();
+      }
+
       setOpen(false);
     };
 
