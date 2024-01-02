@@ -1,6 +1,7 @@
 import React, {
   forwardRef,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState
@@ -13,7 +14,15 @@ import type { DropDownOption, DropDownType, TextBoxRef } from '@/types';
 
 const DropDown = forwardRef<TextBoxRef, DropDownType>(
   (
-    { name, options = [], disabled, onChange, onTextChange, ...otherProps },
+    {
+      name,
+      options = [],
+      disabled,
+      onChange,
+      onTextChange,
+      value,
+      ...otherProps
+    },
     ref
   ) => {
     const [label, setLabel] = useState('');
@@ -36,6 +45,18 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
     };
 
     useOnClickOutside(refOutside, handleClickOutside);
+
+    useEffect(() => {
+      const option = options.find(
+        (option) => String(option.value) === String(value)
+      );
+      if (!option) {
+        setLabel('');
+        return;
+      }
+
+      setLabel(option.label);
+    }, [value]);
 
     const handleFocus = useCallback(() => {
       if (disabled) {
@@ -83,10 +104,10 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
           disabled={disabled}
           rightButton
           rightIcon={FaSortDown}
-          value={label}
           onFocus={handleFocus}
           onChange={handleChange}
           {...otherProps}
+          value={label}
         />
         {open && (
           <ul

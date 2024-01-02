@@ -4,7 +4,7 @@ import * as Icons from 'react-icons/fa';
 import DropDown from './drop-down.component';
 
 const meta: Meta<typeof DropDown> = {
-  title: 'CreativeCode.com.co/UI/Form/DropDown',
+  title: '@creativecodeco-ui/Form/DropDown',
   component: DropDown,
   argTypes: {
     name: {
@@ -79,5 +79,11 @@ export const WithError: Story = {
 export const Disabled: Story = {
   args: {
     disabled: true
+  }
+};
+
+export const InitialValue: Story = {
+  args: {
+    value: 2
   }
 };
