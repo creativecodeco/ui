@@ -1,7 +1,9 @@
 import { act, render, renderHook, screen } from '@testing-library/react';
 import { useForm } from 'react-hook-form';
-import Controller from './controller.component';
+
 import { TextBox } from '@/ui/forms';
+
+import Controller from './controller.component';
 
 describe('<Controller />', () => {
   test('render the input with value', () => {
