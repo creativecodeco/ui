@@ -4,13 +4,17 @@ import type {
   ControllerProps as RHFControllerProps
 } from 'react-hook-form';
 
-import { TextBox } from '@/ui/forms';
+import { DropDown, TextBox } from '@/ui/forms';
 
 type TextBoxType = {
   as: typeof TextBox;
 } & React.ComponentProps<typeof TextBox>;
 
-type Inputs = TextBoxType;
+type DropDownType = {
+  as: typeof DropDown;
+} & React.ComponentProps<typeof DropDown>;
+
+type Inputs = TextBoxType | DropDownType;
 
 export type ControllerType<
   TFieldValues extends FieldValues = FieldValues,
