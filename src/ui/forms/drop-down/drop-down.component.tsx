@@ -85,6 +85,8 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
             className='dropdown-content z-[1] menu w-full bg-base-100'
             id={`options-${name}`}
             ref={refOutside}
+            role='listitem'
+            data-testid={`options-${name}`}
           >
             {filterOptions.map((option) => (
               <li

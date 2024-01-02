@@ -1,4 +1,3 @@
-import React from 'react';
 import { TextBoxType } from './text-box.types';
 
 export interface DropDownOption {

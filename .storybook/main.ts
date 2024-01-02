@@ -36,8 +36,6 @@ const config: StorybookConfig = {
       '@': path.resolve(__dirname, '../src')
     };
 
-    console.log(config);
-
     return config;
   },
   docs: {

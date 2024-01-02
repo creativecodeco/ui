@@ -13,6 +13,7 @@ exports[`<DropDown /> snapshot 1`] = `
       >
         <input
           class="input input-bordered w-full text-box-size-md text-box-with-right-icon"
+          data-testid="test"
           id="test"
           name="test"
           tabindex="0"
@@ -61,6 +62,7 @@ exports[`<DropDown /> snapshot full 1`] = `
       >
         <input
           class="input input-bordered w-full text-box-size-md input-error text-box-with-right-icon"
+          data-testid="test"
           disabled=""
           id="test"
           name="test"

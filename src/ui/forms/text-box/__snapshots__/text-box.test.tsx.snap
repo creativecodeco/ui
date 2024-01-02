@@ -10,6 +10,7 @@ exports[`<TextBox /> snapshot 1`] = `
     >
       <input
         class="input input-bordered w-full text-box-size-md"
+        data-testid="test"
         id="test"
         name="test"
       />
@@ -52,6 +53,7 @@ exports[`<TextBox /> snapshot full 1`] = `
       </svg>
       <input
         class="input input-bordered w-full text-box-size-lg input-error text-box-with-left-icon text-box-with-right-icon"
+        data-testid="test"
         disabled=""
         id="test"
         name="test"

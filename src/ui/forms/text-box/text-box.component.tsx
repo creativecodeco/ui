@@ -45,6 +45,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
             ref={inputRef}
             id={name}
             name={name}
+            data-testid={name}
             {...otherProps}
             onClick={onClick}
             className={cls(

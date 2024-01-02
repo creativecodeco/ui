@@ -43,9 +43,7 @@ describe('<TextBox />', () => {
   });
 
   it('disabled', () => {
-    const { getByTestId } = render(
-      <TextBox name='test' disabled data-testid='test' />
-    );
+    const { getByTestId } = render(<TextBox name='test' disabled />);
 
     expect(getByTestId('test')).toHaveProperty('disabled', true);
   });
