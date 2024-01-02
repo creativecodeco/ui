@@ -4,7 +4,7 @@ import * as Icons from 'react-icons/fa';
 import TextBox from './text-box.component';
 
 const meta: Meta<typeof TextBox> = {
-  title: 'CreativeCode.com.co/UI/Form/TextBox',
+  title: '@creativecodeco-ui/Form/TextBox',
   component: TextBox,
   argTypes: {
     name: {

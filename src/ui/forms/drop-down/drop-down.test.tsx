@@ -24,6 +24,16 @@ describe('<DropDown />', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('default value', () => {
+    const { getByTestId } = render(
+      <DropDown name='test' options={options} value='2' />
+    );
+
+    const control = getByTestId('test');
+
+    expect((control as HTMLInputElement).value).toEqual('Option 2');
+  });
+
   it('focus', () => {
     const { getByTestId } = render(<DropDown name='test' options={options} />);
 
