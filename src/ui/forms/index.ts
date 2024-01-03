@@ -1,4 +1,2 @@
-import { DropDown } from '@/ui/forms/drop-down';
-import { TextBox } from '@/ui/forms/text-box';
-
-export { DropDown, TextBox };
+export * from '@/ui/forms/drop-down';
+export * from '@/ui/forms/text-box';

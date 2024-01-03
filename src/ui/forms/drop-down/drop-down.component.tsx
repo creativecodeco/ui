@@ -52,10 +52,12 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
       );
       if (!option) {
         setLabel('');
+        setValueFilter(undefined);
         return;
       }
 
       setLabel(option.label);
+      setValueFilter(option.label);
     }, [value]);
 
     const handleFocus = useCallback(() => {

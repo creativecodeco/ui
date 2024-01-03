@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Avatar /> Snapshot 1`] = `
+<div>
+  <div
+    class="avatar placeholder"
+    data-testid="avatar"
+  >
+    <div
+      class="bg-neutral text-neutral-content avatar-size-md rounded"
+      data-testid="avatar-content"
+    >
+      <span>
+        TE
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Avatar /> Snapshot URL 1`] = `
+<div>
+  <div
+    class="avatar"
+    data-testid="avatar"
+  >
+    <div
+      class="bg-neutral text-neutral-content avatar-size-md rounded"
+      data-testid="avatar-content"
+    >
+      <img
+        alt="Avatar"
+        src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+      />
+    </div>
+  </div>
+</div>
+`;
