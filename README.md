@@ -25,11 +25,11 @@ yarn add @creativecodeco/ui
 ### Dependencies
 
 ```bash
-npm install --save-dev tailwindcss postcss postcss-import autoprefixer usehooks-ts
+npm install --save-dev tailwindcss postcss postcss-import autoprefixer usehooks-ts cssnano
 
 or
 
-yarn add -D tailwindcss postcss postcss-import autoprefixer usehooks-ts
+yarn add -D tailwindcss postcss postcss-import autoprefixer usehooks-ts cssnano
 ```
 
 ### Setting Tailwind
@@ -46,8 +46,40 @@ const themeConfig = {
     ...creativeCodeTheme.content,
     './src/**/*.{js,jsx,ts,tsx}',
     './app/**/*.{js,jsx,ts,tsx}',
-    './node_modules/@creativecodeco/ui/lib/**/*.{js,jsx,ts,tsx}',
   ],
+};
+
+export default themeConfig;
+```
+
+#### Custom theme
+
+```js
+/** @type {import('tailwindcss').Config} */
+import { creativeCodeTheme } from '@creativecodeco/ui';
+
+const themeConfig = {
+  ...creativeCodeTheme,
+  content: [
+    ...creativeCodeTheme.content,
+    './src/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx}',
+  ],
+  daisyui: {
+    ...creativeCodeTheme.daisyui,
+    themes: [
+      {
+        customTheme: {
+          ...require('daisyui/src/theming/themes')['light'],
+          primary: '#08448c',
+          secondary: '#427AA1',
+          neutral: '#EBF2FA',
+          accent: '#679436',
+          other: '#A5BE00',
+        },
+      },
+    ],
+  },
 };
 
 export default themeConfig;
@@ -64,6 +96,7 @@ module.exports = {
     'tailwindcss/nesting': {},
     tailwindcss: {},
     autoprefixer: {},
+    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {}),
   },
 };
 ```
@@ -75,7 +108,7 @@ Add on layout `layout.tsx`
 ```tsx
 import { CreativeCodeUIProvider } from '@creativecodeco/ui';
 
-import '@creativecodeco/ui/lib/theme/main.css';
+import '@creativecodeco/ui/lib/theme/css/main.css';
 
 export default function RootLayout({ children }) {
   return (

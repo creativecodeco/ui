@@ -1,4 +1,5 @@
 import type { IconType } from 'react-icons';
+import { SizeType } from '@/types';
 
 export interface TextBoxType
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
@@ -11,7 +12,7 @@ export interface TextBoxType
 
   disabled?: boolean;
 
-  size?: 'xs' | 'sm' | 'md' | 'lg';
+  size?: SizeType;
 
   leftIcon?: IconType;
   rightIcon?: IconType;
