@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "sourceMap": false,
-    "removeComments": true,
+    "removeComments": false,
     "baseUrl": ".",
     "rootDir": "./src",
   },
