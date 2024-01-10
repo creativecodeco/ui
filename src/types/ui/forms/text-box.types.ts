@@ -1,14 +1,12 @@
 import type { IconType } from 'react-icons';
-import { SizeType } from '@/types';
+import type { ErrorType, SizeType } from '@/types';
 
 export interface TextBoxType
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size'>,
+    ErrorType {
   name: string;
 
   label?: string;
-
-  isError?: boolean;
-  error?: string;
 
   disabled?: boolean;
 

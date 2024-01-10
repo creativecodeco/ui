@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> snapshot 1`] = `
+<div>
+  <label
+    class="label cursor-pointer"
+  >
+    <input
+      class="checkbox checkbox-size-md"
+      data-testid="test"
+      id="test"
+      name="test"
+      type="checkbox"
+    />
+  </label>
+</div>
+`;
+
+exports[`<Checkbox /> snapshot full props 1`] = `
+<div>
+  <label
+    class="label cursor-not-allowed"
+  >
+    <span
+      class="label-text"
+    >
+      Label
+    </span>
+    <input
+      checked=""
+      class="checkbox checkbox-color-primary checkbox-size-lg"
+      data-testid="test"
+      disabled=""
+      id="test"
+      name="test"
+      type="checkbox"
+    />
+  </label>
+  <p
+    class="text-red-500"
+  >
+    Error test
+  </p>
+</div>
+`;
