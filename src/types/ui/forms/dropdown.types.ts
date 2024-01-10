@@ -1,12 +1,12 @@
 import { TextBoxType } from './text-box.types';
 
-export interface DropDownOption {
+export interface DropdownOption {
   value: string | number;
   label: string;
 }
 
-export interface DropDownType extends TextBoxType {
-  options?: DropDownOption[];
+export interface DropdownType extends TextBoxType {
+  options?: DropdownOption[];
   onChange?: (option: React.ChangeEvent<HTMLInputElement>) => void;
   onTextChange?: (text?: string) => void;
 }

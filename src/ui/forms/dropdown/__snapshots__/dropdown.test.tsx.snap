@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DropDown /> snapshot 1`] = `
+exports[`<Dropdown /> snapshot 1`] = `
 <div>
   <div
     class="dropdown block"
@@ -39,7 +39,7 @@ exports[`<DropDown /> snapshot 1`] = `
 </div>
 `;
 
-exports[`<DropDown /> snapshot full 1`] = `
+exports[`<Dropdown /> snapshot full 1`] = `
 <div>
   <div
     class="dropdown block"

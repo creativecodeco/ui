@@ -10,9 +10,9 @@ import { FaSortDown } from 'react-icons/fa';
 import { useOnClickOutside } from 'usehooks-ts';
 
 import { TextBox } from '@/ui/forms';
-import type { DropDownOption, DropDownType, TextBoxRef } from '@/types';
+import type { DropdownOption, DropdownType, TextBoxRef } from '@/types';
 
-const DropDown = forwardRef<TextBoxRef, DropDownType>(
+const Dropdown = forwardRef<TextBoxRef, DropdownType>(
   (
     {
       name,
@@ -68,7 +68,7 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
     }, [open, disabled]);
 
     const handleSelect = useCallback(
-      (option: DropDownOption) => {
+      (option: DropdownOption) => {
         onChange?.({
           target: { value: String(option.value) }
         } as React.ChangeEvent<HTMLInputElement>);
@@ -136,4 +136,4 @@ const DropDown = forwardRef<TextBoxRef, DropDownType>(
   }
 );
 
-export default DropDown;
+export default Dropdown;

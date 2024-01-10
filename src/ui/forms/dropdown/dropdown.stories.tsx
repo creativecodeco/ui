@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Icons from 'react-icons/fa';
 
-import DropDown from './drop-down.component';
+import Dropdown from './dropdown.component';
 
-const meta: Meta<typeof DropDown> = {
-  title: '@creativecodeco-ui/Form/DropDown',
-  component: DropDown,
+const meta: Meta<typeof Dropdown> = {
+  title: '@creativecodeco-ui/Form/Dropdown',
+  component: Dropdown,
   argTypes: {
     name: {
       description: 'Unique Name',
@@ -16,7 +16,7 @@ const meta: Meta<typeof DropDown> = {
       type: 'string'
     },
     isError: {
-      description: 'DropDown has error',
+      description: 'Dropdown has error',
       type: 'boolean'
     },
     error: {
@@ -31,8 +31,7 @@ const meta: Meta<typeof DropDown> = {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      defaultValue: 'md'
+      control: { type: 'select' }
     },
     leftIcon: {
       description: 'Left Icon',
@@ -45,7 +44,7 @@ const meta: Meta<typeof DropDown> = {
     }
   },
   args: {
-    name: 'drop-down',
+    name: 'dropdown',
     size: 'md',
     options: Array.from({ length: 10 }).map((_, index) => ({
       value: index.toString(),
@@ -56,7 +55,9 @@ const meta: Meta<typeof DropDown> = {
 
 export default meta;
 
-type Story = StoryObj<typeof DropDown>;
+Dropdown.displayName = 'Dropdown';
+
+type Story = StoryObj<typeof Dropdown>;
 
 export const Primary: Story = {
   args: {}
@@ -72,7 +73,7 @@ export const WithError: Story = {
   args: {
     label: 'Label',
     isError: true,
-    error: 'Error DropDown'
+    error: 'Error Dropdown'
   }
 };
 

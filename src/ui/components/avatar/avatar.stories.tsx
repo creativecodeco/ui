@@ -30,8 +30,7 @@ const meta: Meta<typeof Avatar> = {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      defaultValue: 'md'
+      control: { type: 'select' }
     }
   },
   args: {

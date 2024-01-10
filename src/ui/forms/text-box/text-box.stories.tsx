@@ -31,8 +31,7 @@ const meta: Meta<typeof TextBox> = {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      defaultValue: 'md'
+      control: { type: 'select' }
     },
     leftIcon: {
       description: 'Left Icon',
@@ -64,6 +63,8 @@ const meta: Meta<typeof TextBox> = {
 };
 
 export default meta;
+
+TextBox.displayName = 'TextBox';
 
 type Story = StoryObj<typeof TextBox>;
 
