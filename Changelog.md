@@ -1,15 +1,30 @@
 <!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
 # Changelog
 
-## v0.0.5 - DropDown (Jan 2 - 2021)
+## v0.2.0 - Checkbox (Jan 10 - 2024)
+
+### 👾 Feature
+
+- Checkbox
+- Fix name Dropdown
+- Fix build chromatic
+- New util isValidUrl
+
+## v0.1.0 - Avatar (Jan 3 - 2024)
+
+### 👾 Feature
+
+- Avatar
+
+## v0.0.5 - Dropdown (Jan 2 - 2024)
 
 ### 🐛 Bugs
 
-- DropDown - Label default value
+- Dropdown - Label default value
 - Storybook config
 - Changelog - Version in Storybook
 
-## v0.0.4 - DropDown (Jan 2 - 2021)
+## v0.0.4 - Dropdown (Jan 2 - 2021)
 
 ### 🐛 Bugs
 
@@ -17,11 +32,11 @@
 - Update Readme.md
 - Types Controller React Hook Form
 
-## v0.0.3 - DropDown (Dec 21 - 2023)
+## v0.0.3 - Dropdown (Dec 21 - 2023)
 
 ### 👾 Feature
 
-- DropDown
+- Dropdown
 
 ### 🐛 Bugs
 

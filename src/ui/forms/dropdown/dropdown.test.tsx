@@ -1,24 +1,24 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import DropDown from './drop-down.component';
+import Dropdown from './dropdown.component';
 
-import type { DropDownOption } from '@/types';
+import type { DropdownOption } from '@/types';
 
-const options = Array.from({ length: 5 }).map<DropDownOption>((_, index) => ({
+const options = Array.from({ length: 5 }).map<DropdownOption>((_, index) => ({
   value: index,
   label: `Option ${index}`
 }));
 
-describe('<DropDown />', () => {
+describe('<Dropdown />', () => {
   it('snapshot', () => {
-    const { container } = render(<DropDown name='test' />);
+    const { container } = render(<Dropdown name='test' />);
 
     expect(container).toMatchSnapshot();
   });
 
   it('snapshot full', () => {
     const { container } = render(
-      <DropDown name='test' label='Label' isError error='Error' disabled />
+      <Dropdown name='test' label='Label' isError error='Error' disabled />
     );
 
     expect(container).toMatchSnapshot();
@@ -26,7 +26,7 @@ describe('<DropDown />', () => {
 
   it('default value', () => {
     const { getByTestId } = render(
-      <DropDown name='test' options={options} value='2' />
+      <Dropdown name='test' options={options} value='2' />
     );
 
     const control = getByTestId('test');
@@ -35,7 +35,7 @@ describe('<DropDown />', () => {
   });
 
   it('focus', () => {
-    const { getByTestId } = render(<DropDown name='test' options={options} />);
+    const { getByTestId } = render(<Dropdown name='test' options={options} />);
 
     const textBox = getByTestId('test');
 
@@ -46,7 +46,7 @@ describe('<DropDown />', () => {
 
   it('focus disabled', async () => {
     const { getByTestId } = render(
-      <DropDown name='test' options={options} disabled />
+      <Dropdown name='test' options={options} disabled />
     );
 
     const textBox = getByTestId('test');
@@ -61,7 +61,7 @@ describe('<DropDown />', () => {
     const onChangeMock = jest.fn();
 
     const { getByTestId, getByText } = render(
-      <DropDown name='test' options={options} onChange={onChangeMock} />
+      <Dropdown name='test' options={options} onChange={onChangeMock} />
     );
 
     const textBox = getByTestId('test');
@@ -77,7 +77,7 @@ describe('<DropDown />', () => {
 
   it('closes the dropdown on click outside', () => {
     const { getByTestId } = render(
-      <DropDown name='test' data-testid='textbox' options={options} />
+      <Dropdown name='test' data-testid='textbox' options={options} />
     );
 
     const textBox = getByTestId('textbox');
@@ -103,7 +103,7 @@ describe('<DropDown />', () => {
   it('handles change correctly', () => {
     const onTextChangeMock = jest.fn();
     const { getByTestId } = render(
-      <DropDown name='test' onTextChange={onTextChangeMock} options={options} />
+      <Dropdown name='test' onTextChange={onTextChangeMock} options={options} />
     );
     const textBox = getByTestId('test');
 
@@ -115,7 +115,7 @@ describe('<DropDown />', () => {
   it('handles change correctly with option', () => {
     const onTextChangeMock = jest.fn();
     const { getByTestId } = render(
-      <DropDown name='test' onTextChange={onTextChangeMock} options={options} />
+      <Dropdown name='test' onTextChange={onTextChangeMock} options={options} />
     );
     const textBox = getByTestId('test');
 

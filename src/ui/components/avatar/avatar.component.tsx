@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import cls from 'classnames';
 
 import type { AvatarType } from '@/types';
-import { getInitials } from '@/utils';
+import { getInitials, isValidUrl } from '@/utils';
 
 const Avatar = ({
   isOnline = false,
@@ -12,7 +12,7 @@ const Avatar = ({
   src,
   withStatus = false
 }: AvatarType) => {
-  const isUri = useMemo(() => URL.canParse(src), [src]);
+  const isUri = useMemo(() => isValidUrl(src), [src]);
 
   const letters = useMemo(() => getInitials(src), [src, isUri]);
 

@@ -1,35 +1,57 @@
-import { getInitials } from './string.utils';
+import { getInitials, isValidUrl } from './string.utils';
 
 describe('string utils', () => {
-  it('One Name', () => {
-    const name = 'FirstName';
+  describe('getInitials', () => {
+    it('One Name', () => {
+      const name = 'FirstName';
 
-    const result = getInitials(name);
+      const result = getInitials(name);
 
-    expect(result).toEqual('FI');
+      expect(result).toEqual('FI');
+    });
+
+    it('Two names', () => {
+      const name = 'FirstName LastName';
+
+      const result = getInitials(name);
+
+      expect(result).toEqual('FL');
+    });
+
+    it('Three names', () => {
+      const name = 'FirstName SecondName LastName';
+
+      const result = getInitials(name);
+
+      expect(result).toEqual('FL');
+    });
+
+    it('Four names', () => {
+      const name = 'FirstName SecondName LastName SecondLastName';
+
+      const result = getInitials(name);
+
+      expect(result).toEqual('FL');
+    });
   });
 
-  it('Two names', () => {
-    const name = 'FirstName LastName';
+  describe('isValidUrl', () => {
+    it('undefined', () => {
+      const valid = isValidUrl();
 
-    const result = getInitials(name);
+      expect(valid).toEqual(false);
+    });
 
-    expect(result).toEqual('FL');
-  });
+    it('url invalid', () => {
+      const valid = isValidUrl('text');
 
-  it('Three names', () => {
-    const name = 'FirstName SecondName LastName';
+      expect(valid).toEqual(false);
+    });
 
-    const result = getInitials(name);
+    it('url valid', () => {
+      const valid = isValidUrl('https://www.google.com');
 
-    expect(result).toEqual('FL');
-  });
-
-  it('Four names', () => {
-    const name = 'FirstName SecondName LastName SecondLastName';
-
-    const result = getInitials(name);
-
-    expect(result).toEqual('FL');
+      expect(valid).toEqual(true);
+    });
   });
 });
