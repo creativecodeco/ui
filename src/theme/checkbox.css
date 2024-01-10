@@ -1,0 +1,47 @@
+.checkbox-color {
+  &-primary {
+    @apply checkbox-primary;
+  }
+
+  &-secondary {
+    @apply checkbox-secondary;
+  }
+
+  &-accent {
+    @apply checkbox-accent;
+  }
+
+  &-success {
+    @apply checkbox-success;
+  }
+
+  &-warning {
+    @apply checkbox-warning;
+  }
+
+  &-info {
+    @apply checkbox-info;
+  }
+
+  &-error {
+    @apply checkbox-error;
+  }
+}
+
+.checkbox-size {
+  &-xs {
+    @apply checkbox-xs;
+  }
+
+  &-sm {
+    @apply checkbox-sm;
+  }
+
+  &-md {
+    @apply checkbox-md;
+  }
+
+  &-lg {
+    @apply checkbox-lg;
+  }
+}
