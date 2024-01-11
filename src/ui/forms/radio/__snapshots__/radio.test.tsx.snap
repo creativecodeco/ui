@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> snapshot 1`] = `
+<div>
+  <label
+    class="label justify-start gap-3 cursor-pointer"
+  >
+    <input
+      class="radio radio-size-md"
+      data-testid="test"
+      id="test"
+      name="test"
+      type="radio"
+    />
+  </label>
+</div>
+`;
+
+exports[`<Radio /> snapshot full props 1`] = `
+<div>
+  <label
+    class="label justify-start gap-3 cursor-not-allowed"
+  >
+    <span
+      class="label-text"
+    >
+      Label
+    </span>
+    <input
+      checked=""
+      class="radio radio-color-primary radio-size-lg"
+      data-testid="test"
+      disabled=""
+      id="test"
+      name="test"
+      type="radio"
+    />
+  </label>
+  <p
+    class="text-red-500"
+  >
+    Error test
+  </p>
+</div>
+`;

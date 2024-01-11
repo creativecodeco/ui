@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react';
 import cls from 'classnames';
 
-import type { CheckboxItemType, CheckboxRef, CheckboxType } from '@/types';
+import type { RadioRef, RadioItemType, RadioType } from '@/types';
 
-const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
+const Radio = forwardRef<RadioRef, RadioType>(
   (
     {
       name,
@@ -26,19 +26,19 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
         isChecked: e.target.checked,
         value,
         label
-      } as CheckboxItemType);
+      } as RadioItemType);
     };
 
-    const checkbox = () => (
+    const radio = () => (
       <input
+        ref={ref}
         id={name}
         name={name}
         data-testid={name}
-        ref={ref}
-        type='checkbox'
-        className={cls('checkbox', {
-          [`checkbox-color-${color}`]: color,
-          [`checkbox-size-${size}`]: size
+        type='radio'
+        className={cls('radio', {
+          [`radio-color-${color}`]: color,
+          [`radio-size-${size}`]: size
         })}
         disabled={disabled}
         checked={checked}
@@ -50,14 +50,14 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
     return (
       <>
         <label
-          className={cls('label', {
+          className={cls('label justify-start gap-3', {
             'cursor-pointer': !disabled,
             'cursor-not-allowed': disabled
           })}
         >
-          {position === 'left' && checkbox()}
+          {position === 'left' && radio()}
           {label && <span className='label-text'>{label}</span>}
-          {position === 'right' && checkbox()}
+          {position === 'right' && radio()}
         </label>
         {isError && <p className='text-red-500'>{error}</p>}
       </>
@@ -65,4 +65,4 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
   }
 );
 
-export default Checkbox;
+export default Radio;

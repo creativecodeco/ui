@@ -1,11 +1,24 @@
 <!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
 # Changelog
 
+## v0.3.0 - Radio (Jan 10 - 2024)
+
+### 👾 Feature
+
+- Radio
+
+### 🐛 Bugs
+
+- Checkbox update
+
 ## v0.2.0 - Checkbox (Jan 10 - 2024)
 
 ### 👾 Feature
 
 - Checkbox
+
+### 🐛 Bugs
+
 - Fix name Dropdown
 - Fix build chromatic
 - New util isValidUrl

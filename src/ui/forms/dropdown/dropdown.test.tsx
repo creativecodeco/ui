@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import Dropdown from './dropdown.component';
-
 import type { DropdownOption } from '@/types';
+
+import Dropdown from './dropdown.component';
 
 const options = Array.from({ length: 5 }).map<DropdownOption>((_, index) => ({
   value: index,

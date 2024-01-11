@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioList /> not options 1`] = `<div />`;
+
+exports[`<RadioList /> snapshot 1`] = `
+<div>
+  <div
+    class="form-control"
+  >
+    <label
+      class="label justify-start gap-3 cursor-pointer"
+    >
+      <input
+        class="radio radio-size-md"
+        data-testid="test"
+        id="test"
+        name="test"
+        type="radio"
+      />
+      <span
+        class="label-text"
+      >
+        Option 0
+      </span>
+    </label>
+    <label
+      class="label justify-start gap-3 cursor-pointer"
+    >
+      <input
+        class="radio radio-size-md"
+        data-testid="test"
+        id="test"
+        name="test"
+        type="radio"
+      />
+      <span
+        class="label-text"
+      >
+        Option 1
+      </span>
+    </label>
+    <label
+      class="label justify-start gap-3 cursor-pointer"
+    >
+      <input
+        class="radio radio-size-md"
+        data-testid="test"
+        id="test"
+        name="test"
+        type="radio"
+      />
+      <span
+        class="label-text"
+      >
+        Option 2
+      </span>
+    </label>
+    <label
+      class="label justify-start gap-3 cursor-pointer"
+    >
+      <input
+        class="radio radio-size-md"
+        data-testid="test"
+        id="test"
+        name="test"
+        type="radio"
+      />
+      <span
+        class="label-text"
+      >
+        Option 3
+      </span>
+    </label>
+  </div>
+</div>
+`;

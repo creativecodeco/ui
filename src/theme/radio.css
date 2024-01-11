@@ -1,0 +1,47 @@
+.radio-color {
+  &-primary {
+    @apply radio-primary;
+  }
+
+  &-secondary {
+    @apply radio-secondary;
+  }
+
+  &-accent {
+    @apply radio-accent;
+  }
+
+  &-success {
+    @apply radio-success;
+  }
+
+  &-warning {
+    @apply radio-warning;
+  }
+
+  &-info {
+    @apply radio-info;
+  }
+
+  &-error {
+    @apply radio-error;
+  }
+}
+
+.radio-size {
+  &-xs {
+    @apply radio-xs;
+  }
+
+  &-sm {
+    @apply radio-sm;
+  }
+
+  &-md {
+    @apply radio-md;
+  }
+
+  &-lg {
+    @apply radio-lg;
+  }
+}
