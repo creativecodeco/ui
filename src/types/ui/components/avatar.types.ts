@@ -1,4 +1,4 @@
-import { SizeType } from '@/types';
+import type { SizeType } from '@/types';
 
 export interface AvatarType {
   src: string;

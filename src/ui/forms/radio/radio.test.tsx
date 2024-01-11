@@ -1,24 +1,24 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import type { CheckboxType } from '@/types';
+import type { RadioType } from '@/types';
 
-import Checkbox from './checkbox.component';
+import Radio from './radio.component';
 
-const baseProps: CheckboxType = {
+const baseProps: RadioType = {
   name: 'test',
   value: 'test'
 };
 
-describe('<Checkbox />', () => {
+describe('<Radio />', () => {
   it('snapshot', () => {
-    const { container } = render(<Checkbox {...baseProps} />);
+    const { container } = render(<Radio {...baseProps} />);
 
     expect(container).toMatchSnapshot();
   });
 
   it('snapshot full props', () => {
     const { container } = render(
-      <Checkbox
+      <Radio
         {...baseProps}
         checked
         color='primary'
@@ -36,7 +36,7 @@ describe('<Checkbox />', () => {
 
   it('label', () => {
     const label = 'Hello Word';
-    const { getByText } = render(<Checkbox {...baseProps} label={label} />);
+    const { getByText } = render(<Radio {...baseProps} label={label} />);
 
     expect(getByText(label)).toBeInTheDocument();
   });
@@ -44,14 +44,14 @@ describe('<Checkbox />', () => {
   it('with error', () => {
     const error = 'Error message';
     const { getByText } = render(
-      <Checkbox {...baseProps} isError error={error} />
+      <Radio {...baseProps} isError error={error} />
     );
 
     expect(getByText(error)).toBeInTheDocument();
   });
 
   it('disabled', () => {
-    const { getByTestId } = render(<Checkbox {...baseProps} disabled />);
+    const { getByTestId } = render(<Radio {...baseProps} disabled />);
 
     expect(getByTestId('test')).toHaveProperty('disabled', true);
   });
@@ -59,36 +59,34 @@ describe('<Checkbox />', () => {
   it('position right', () => {
     const label = 'Hello Word';
     const { getByText } = render(
-      <Checkbox {...baseProps} label={label} position='right' />
+      <Radio {...baseProps} label={label} position='right' />
     );
 
     expect(getByText(label)).toBeInTheDocument();
   });
 
   it('color', () => {
-    const { container } = render(<Checkbox {...baseProps} color='primary' />);
+    const { container } = render(<Radio {...baseProps} color='primary' />);
 
     expect(container.querySelector('input')?.className).toEqual(
-      'checkbox checkbox-color-primary checkbox-size-md'
+      'radio radio-color-primary radio-size-md'
     );
   });
 
   it('size', () => {
-    const { container } = render(<Checkbox {...baseProps} size='lg' />);
+    const { container } = render(<Radio {...baseProps} size='lg' />);
 
     expect(container.querySelector('input')?.className).toEqual(
-      'checkbox checkbox-size-lg'
+      'radio radio-size-lg'
     );
   });
 
   it('onChange', () => {
     const onChange = jest.fn();
 
-    const { getByRole } = render(
-      <Checkbox {...baseProps} size='lg' onChange={onChange} />
-    );
+    const { getByRole } = render(<Radio {...baseProps} onChange={onChange} />);
 
-    fireEvent.click(getByRole('checkbox'));
+    fireEvent.click(getByRole('radio'));
 
     expect(onChange).toHaveBeenCalledTimes(1);
   });

@@ -1,24 +1,25 @@
-import type { ErrorType, SizeType } from '@/types';
+import type { ColorType, ErrorType, PositionType, SizeType } from '@/types';
 
-export interface CheckboxType extends ErrorType {
+export interface CheckboxItemType {
+  label?: string;
+  checked?: boolean;
+  value: string | number;
+}
+
+export interface CheckboxType extends CheckboxItemType, ErrorType {
   name: string;
 
   label?: string;
   checked?: boolean;
 
-  position?: 'left' | 'right';
-  color?:
-    | 'primary'
-    | 'secondary'
-    | 'accent'
-    | 'success'
-    | 'warning'
-    | 'info'
-    | 'error';
+  position?: PositionType;
+  color?: ColorType;
 
   size?: SizeType;
 
   disabled?: boolean;
+
+  onChange?: (value: CheckboxItemType) => void;
 }
 
 export type CheckboxRef = HTMLInputElement;
