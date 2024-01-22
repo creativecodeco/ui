@@ -7,6 +7,11 @@
 
 - Button
 
+### 🐛 Changes
+
+- Storybook table info
+- Fix chromatic show controls
+
 ## v0.3.0 - Radio (Jan 10 - 2024)
 
 ### 👾 Feature
