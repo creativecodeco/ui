@@ -2,7 +2,6 @@ import type { ColorType, ErrorType, PositionType, SizeType } from '@/types';
 
 export interface RadioItemType {
   label?: string;
-  checked?: boolean;
   value?: string | number;
 }
 

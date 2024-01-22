@@ -1,3 +1,2 @@
-import { AvatarType } from './avatar.types';
-
-export type { AvatarType };
+export type * from './avatar.types';
+export type * from './button.types';

@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @import './avatar.css';
+@import './button.css';
 @import './checkbox.css';
 @import './radio.css';
 @import './text-box.css';

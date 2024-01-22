@@ -1,6 +1,12 @@
 <!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
 # Changelog
 
+## v0.4.0 - Radio (Jan 22 - 2024)
+
+### 👾 Feature
+
+- Button
+
 ## v0.3.0 - Radio (Jan 10 - 2024)
 
 ### 👾 Feature
