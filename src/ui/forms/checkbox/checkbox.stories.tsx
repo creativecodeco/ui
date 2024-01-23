@@ -38,6 +38,9 @@ const meta: Meta<typeof Checkbox> = {
       options: ['left', 'right'],
       control: { type: 'radio' },
       table: {
+        type: {
+          summary: 'string'
+        },
         defaultValue: { summary: 'left' }
       }
     },
@@ -61,6 +64,9 @@ const meta: Meta<typeof Checkbox> = {
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'select' },
       table: {
+        type: {
+          summary: 'string'
+        },
         defaultValue: { summary: 'md' }
       }
     }

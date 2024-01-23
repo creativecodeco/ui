@@ -66,7 +66,18 @@ const meta: Meta<typeof RadioList> = {
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'select' },
       table: {
+        type: {
+          summary: 'string'
+        },
         defaultValue: { summary: 'md' }
+      }
+    },
+    options: {
+      description: 'Options',
+      table: {
+        type: {
+          summary: '[]{value: string | number, label: string}: RadioItemType'
+        }
       }
     }
   },

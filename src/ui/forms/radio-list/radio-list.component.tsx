@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Radio } from '@/ui/forms';
+import { Radio } from '../radio';
 
 import type { RadioListType } from '@/types';
 

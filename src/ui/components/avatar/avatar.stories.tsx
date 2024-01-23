@@ -12,25 +12,51 @@ const meta: Meta<typeof Avatar> = {
     },
     withStatus: {
       description: 'With Status',
-      type: 'boolean'
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      }
     },
     isOnline: {
       description: 'Is Online',
-      type: 'boolean'
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      }
     },
     rounded: {
       description: 'Rounded',
-      type: 'boolean'
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      }
     },
     ring: {
       description: 'Ring',
-      type: 'boolean'
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      }
     },
     size: {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' }
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: { summary: 'md' }
+      }
     }
   },
   args: {

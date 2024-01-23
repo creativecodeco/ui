@@ -31,7 +31,13 @@ const meta: Meta<typeof Dropdown> = {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' }
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: { summary: 'md' }
+      }
     },
     leftIcon: {
       description: 'Left Icon',
@@ -40,6 +46,14 @@ const meta: Meta<typeof Dropdown> = {
       mapping: Icons,
       control: {
         type: 'select'
+      }
+    },
+    options: {
+      description: 'Options',
+      table: {
+        type: {
+          summary: '[]{value: string | number, label: string}: DropdownOption'
+        }
       }
     }
   },

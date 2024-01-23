@@ -1,3 +1,3 @@
-export * from './ui/base';
-export * from './ui/components';
-export * from './ui/forms';
+export type * from './ui/base';
+export type * from './ui/components';
+export type * from './ui/forms';

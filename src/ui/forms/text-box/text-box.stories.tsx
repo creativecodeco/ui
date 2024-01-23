@@ -31,7 +31,13 @@ const meta: Meta<typeof TextBox> = {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' }
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'string'
+        },
+        defaultValue: { summary: 'md' }
+      }
     },
     leftIcon: {
       description: 'Left Icon',

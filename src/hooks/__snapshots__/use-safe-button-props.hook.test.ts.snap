@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useSafeButtonProps should return props 1`] = `
+{
+  "disabled": false,
+  "onClick": [Function],
+  "onSubmit": [Function],
+}
+`;

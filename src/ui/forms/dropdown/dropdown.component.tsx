@@ -9,7 +9,7 @@ import React, {
 import { FaSortDown } from 'react-icons/fa';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { TextBox } from '@/ui/forms';
+import { TextBox } from '../text-box';
 import type { DropdownOption, DropdownType, TextBoxRef } from '@/types';
 
 const Dropdown = forwardRef<TextBoxRef, DropdownType>(
