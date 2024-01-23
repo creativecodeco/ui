@@ -63,7 +63,7 @@ describe('<Button />', () => {
   });
 
   it('Color primary', () => {
-    const { container } = render(<Button color="primary">Button</Button>);
+    const { container } = render(<Button color='primary'>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
       'button button-color-primary'
@@ -71,7 +71,7 @@ describe('<Button />', () => {
   });
 
   it('Size lg', () => {
-    const { container } = render(<Button size="lg">Button</Button>);
+    const { container } = render(<Button size='lg'>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
       'button button-size-lg'
@@ -92,5 +92,27 @@ describe('<Button />', () => {
     expect(container.querySelector('button')?.className).toEqual(
       'button button-link'
     );
+  });
+
+  it('Loading', () => {
+    const { getByRole } = render(<Button loading>Button</Button>);
+
+    const button = getByRole('button');
+    console.log(button.firstChild);
+
+    expect((button.firstChild as HTMLSpanElement).className).toBe(
+      'span-loading'
+    );
+  });
+
+  it('Loading with label', () => {
+    const loadingLabel = 'Loading...';
+    const { getByText } = render(
+      <Button loading loadingLabel={loadingLabel}>
+        Button
+      </Button>
+    );
+
+    expect(getByText(loadingLabel)).toBeInTheDocument();
   });
 });

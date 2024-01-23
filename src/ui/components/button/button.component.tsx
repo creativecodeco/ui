@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useMemo } from 'react';
 import cls from 'classnames';
 
 import { useSafeButtonProps } from '@/hooks';
@@ -15,20 +15,40 @@ const Button = forwardRef<ButtonRef, ButtonType>(
       size = 'md',
       icon: Icon,
       iconPosition = 'left',
-      disabled,
+      loading,
+      loadingLabel,
       ...otherProps
     },
     ref
   ) => {
-    const safeProps = useSafeButtonProps({ disabled, ...otherProps });
+    const safeProps = useSafeButtonProps({ loading, ...otherProps });
 
-    const getIcon = () => {
+    const newIcon = useMemo(() => {
       if (!Icon) {
         return;
       }
 
       return <Icon />;
-    };
+    }, [Icon]);
+
+    const content = useMemo(() => {
+      if (loading) {
+        return (
+          <>
+            <span className='span-loading'></span>
+            {loadingLabel}
+          </>
+        );
+      }
+
+      return (
+        <>
+          {iconPosition === 'left' && newIcon}
+          {children}
+          {iconPosition === 'right' && newIcon}
+        </>
+      );
+    }, [loading, loadingLabel, iconPosition, children, newIcon]);
 
     return (
       <button
@@ -37,13 +57,12 @@ const Button = forwardRef<ButtonRef, ButtonType>(
           'button-link': isLink,
           'button-outline': !isLink && outline,
           [`button-color-${color}`]: !isLink && color,
-          [`button-size-${size}`]: size !== 'md'
+          [`button-size-${size}`]: size !== 'md',
+          'button-loading': loading
         })}
         {...safeProps}
       >
-        {iconPosition === 'left' && getIcon()}
-        {children}
-        {iconPosition === 'right' && getIcon()}
+        {content}
       </button>
     );
   }

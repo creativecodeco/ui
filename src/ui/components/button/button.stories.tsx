@@ -88,6 +88,19 @@ const meta: Meta<typeof Button> = {
           summary: 'boolean'
         }
       }
+    },
+    loading: {
+      description: 'Loading',
+      type: 'boolean',
+      table: {
+        type: {
+          summary: 'boolean'
+        }
+      }
+    },
+    loadingLabel: {
+      description: 'Loading Label',
+      type: 'string'
     }
   },
   args: {
@@ -114,6 +127,19 @@ export const Outline: Story = {
 export const Link: Story = {
   args: {
     isLink: true
+  }
+};
+
+export const Loading: Story = {
+  args: {
+    loading: true
+  }
+};
+
+export const LoadingLabel: Story = {
+  args: {
+    loading: true,
+    loadingLabel: 'Loading...'
   }
 };
 

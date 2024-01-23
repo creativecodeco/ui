@@ -3,8 +3,9 @@ import React from 'react';
 import type { Preview } from '@storybook/react';
 import { themes } from '@storybook/theming';
 
-import '../lib/theme/main.css';
 import { CreativeCodeUIProvider } from '../lib';
+
+import '../lib/theme/main.css';
 
 const preview: Preview = {
   parameters: {
