@@ -5,11 +5,14 @@ import type { ButtonEvent, ButtonEventHandler } from '@/types';
 export default function useSafeButtonProps({
   onClick,
   onSubmit,
+  loading,
   ...props
-}: React.ComponentPropsWithoutRef<'button'>) {
+}: React.ComponentPropsWithoutRef<'button'> & {
+  loading?: boolean;
+}) {
   const wrapper = useCallback(
     (callback: ButtonEventHandler, event: ButtonEvent) => {
-      !props.disabled && callback(event);
+      !props.disabled && !loading && callback(event);
     },
     [props.disabled]
   );

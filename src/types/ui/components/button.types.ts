@@ -11,6 +11,8 @@ export interface ButtonType
   size?: SizeType;
   icon?: IconType;
   iconPosition?: PositionType;
+  loading?: boolean;
+  loadingLabel?: string;
 }
 
 export type ButtonRef = HTMLButtonElement;

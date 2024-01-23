@@ -1,13 +1,19 @@
 <!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
 # Changelog
 
-## v0.4.0 - Radio (Jan 22 - 2024)
+## v0.4.1 - Button (Jan 22 - 2024)
+
+### 📶 Changes
+
+- Button loading
+
+## v0.4.0 - Button (Jan 22 - 2024)
 
 ### 👾 Feature
 
 - Button
 
-### 🐛 Changes
+### 📶 Changes
 
 - Storybook table info
 - Fix chromatic show controls
