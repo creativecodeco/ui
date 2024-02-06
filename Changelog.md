@@ -1,7 +1,14 @@
-<!-- markdownlint-configure-file { "MD024": { "allow_different_nesting": true } } -->
+<!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
-## v0.4.1 - Button (Jan 22 - 2024)
+## v0.4.2 - Text Box (Jan 22 - 2024)
+
+### 📶 Changes
+
+- Text Box semantic Html
+- Text Box colors
+
+## v0.4.2 - Button (Jan 22 - 2024)
 
 ### 📶 Changes
 

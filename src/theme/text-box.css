@@ -1,48 +1,50 @@
-.text-box-size-xs {
-  @apply input-xs;
+.text-box-size {
+  &-xs {
+    @apply input-xs;
 
-  &.text-box-with-left-icon {
-    @apply pl-8;
+    &.text-box-with-left-icon {
+      @apply pl-8;
+    }
+
+    &.text-box-with-right-icon {
+      @apply pr-8;
+    }
   }
 
-  &.text-box-with-right-icon {
-    @apply pr-8;
-  }
-}
+  &-sm {
+    @apply input-sm;
 
-.text-box-size-sm {
-  @apply input-sm;
+    &.text-box-with-left-icon {
+      @apply pl-8;
+    }
 
-  &.text-box-with-left-icon {
-    @apply pl-8;
-  }
-
-  &.text-box-with-right-icon {
-    @apply pr-8;
-  }
-}
-
-.text-box-size-md {
-  @apply input-md;
-
-  &.text-box-with-left-icon {
-    @apply pl-9;
+    &.text-box-with-right-icon {
+      @apply pr-8;
+    }
   }
 
-  &.text-box-with-right-icon {
-    @apply pr-9;
+  &-md {
+    @apply input-md;
+
+    &.text-box-with-left-icon {
+      @apply pl-9;
+    }
+
+    &.text-box-with-right-icon {
+      @apply pr-9;
+    }
   }
-}
 
-.text-box-size-lg {
-  @apply input-lg;
+  &-lg {
+    @apply input-lg;
 
-  &.text-box-with-left-icon {
-    @apply pl-9;
-  }
+    &.text-box-with-left-icon {
+      @apply pl-9;
+    }
 
-  &.text-box-with-right-icon {
-    @apply pr-9;
+    &.text-box-with-right-icon {
+      @apply pr-9;
+    }
   }
 }
 
@@ -83,5 +85,29 @@
 
   &-size-lg {
     @apply top-6 right-3;
+  }
+}
+
+.text-box-color {
+  &-primary {
+    @apply input-primary;
+  }
+  &-secondary {
+    @apply input-secondary;
+  }
+  &-accent {
+    @apply input-accent;
+  }
+  &-success {
+    @apply input-success;
+  }
+  &-warning {
+    @apply input-warning;
+  }
+  &-info {
+    @apply input-info;
+  }
+  &-error {
+    @apply input-error;
   }
 }

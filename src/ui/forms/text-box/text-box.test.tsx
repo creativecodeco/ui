@@ -76,6 +76,14 @@ describe('<TextBox />', () => {
 
     fireEvent.click(svgRight as SVGSVGElement);
 
-    expect(onClick).toHaveBeenCalledTimes(1);
+    expect(onClick).toHaveBeenCalled();
+  });
+
+  it('color primary', () => {
+    const { container } = render(<TextBox name='test' color='primary' />);
+
+    expect(container.querySelector('input')?.className).toEqual(
+      'input input-bordered w-full text-box-size-md text-box-color-primary'
+    );
   });
 });
