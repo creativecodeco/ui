@@ -2,8 +2,9 @@
 
 exports[`<TextBox /> snapshot 1`] = `
 <div>
-  <div
+  <label
     class="form-control w-full flex"
+    for="test"
   >
     <div
       class="relative"
@@ -15,30 +16,26 @@ exports[`<TextBox /> snapshot 1`] = `
         name="test"
       />
     </div>
-  </div>
+  </label>
 </div>
 `;
 
 exports[`<TextBox /> snapshot full 1`] = `
 <div>
-  <div
+  <label
     class="form-control w-full flex"
+    for="test"
   >
-    <div
-      class="label"
+    <span
+      class="label-text"
     >
-      <label
-        class="label-text"
-        for="test"
-      >
-        Label
-      </label>
-    </div>
+      Label
+    </span>
     <div
       class="relative"
     >
       <svg
-        class="text-box-left-icon text-box-left-icon-size-lg"
+        class="text-box-left-icon text-box-left-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -59,7 +56,7 @@ exports[`<TextBox /> snapshot full 1`] = `
         name="test"
       />
       <svg
-        class="text-box-right-icon text-box-right-icon-size-lg cursor-pointer"
+        class="text-box-right-icon text-box-right-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -78,6 +75,6 @@ exports[`<TextBox /> snapshot full 1`] = `
     >
       Error
     </p>
-  </div>
+  </label>
 </div>
 `;

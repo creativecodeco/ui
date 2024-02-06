@@ -78,6 +78,12 @@ export const Primary: Story = {
   args: {}
 };
 
+export const Label: Story = {
+  args: {
+    label: 'Label Text'
+  }
+};
+
 export const SizeXs: Story = {
   args: {
     size: 'xs'
@@ -117,6 +123,49 @@ export const RightIcon: Story = {
 export const RightIconButton: Story = {
   args: {
     rightIcon: Icons.FaSortDown,
-    rightButton: true
+    rightButton: true,
+    onClick: () => alert('Click')
+  }
+};
+
+export const ColorPrimary: Story = {
+  args: {
+    color: 'primary'
+  }
+};
+
+export const ColorSecondary: Story = {
+  args: {
+    color: 'secondary'
+  }
+};
+
+export const ColorAccent: Story = {
+  args: {
+    color: 'accent'
+  }
+};
+
+export const ColorSuccess: Story = {
+  args: {
+    color: 'success'
+  }
+};
+
+export const ColorWarning: Story = {
+  args: {
+    color: 'warning'
+  }
+};
+
+export const ColorInfo: Story = {
+  args: {
+    color: 'info'
+  }
+};
+
+export const ColorError: Story = {
+  args: {
+    color: 'error'
   }
 };

@@ -98,7 +98,6 @@ describe('<Button />', () => {
     const { getByRole } = render(<Button loading>Button</Button>);
 
     const button = getByRole('button');
-    console.log(button.firstChild);
 
     expect((button.firstChild as HTMLSpanElement).className).toBe(
       'span-loading'
