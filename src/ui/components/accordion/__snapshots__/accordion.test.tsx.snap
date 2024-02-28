@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Accordion /> snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-wrap gap-2"
+  >
+    <div
+      class="collapse bg-base-200 accordion-type-arrow"
+    >
+      <input
+        name="test"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        0
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-arrow"
+    >
+      <input
+        name="test"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        1
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-arrow"
+    >
+      <input
+        name="test"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        2
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-arrow"
+    >
+      <input
+        name="test"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        3
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Accordion /> snapshot all props 1`] = `
+<div>
+  <div
+    class="flex flex-wrap join join-vertical w-full"
+  >
+    <div
+      class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
+    >
+      <input
+        name="test"
+        type="checkbox"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        0
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
+    >
+      <input
+        name="test"
+        type="checkbox"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        1
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
+    >
+      <input
+        name="test"
+        type="checkbox"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        2
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+    <div
+      class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
+    >
+      <input
+        name="test"
+        type="checkbox"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Header 
+        3
+      </div>
+      <div
+        class="collapse-content"
+      >
+        <p>
+          Body
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

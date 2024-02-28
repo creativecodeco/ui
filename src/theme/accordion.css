@@ -1,0 +1,9 @@
+.accordion-type {
+  &-arrow {
+    @apply collapse-arrow;
+  }
+
+  &-plus {
+    @apply collapse-plus;
+  }
+}
