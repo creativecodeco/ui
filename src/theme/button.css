@@ -1,6 +1,4 @@
 .button {
-  @apply btn;
-
   &-link {
     @apply btn-link;
   }
@@ -40,6 +38,10 @@
 
     &-error {
       @apply btn-error;
+    }
+
+    &-ghost {
+      @apply btn-ghost;
     }
   }
 

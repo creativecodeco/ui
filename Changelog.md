@@ -1,6 +1,24 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
+## v0.6.0 - Badge
+
+### 👾 Feature
+
+- Badge
+
+### 📶 Changes
+
+- Update changelog
+- Button Outline Color
+- Button Badge
+
+## v0.5.0 - Accordion
+
+### 👾 Feature
+
+- Accordion
+
 ## v0.4.2 - Text Box (Jan 22 - 2024)
 
 ### 📶 Changes

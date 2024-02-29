@@ -1,4 +1,4 @@
-import type { ColorButtonType, SizeType } from '@/types';
+import type { BadgeType, ColorButtonType, SizeType } from '@/types';
 import type { IconType } from 'react-icons';
 import type { PositionType } from '@/types';
 
@@ -13,6 +13,10 @@ export interface ButtonType
   iconPosition?: PositionType;
   loading?: boolean;
   loadingLabel?: string;
+
+  withBadge?: boolean;
+  badge?: React.ReactNode;
+  badgeProps?: Omit<BadgeType, 'children' | 'size'>;
 }
 
 export type ButtonRef = HTMLButtonElement;

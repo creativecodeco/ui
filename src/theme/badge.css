@@ -1,0 +1,45 @@
+.badge {
+  &-size {
+    &-lg {
+      @apply badge-lg;
+    }
+
+    &-sm {
+      @apply badge-sm;
+    }
+
+    &-xs {
+      @apply badge-xs;
+    }
+  }
+
+  &-color {
+    &-primary {
+      @apply badge-primary;
+    }
+
+    &-secondary {
+      @apply badge-secondary;
+    }
+
+    &-accent {
+      @apply badge-accent;
+    }
+
+    &-success {
+      @apply badge-success;
+    }
+
+    &-warning {
+      @apply badge-warning;
+    }
+
+    &-info {
+      @apply badge-info;
+    }
+
+    &-error {
+      @apply badge-error;
+    }
+  }
+}
