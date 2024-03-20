@@ -66,7 +66,7 @@ describe('<Button />', () => {
     const { container } = render(<Button color='primary'>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
-      'button button-color-primary'
+      'btn button-color-primary'
     );
   });
 
@@ -74,7 +74,7 @@ describe('<Button />', () => {
     const { container } = render(<Button size='lg'>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
-      'button button-size-lg'
+      'btn button-size-lg'
     );
   });
 
@@ -82,7 +82,19 @@ describe('<Button />', () => {
     const { container } = render(<Button outline>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
-      'button button-outline'
+      'btn btn-outline'
+    );
+  });
+
+  it('Outline Color', () => {
+    const { container } = render(
+      <Button outline color='primary'>
+        Button
+      </Button>
+    );
+
+    expect(container.querySelector('button')?.className).toEqual(
+      'btn btn-outline btn-primary'
     );
   });
 
@@ -90,7 +102,7 @@ describe('<Button />', () => {
     const { container } = render(<Button isLink>Button</Button>);
 
     expect(container.querySelector('button')?.className).toEqual(
-      'button button-link'
+      'btn button-link'
     );
   });
 

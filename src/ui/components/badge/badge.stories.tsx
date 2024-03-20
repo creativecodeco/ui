@@ -1,26 +1,13 @@
-import React from 'react';
-
 import * as Icons from 'react-icons/fa';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Badge } from '@/ui/components';
+import Badge from './badge.component';
 
-import Button from './button.component';
-
-const meta: Meta<typeof Button> = {
-  title: '@creativecodeco-ui/Components/Button',
-  component: Button,
+const meta: Meta<typeof Badge> = {
+  title: '@creativecodeco-ui/Components/Badge',
+  component: Badge,
   argTypes: {
-    isLink: {
-      description: 'Is Link',
-      type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
-    },
     color: {
       description: 'Color',
       type: 'string',
@@ -31,9 +18,7 @@ const meta: Meta<typeof Button> = {
         'success',
         'warning',
         'info',
-        'error',
-        'ghost',
-        'neutral'
+        'error'
       ],
       control: { type: 'select' },
       table: {
@@ -83,78 +68,26 @@ const meta: Meta<typeof Button> = {
         },
         defaultValue: { summary: 'left' }
       }
-    },
-    disabled: {
-      description: 'Disabled',
-      type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
-    },
-    loading: {
-      description: 'Loading',
-      type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
-    },
-    loadingLabel: {
-      description: 'Loading Label',
-      type: 'string'
     }
   },
   args: {
     size: 'md',
-    children: 'Button',
+    children: 'Badge',
     iconPosition: 'left'
   }
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof Badge>;
 
 export const Primary: Story = {
   args: {}
 };
 
-export const WithBadge: Story = {
-  args: {
-    children: (
-      <>
-        Button
-        <Badge color='primary'>+100</Badge>
-      </>
-    )
-  }
-};
-
 export const Outline: Story = {
   args: {
     outline: true
-  }
-};
-
-export const Link: Story = {
-  args: {
-    isLink: true
-  }
-};
-
-export const Loading: Story = {
-  args: {
-    loading: true
-  }
-};
-
-export const LoadingLabel: Story = {
-  args: {
-    loading: true,
-    loadingLabel: 'Loading...'
   }
 };
 
@@ -237,18 +170,6 @@ export const ColorError: Story = {
   }
 };
 
-export const ColorGhost: Story = {
-  args: {
-    color: 'ghost'
-  }
-};
-
-export const ColorNeutral: Story = {
-  args: {
-    color: 'neutral'
-  }
-};
-
 export const ColorPrimaryOutline: Story = {
   args: {
     color: 'primary',
@@ -294,20 +215,6 @@ export const ColorInfoOutline: Story = {
 export const ColorErrorOutline: Story = {
   args: {
     color: 'error',
-    outline: true
-  }
-};
-
-export const ColorNeutralOutline: Story = {
-  args: {
-    color: 'neutral',
-    outline: true
-  }
-};
-
-export const ColorGhostOutline: Story = {
-  args: {
-    color: 'ghost',
     outline: true
   }
 };

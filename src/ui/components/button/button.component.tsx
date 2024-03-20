@@ -53,10 +53,11 @@ const Button = forwardRef<ButtonRef, ButtonType>(
     return (
       <button
         ref={ref}
-        className={cls('button', {
+        className={cls('btn', {
           'button-link': isLink,
-          'button-outline': !isLink && outline,
-          [`button-color-${color}`]: !isLink && color,
+          'btn-outline': !isLink && outline,
+          [`btn-${color}`]: outline && color,
+          [`button-color-${color}`]: !outline && color,
           [`button-size-${size}`]: size !== 'md',
           'button-loading': loading
         })}
