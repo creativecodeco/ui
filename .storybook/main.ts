@@ -9,15 +9,13 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-links',
-    '@storybook/addon-mdx-gfm',
-    'storybook-addon-themes'
+    '@storybook/addon-webpack5-compiler-swc',
+    '@chromatic-com/storybook'
   ],
   framework: {
     name: '@storybook/react-webpack5',
     options: {
-      builder: {
-        useSWC: true
-      }
+      builder: {}
     }
   },
   webpackFinal: async (config, _options) => {
@@ -40,7 +38,6 @@ const config: StorybookConfig = {
     return config;
   },
   docs: {
-    autodocs: true,
     docsMode: true
   },
   typescript: {

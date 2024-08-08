@@ -9,7 +9,6 @@ import '../lib/theme/main.css';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -20,13 +19,16 @@ const preview: Preview = {
       theme: themes.light
     }
   },
+
   decorators: [
     (Story) => (
       <CreativeCodeUIProvider>
         <Story />
       </CreativeCodeUIProvider>
     )
-  ]
+  ],
+
+  tags: ['autodocs', 'autodocs']
 };
 
 export default preview;

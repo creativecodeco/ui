@@ -1,9 +1,15 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
+## v0.6.2 - Upgrade storybook
+
+### ☝🏻 Upgrade
+
+- Upgrade storybook
+
 ## v0.6.1 - Upgrade lib versions
 
-### 👾 Fix
+### ☝🏻 Upgrade
 
 - Upgrade lib versions
 
