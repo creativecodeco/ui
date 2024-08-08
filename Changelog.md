@@ -1,6 +1,12 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
+## v0.6.1 - Upgrade lib versions
+
+### 👾 Fix
+
+- Upgrade lib versions
+
 ## v0.6.0 - Badge
 
 ### 👾 Feature
