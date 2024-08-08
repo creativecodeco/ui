@@ -10,7 +10,7 @@
     "framework design",
     "design system"
   ],
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/creativecodeco/ui",
   "author": {
     "name": "John Toro",
@@ -31,7 +31,7 @@
     "lint:eslint": "eslint .",
     "lint:fix": "npm run lint:eslint --fix --quiet",
     "prepack": "npm run build",
-    "prepare": "husky install",
+    "prepare": "husky",
     "release": "npm publish --access public",
     "storybook": "storybook dev -p 6006",
     "test": "jest .",
