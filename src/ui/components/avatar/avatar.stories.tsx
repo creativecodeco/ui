@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Avatar from './avatar.component';
 
+const imageAvatar = 'https://www.creativecode.com.co/wp-content/uploads/2020/07/Avatar-CC.png'
+
 const meta: Meta<typeof Avatar> = {
   title: '@creativecodeco-ui/Components/Avatar',
   component: Avatar,
@@ -99,20 +101,20 @@ export const SizeLg: Story = {
 
 export const Image: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg'
+    src: imageAvatar
   }
 };
 
 export const Rounded: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     rounded: true
   }
 };
 
 export const RoundedOnline: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     rounded: true,
     withStatus: true,
     isOnline: true
@@ -121,7 +123,7 @@ export const RoundedOnline: Story = {
 
 export const RoundedOffline: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     rounded: true,
     withStatus: true
   }
@@ -129,7 +131,7 @@ export const RoundedOffline: Story = {
 
 export const RoundedRing: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     rounded: true,
     ring: true
   }
@@ -137,7 +139,7 @@ export const RoundedRing: Story = {
 
 export const WithStatusOnline: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     withStatus: true,
     isOnline: true
   }
@@ -145,7 +147,7 @@ export const WithStatusOnline: Story = {
 
 export const WithStatusOffline: Story = {
   args: {
-    src: 'https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg',
+    src: imageAvatar,
     withStatus: true
   }
 };

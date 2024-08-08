@@ -27,7 +27,9 @@ const Avatar = ({
     >
       <div
         data-testid='avatar-content'
-        className={cls(`bg-neutral text-neutral-content avatar-size-${size}`, {
+        className={cls('text-neutral-content', {
+          'bg-neutral': !isUri,
+          [`avatar-size-${size}`]: size,
           'rounded-full': rounded,
           rounded: !rounded,
           'avatar-ring': ring
