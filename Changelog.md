@@ -1,6 +1,12 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
+## v0.64 - Fix chromatic
+
+### 👾 Fix
+
+- Fix chromatic
+
 ## v0.6.3 - Upgrade libs
 
 ### ☝🏻 Upgrade

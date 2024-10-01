@@ -10,8 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     '@storybook/addon-webpack5-compiler-swc',
-    '@chromatic-com/storybook',
-    '@storybook/addon-mdx-gfm'
+    '@chromatic-com/storybook'
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -21,6 +20,13 @@ const config: StorybookConfig = {
   },
   webpackFinal: async (config, _options) => {
     config.devtool = false;
+
+    config.performance = {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000
+    };
+
     if (!config.resolve) {
       return config;
     }
