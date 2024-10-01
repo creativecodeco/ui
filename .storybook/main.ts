@@ -10,7 +10,8 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-links',
     '@storybook/addon-webpack5-compiler-swc',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
+    '@storybook/addon-mdx-gfm'
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -19,6 +20,7 @@ const config: StorybookConfig = {
     }
   },
   webpackFinal: async (config, _options) => {
+    config.devtool = false;
     if (!config.resolve) {
       return config;
     }

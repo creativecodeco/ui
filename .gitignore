@@ -5,6 +5,7 @@ build-storybook.log
 coverage
 coverage.txt
 junit.xml
-**/storybook-static
+storybook-static
 **/migration-storybook.log
 **/storybook.log
+*.env

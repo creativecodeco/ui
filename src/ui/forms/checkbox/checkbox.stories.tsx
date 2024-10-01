@@ -74,7 +74,8 @@ const meta: Meta<typeof Checkbox> = {
   args: {
     name: 'checkbox',
     position: 'left',
-    size: 'md'
+    size: 'md',
+    label: 'Label'
   }
 };
 

@@ -48,19 +48,18 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
     );
 
     return (
-      <>
-        <label
-          className={cls('label', {
-            'cursor-pointer': !disabled,
-            'cursor-not-allowed': disabled
-          })}
-        >
-          {position === 'left' && checkbox()}
-          {label && <span className='label-text'>{label}</span>}
-          {position === 'right' && checkbox()}
-        </label>
+      <label
+        className={cls('label', {
+          'cursor-pointer': !disabled,
+          'cursor-not-allowed': disabled
+        })}
+        htmlFor={name}
+      >
+        {position === 'left' && checkbox()}
+        {label && <span className='label-text'>{label}</span>}
+        {position === 'right' && checkbox()}
         {isError && <p className='text-red-500'>{error}</p>}
-      </>
+      </label>
     );
   }
 );

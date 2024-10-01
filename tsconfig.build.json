@@ -15,6 +15,7 @@
     "*.config.js",
     "*.setup.ts",
     "lib",
-    "coverage"
+    "coverage",
+    "storybook-static"
   ]
 }
