@@ -4,6 +4,7 @@ exports[`<Checkbox /> snapshot 1`] = `
 <div>
   <label
     class="label cursor-pointer"
+    for="test"
   >
     <input
       class="checkbox checkbox-size-md"
@@ -20,6 +21,7 @@ exports[`<Checkbox /> snapshot full props 1`] = `
 <div>
   <label
     class="label cursor-not-allowed"
+    for="test"
   >
     <span
       class="label-text"
@@ -35,11 +37,11 @@ exports[`<Checkbox /> snapshot full props 1`] = `
       name="test"
       type="checkbox"
     />
+    <p
+      class="text-red-500"
+    >
+      Error test
+    </p>
   </label>
-  <p
-    class="text-red-500"
-  >
-    Error test
-  </p>
 </div>
 `;

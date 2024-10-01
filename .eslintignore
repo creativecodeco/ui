@@ -8,3 +8,4 @@ node_modules/
 *.log
 *.d.ts
 coverage.txt
+storybook-static

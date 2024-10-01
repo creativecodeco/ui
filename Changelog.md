@@ -1,6 +1,16 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
 # Changelog
 
+## v0.6.3 - Upgrade libs
+
+### ☝🏻 Upgrade
+
+- Upgrade libs
+
+### 👾 Feature
+
+- HtmlFor labels
+
 ## v0.6.2 - Upgrade storybook
 
 ### ☝🏻 Upgrade

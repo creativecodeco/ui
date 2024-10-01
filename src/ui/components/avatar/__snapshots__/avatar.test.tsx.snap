@@ -7,7 +7,7 @@ exports[`<Avatar /> Snapshot 1`] = `
     data-testid="avatar"
   >
     <div
-      class="bg-neutral text-neutral-content avatar-size-md rounded"
+      class="text-neutral-content bg-neutral avatar-size-md rounded"
       data-testid="avatar-content"
     >
       <span>
@@ -25,7 +25,7 @@ exports[`<Avatar /> Snapshot URL 1`] = `
     data-testid="avatar"
   >
     <div
-      class="bg-neutral text-neutral-content avatar-size-md rounded"
+      class="text-neutral-content avatar-size-md rounded"
       data-testid="avatar-content"
     >
       <img
