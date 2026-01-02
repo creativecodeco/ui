@@ -11,61 +11,34 @@ const meta: Meta<typeof TextBox> = {
       description: 'Unique Name',
       type: { name: 'string', required: true }
     },
-    label: {
-      description: 'Label',
-      type: 'string'
-    },
-    isError: {
-      description: 'TextBox has error',
-      type: 'boolean'
-    },
-    error: {
-      description: 'Error message',
-      type: 'string'
-    },
-    disabled: {
-      description: 'Disabled',
-      type: 'boolean'
-    },
+    label: { description: 'Label', type: 'string' },
+    isError: { description: 'TextBox has error', type: 'boolean' },
+    error: { description: 'Error message', type: 'string' },
+    disabled: { description: 'Disabled', type: 'boolean' },
     size: {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'md' }
-      }
+      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
     },
     leftIcon: {
       description: 'Left Icon',
       type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: {
-        type: 'select'
-      }
+      control: { type: 'select' }
     },
     rightIcon: {
       description: 'Right Icon',
       type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: {
-        type: 'select'
-      }
+      control: { type: 'select' }
     },
-    rightButton: {
-      description: 'Right Button',
-      type: 'boolean'
-    }
+    rightButton: { description: 'Right Button', type: 'boolean' }
   },
-  args: {
-    name: 'text-box',
-    size: 'md'
-  }
+  args: { name: 'text-box', size: 'md' }
 };
 
 export default meta;
@@ -74,51 +47,21 @@ TextBox.displayName = 'TextBox';
 
 type Story = StoryObj<typeof TextBox>;
 
-export const Primary: Story = {
-  args: {}
-};
+export const Primary: Story = { args: {} };
 
-export const Label: Story = {
-  args: {
-    label: 'Label Text'
-  }
-};
+export const Label: Story = { args: { label: 'Label Text' } };
 
-export const SizeXs: Story = {
-  args: {
-    size: 'xs'
-  }
-};
+export const SizeXs: Story = { args: { size: 'xs' } };
 
-export const SizeSm: Story = {
-  args: {
-    size: 'sm'
-  }
-};
+export const SizeSm: Story = { args: { size: 'sm' } };
 
-export const SizeMd: Story = {
-  args: {
-    size: 'md'
-  }
-};
+export const SizeMd: Story = { args: { size: 'md' } };
 
-export const SizeLg: Story = {
-  args: {
-    size: 'lg'
-  }
-};
+export const SizeLg: Story = { args: { size: 'lg' } };
 
-export const LeftIcon: Story = {
-  args: {
-    leftIcon: Icons.FaPhoneAlt
-  }
-};
+export const LeftIcon: Story = { args: { leftIcon: Icons.FaPhoneAlt } };
 
-export const RightIcon: Story = {
-  args: {
-    rightIcon: Icons.FaPhone
-  }
-};
+export const RightIcon: Story = { args: { rightIcon: Icons.FaPhone } };
 
 export const RightIconButton: Story = {
   args: {
@@ -128,44 +71,16 @@ export const RightIconButton: Story = {
   }
 };
 
-export const ColorPrimary: Story = {
-  args: {
-    color: 'primary'
-  }
-};
+export const ColorPrimary: Story = { args: { color: 'primary' } };
 
-export const ColorSecondary: Story = {
-  args: {
-    color: 'secondary'
-  }
-};
+export const ColorSecondary: Story = { args: { color: 'secondary' } };
 
-export const ColorAccent: Story = {
-  args: {
-    color: 'accent'
-  }
-};
+export const ColorAccent: Story = { args: { color: 'accent' } };
 
-export const ColorSuccess: Story = {
-  args: {
-    color: 'success'
-  }
-};
+export const ColorSuccess: Story = { args: { color: 'success' } };
 
-export const ColorWarning: Story = {
-  args: {
-    color: 'warning'
-  }
-};
+export const ColorWarning: Story = { args: { color: 'warning' } };
 
-export const ColorInfo: Story = {
-  args: {
-    color: 'info'
-  }
-};
+export const ColorInfo: Story = { args: { color: 'info' } };
 
-export const ColorError: Story = {
-  args: {
-    color: 'error'
-  }
-};
+export const ColorError: Story = { args: { color: 'error' } };
