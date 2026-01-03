@@ -12,21 +12,27 @@ export default function useSafeButtonProps({
 }) {
   const wrapper = useCallback(
     (callback: ButtonEventHandler, event: ButtonEvent) => {
-      !props.disabled && !loading && callback(event);
+      if (!props.disabled && !loading) {
+        callback(event);
+      }
     },
     [props.disabled]
   );
 
   const handleClick = useCallback(
     (event: ButtonEvent) => {
-      onClick && wrapper(onClick, event);
+      if (onClick) {
+        wrapper(onClick, event);
+      }
     },
     [onClick, wrapper]
   );
 
   const handleSubmit = useCallback(
     (event: ButtonEvent) => {
-      onSubmit && wrapper(onSubmit, event);
+      if (onSubmit) {
+        wrapper(onSubmit, event);
+      }
     },
     [onSubmit, wrapper]
   );

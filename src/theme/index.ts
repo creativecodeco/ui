@@ -9,5 +9,6 @@ export const creativeCodeTheme = {
   daisyui: {
     themes: ['light']
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require('daisyui')]
 };

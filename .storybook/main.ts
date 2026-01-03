@@ -1,5 +1,5 @@
 // This file has been automatically migrated to valid ESM format by Storybook.
-import { fileURLToPath } from "node:url";
+import { fileURLToPath } from 'node:url';
 import path, { dirname } from 'path';
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 
