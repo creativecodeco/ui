@@ -1,5 +1,13 @@
 <!-- markdownlint-configure-file { "MD024": false } -->
+
 # Changelog
+
+## v1.0.0 - Update Libraries
+
+### ☝🏻 Upgrade
+
+- Upgrade libs
+- Adjust Tailwindcss
 
 ## v0.64 - Fix chromatic
 

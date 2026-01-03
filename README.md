@@ -25,11 +25,11 @@ yarn add @creativecodeco/ui
 ### Dependencies
 
 ```bash
-npm install --save-dev tailwindcss postcss postcss-import autoprefixer usehooks-ts cssnano
+npm install --save-dev tailwindcss postcss usehooks-ts cssnano
 
 or
 
-yarn add -D tailwindcss postcss postcss-import autoprefixer usehooks-ts cssnano
+yarn add -D tailwindcss postcss usehooks-ts cssnano
 ```
 
 ### Setting Tailwind
@@ -45,8 +45,8 @@ const themeConfig = {
   content: [
     ...creativeCodeTheme.content,
     './src/**/*.{js,jsx,ts,tsx}',
-    './app/**/*.{js,jsx,ts,tsx}',
-  ],
+    './app/**/*.{js,jsx,ts,tsx}'
+  ]
 };
 
 export default themeConfig;
@@ -63,7 +63,7 @@ const themeConfig = {
   content: [
     ...creativeCodeTheme.content,
     './src/**/*.{js,jsx,ts,tsx}',
-    './app/**/*.{js,jsx,ts,tsx}',
+    './app/**/*.{js,jsx,ts,tsx}'
   ],
   daisyui: {
     ...creativeCodeTheme.daisyui,
@@ -75,11 +75,11 @@ const themeConfig = {
           secondary: '#427AA1',
           neutral: '#EBF2FA',
           accent: '#679436',
-          other: '#A5BE00',
-        },
-      },
-    ],
-  },
+          other: '#A5BE00'
+        }
+      }
+    ]
+  }
 };
 
 export default themeConfig;
@@ -92,12 +92,8 @@ Create file `postcss.config.js` and add
 ```js
 module.exports = {
   plugins: {
-    'postcss-import': {},
-    'tailwindcss/nesting': {},
-    tailwindcss: {},
-    autoprefixer: {},
-    ...(process.env.NODE_ENV === 'production' ? { cssnano: {} } : {}),
-  },
+    '@tailwindcss/postcss': {}
+  }
 };
 ```
 
@@ -114,9 +110,7 @@ export default function RootLayout({ children }) {
   return (
     <html>
       <body>
-        <CreativeCodeUIProvider>
-          {children}
-        </CreativeCodeUIProvider>
+        <CreativeCodeUIProvider>{children}</CreativeCodeUIProvider>
       </body>
     </html>
   );

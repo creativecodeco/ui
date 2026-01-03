@@ -1,13 +1,13 @@
 export const creativeCodeTheme = {
   content: [
-    "./src/**/*.{html,js,ts,jsx,tsx,mdx}",
-    "./node_modules/creativecodeco/ui/lib/**/*.{js,jsx,ts,tsx}",
+    './src/**/*.{html,js,ts,jsx,tsx,mdx}',
+    './node_modules/creativecodeco/ui/lib/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {}
   },
   daisyui: {
-    themes: ["light"],
+    themes: ['light']
   },
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui')]
 };

@@ -48,18 +48,20 @@ const Radio = forwardRef<RadioRef, RadioType>(
     );
 
     return (
-      <label
-        className={cls('label justify-start gap-3', {
-          'cursor-pointer': !disabled,
-          'cursor-not-allowed': disabled
-        })}
-        htmlFor={name}
-      >
-        {position === 'left' && radio()}
-        {label && <span className='label-text'>{label}</span>}
-        {position === 'right' && radio()}
-        {isError && <p className='text-red-500'>{error}</p>}
-      </label>
+      <div className='form-control'>
+        <label
+          className={cls('label justify-start gap-3', {
+            'cursor-pointer': !disabled,
+            'cursor-not-allowed': disabled
+          })}
+          htmlFor={name}
+        >
+          {position === 'left' && radio()}
+          {label && <span className='label-text'>{label}</span>}
+          {position === 'right' && radio()}
+          {isError && <p className='text-red-500'>{error}</p>}
+        </label>
+      </div>
     );
   }
 );

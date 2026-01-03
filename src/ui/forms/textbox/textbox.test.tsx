@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { FaAdn } from 'react-icons/fa';
 
-import TextBox from './text-box.component';
+import TextBox from './textbox.component';
 
 describe('<TextBox />', () => {
   it('snapshot', () => {
@@ -53,7 +53,7 @@ describe('<TextBox />', () => {
 
     expect(container.querySelector('svg')).toBeInTheDocument();
     expect(container.querySelector('input')?.className).toEqual(
-      'input input-bordered w-full text-box-size-md text-box-with-left-icon'
+      'input input-bordered w-full textbox-size-md textbox-with-left-icon'
     );
   });
 
@@ -62,7 +62,7 @@ describe('<TextBox />', () => {
 
     expect(container.querySelector('svg')).toBeInTheDocument();
     expect(container.querySelector('input')?.className).toEqual(
-      'input input-bordered w-full text-box-size-md text-box-with-right-icon'
+      'input input-bordered w-full textbox-size-md textbox-with-right-icon'
     );
   });
 
@@ -83,7 +83,7 @@ describe('<TextBox />', () => {
     const { container } = render(<TextBox name='test' color='primary' />);
 
     expect(container.querySelector('input')?.className).toEqual(
-      'input input-bordered w-full text-box-size-md text-box-color-primary'
+      'input input-bordered w-full textbox-size-md textbox-color-primary'
     );
   });
 });

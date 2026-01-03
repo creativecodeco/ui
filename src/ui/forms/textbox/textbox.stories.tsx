@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Icons from 'react-icons/fa';
 
-import TextBox from './text-box.component';
+import TextBox from './textbox.component';
 
 const meta: Meta<typeof TextBox> = {
   title: '@creativecodeco-ui/Form/TextBox',
@@ -38,7 +38,7 @@ const meta: Meta<typeof TextBox> = {
     },
     rightButton: { description: 'Right Button', type: 'boolean' }
   },
-  args: { name: 'text-box', size: 'md' }
+  args: { size: 'md' }
 };
 
 export default meta;
@@ -47,40 +47,59 @@ TextBox.displayName = 'TextBox';
 
 type Story = StoryObj<typeof TextBox>;
 
-export const Primary: Story = { args: {} };
+export const Primary: Story = { args: { name: 'txtPrimary' } };
 
-export const Label: Story = { args: { label: 'Label Text' } };
+export const Label: Story = { args: { name: 'txtLabel', label: 'Label Text' } };
 
-export const SizeXs: Story = { args: { size: 'xs' } };
+export const SizeXs: Story = { args: { name: 'txtSizeXs', size: 'xs' } };
 
-export const SizeSm: Story = { args: { size: 'sm' } };
+export const SizeSm: Story = { args: { name: 'txtSizeSm', size: 'sm' } };
 
-export const SizeMd: Story = { args: { size: 'md' } };
+export const SizeMd: Story = { args: { name: 'txtSizeMd', size: 'md' } };
 
-export const SizeLg: Story = { args: { size: 'lg' } };
+export const SizeLg: Story = { args: { name: 'txtSizeLg', size: 'lg' } };
 
-export const LeftIcon: Story = { args: { leftIcon: Icons.FaPhoneAlt } };
+export const LeftIcon: Story = {
+  args: { name: 'txtLeftIcon', leftIcon: Icons.FaPhoneAlt }
+};
 
-export const RightIcon: Story = { args: { rightIcon: Icons.FaPhone } };
+export const RightIcon: Story = {
+  args: { name: 'txtRightIcon', rightIcon: Icons.FaPhone }
+};
 
 export const RightIconButton: Story = {
   args: {
+    name: 'txtRightIconButton',
     rightIcon: Icons.FaSortDown,
     rightButton: true,
     onClick: () => alert('Click')
   }
 };
 
-export const ColorPrimary: Story = { args: { color: 'primary' } };
+export const ColorPrimary: Story = {
+  args: { name: 'txtColorPrimary', color: 'primary' }
+};
 
-export const ColorSecondary: Story = { args: { color: 'secondary' } };
+export const ColorSecondary: Story = {
+  args: { name: 'txtColorSecondary', color: 'secondary' }
+};
 
-export const ColorAccent: Story = { args: { color: 'accent' } };
+export const ColorAccent: Story = {
+  args: { name: 'txtColorAccent', color: 'accent' }
+};
 
-export const ColorSuccess: Story = { args: { color: 'success' } };
+export const ColorSuccess: Story = {
+  args: { name: 'txtColorSuccess', color: 'success' }
+};
 
-export const ColorWarning: Story = { args: { color: 'warning' } };
+export const ColorWarning: Story = {
+  args: { name: 'txtColorWarning', color: 'warning' }
+};
 
-export const ColorInfo: Story = { args: { color: 'info' } };
+export const ColorInfo: Story = {
+  args: { name: 'txtColorInfo', color: 'info' }
+};
 
-export const ColorError: Story = { args: { color: 'error' } };
+export const ColorError: Story = {
+  args: { name: 'txtColorError', color: 'error' }
+};

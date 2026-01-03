@@ -10,7 +10,7 @@ exports[`<TextBox /> snapshot 1`] = `
       class="relative"
     >
       <input
-        class="input input-bordered w-full text-box-size-md"
+        class="input input-bordered w-full textbox-size-md"
         data-testid="test"
         id="test"
         name="test"
@@ -35,7 +35,7 @@ exports[`<TextBox /> snapshot full 1`] = `
       class="relative"
     >
       <svg
-        class="text-box-left-icon text-box-left-icon-size-lg cursor-not-allowed"
+        class="textbox-left-icon textbox-left-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -49,14 +49,14 @@ exports[`<TextBox /> snapshot full 1`] = `
         />
       </svg>
       <input
-        class="input input-bordered w-full text-box-size-lg input-error text-box-with-left-icon text-box-with-right-icon"
+        class="input input-bordered w-full textbox-size-lg input-error textbox-with-left-icon textbox-with-right-icon"
         data-testid="test"
         disabled=""
         id="test"
         name="test"
       />
       <svg
-        class="text-box-right-icon text-box-right-icon-size-lg cursor-not-allowed"
+        class="textbox-right-icon textbox-right-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"

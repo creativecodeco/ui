@@ -1,4 +1,3 @@
-import React from 'react';
 import cls from 'classnames';
 
 import type { AccordionType } from '@/types';

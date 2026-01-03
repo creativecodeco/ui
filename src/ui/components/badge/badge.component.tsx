@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import cls from 'classnames';
 
 import type { BadgeType } from '@/types';

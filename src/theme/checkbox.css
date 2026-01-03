@@ -1,47 +1,43 @@
-.checkbox-color {
-  &-primary {
-    @apply checkbox-primary;
-  }
-
-  &-secondary {
-    @apply checkbox-secondary;
-  }
-
-  &-accent {
-    @apply checkbox-accent;
-  }
-
-  &-success {
-    @apply checkbox-success;
-  }
-
-  &-warning {
-    @apply checkbox-warning;
-  }
-
-  &-info {
-    @apply checkbox-info;
-  }
-
-  &-error {
-    @apply checkbox-error;
-  }
+.checkbox-color-primary {
+  @apply checkbox-primary;
 }
 
-.checkbox-size {
-  &-xs {
-    @apply checkbox-xs;
-  }
+.checkbox-color-secondary {
+  @apply checkbox-secondary;
+}
 
-  &-sm {
-    @apply checkbox-sm;
-  }
+.checkbox-color-accent {
+  @apply checkbox-accent;
+}
 
-  &-md {
-    @apply checkbox-md;
-  }
+.checkbox-color-success {
+  @apply checkbox-success;
+}
 
-  &-lg {
-    @apply checkbox-lg;
-  }
+.checkbox-color-warning {
+  @apply checkbox-warning;
+}
+
+.checkbox-color-info {
+  @apply checkbox-info;
+}
+
+.checkbox-color-error {
+  @apply checkbox-error;
+}
+
+.checkbox-size-xs {
+  @apply checkbox-xs;
+}
+
+.checkbox-size-sm {
+  @apply checkbox-sm;
+}
+
+.checkbox-size-md {
+  @apply checkbox-md;
+}
+
+.checkbox-size-lg {
+  @apply checkbox-lg;
 }

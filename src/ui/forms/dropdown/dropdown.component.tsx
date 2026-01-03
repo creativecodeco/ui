@@ -9,7 +9,7 @@ import React, {
 import { FaSortDown } from 'react-icons/fa';
 import { useOnClickOutside } from 'usehooks-ts';
 
-import { TextBox } from '../text-box';
+import { TextBox } from '../textbox';
 import type { DropdownOption, DropdownType, TextBoxRef } from '@/types';
 
 const Dropdown = forwardRef<TextBoxRef, DropdownType>(
@@ -114,7 +114,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
         {open && (
           <ul
             tabIndex={0}
-            className='dropdown-content z-[1] menu w-full bg-base-100'
+            className='dropdown-content z-1 menu w-full bg-base-100 shadow rounded-box'
             id={`options-${name}`}
             ref={refOutside}
             role='listitem'
