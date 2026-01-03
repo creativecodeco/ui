@@ -6,7 +6,7 @@ exports[`<Dropdown /> snapshot 1`] = `
     class="dropdown block"
   >
     <label
-      class="form-control w-full flex"
+      class="form-control w-full flex flex-row gap-2"
       for="test"
     >
       <div
@@ -46,14 +46,18 @@ exports[`<Dropdown /> snapshot full 1`] = `
     class="dropdown block"
   >
     <label
-      class="form-control w-full flex"
+      class="form-control w-full flex flex-row gap-2"
       for="test"
     >
-      <span
-        class="label-text"
+      <div
+        class="label"
       >
-        Label
-      </span>
+        <span
+          class="label-text"
+        >
+          Label
+        </span>
+      </div>
       <div
         class="relative"
       >
@@ -82,7 +86,7 @@ exports[`<Dropdown /> snapshot full 1`] = `
         </svg>
       </div>
       <p
-        class="text-red-500"
+        class="text-red-500 flex items-center"
       >
         Error
       </p>

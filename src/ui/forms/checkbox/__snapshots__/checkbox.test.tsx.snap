@@ -2,46 +2,54 @@
 
 exports[`<Checkbox /> snapshot 1`] = `
 <div>
-  <label
-    class="label cursor-pointer"
-    for="test"
+  <div
+    class="form-control"
   >
-    <input
-      class="checkbox checkbox-size-md"
-      data-testid="test"
-      id="test"
-      name="test"
-      type="checkbox"
-    />
-  </label>
+    <label
+      class="label cursor-pointer"
+      for="test"
+    >
+      <input
+        class="checkbox checkbox-size-md"
+        data-testid="test"
+        id="test"
+        name="test"
+        type="checkbox"
+      />
+    </label>
+  </div>
 </div>
 `;
 
 exports[`<Checkbox /> snapshot full props 1`] = `
 <div>
-  <label
-    class="label cursor-not-allowed"
-    for="test"
+  <div
+    class="form-control"
   >
-    <span
-      class="label-text"
+    <label
+      class="label cursor-not-allowed"
+      for="test"
     >
-      Label
-    </span>
-    <input
-      checked=""
-      class="checkbox checkbox-color-primary checkbox-size-lg"
-      data-testid="test"
-      disabled=""
-      id="test"
-      name="test"
-      type="checkbox"
-    />
-    <p
-      class="text-red-500"
-    >
-      Error test
-    </p>
-  </label>
+      <span
+        class="label-text"
+      >
+        Label
+      </span>
+      <input
+        checked=""
+        class="checkbox checkbox-color-primary checkbox-size-lg"
+        data-testid="test"
+        disabled=""
+        id="test"
+        name="test"
+        type="checkbox"
+      />
+      <p
+        class="text-red-500"
+      >
+        Error test
+      </p>
+    </label>
+  </div>
 </div>
 `;
