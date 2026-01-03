@@ -1,7 +1,5 @@
-import React from 'react';
-
-import type { Preview } from '@storybook/react';
-import { themes } from '@storybook/theming';
+import type { Preview } from '@storybook/react-webpack5';
+import { themes } from 'storybook/theming';
 
 import { CreativeCodeUIProvider } from '../lib';
 

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import cls from 'classnames';
 
 import type { AvatarType } from '@/types';
@@ -20,9 +20,9 @@ const Avatar = ({
     <div
       data-testid='avatar'
       className={cls('avatar', {
-        online: withStatus && isOnline,
-        offline: withStatus && !isOnline,
-        placeholder: !isUri
+        'avatar-online': withStatus && isOnline,
+        'avatar-offline': withStatus && !isOnline,
+        'avatar-placeholder': !isUri
       })}
     >
       <div

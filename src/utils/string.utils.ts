@@ -74,7 +74,7 @@ export function isValidUrl(uri?: string) {
   try {
     new URL(uri);
     return true;
-  } catch (ignored) {
+  } catch (_) {
     return false;
   }
 }

@@ -1,0 +1,115 @@
+.textbox-size-xs {
+  @apply input-xs;
+
+  &.textbox-with-left-icon {
+    @apply pl-8;
+  }
+
+  &.textbox-with-right-icon {
+    @apply pr-8;
+  }
+}
+
+.textbox-size-sm {
+  @apply input-sm;
+
+  &.textbox-with-left-icon {
+    @apply pl-8;
+  }
+
+  &.textbox-with-right-icon {
+    @apply pr-8;
+  }
+}
+
+.textbox-size-md {
+  @apply input-md;
+
+  &.textbox-with-left-icon {
+    @apply pl-9;
+  }
+
+  &.textbox-with-right-icon {
+    @apply pr-9;
+  }
+}
+
+.textbox-size-lg {
+  @apply input-lg;
+
+  &.textbox-with-left-icon {
+    @apply pl-9;
+  }
+
+  &.textbox-with-right-icon {
+    @apply pr-9;
+  }
+}
+
+.textbox-left-icon {
+  @apply absolute z-10;
+}
+
+.textbox-left-icon-size-xs {
+  @apply top-[5px] left-2;
+}
+
+.textbox-left-icon-size-sm {
+  @apply top-2 left-2;
+}
+
+.textbox-left-icon-size-md {
+  @apply top-4 left-3;
+}
+
+.textbox-left-icon-size-lg {
+  @apply top-6 left-3;
+}
+
+.textbox-right-icon {
+  @apply absolute z-10;
+}
+
+.textbox-right-icon-size-xs {
+  @apply top-[5px] right-2;
+}
+
+.textbox-right-icon-size-sm {
+  @apply top-2 right-2;
+}
+
+.textbox-right-icon-size-md {
+  @apply top-3 right-3;
+}
+
+.textbox-right-icon-size-lg {
+  @apply top-6 right-3;
+}
+
+.textbox-color-primary {
+  @apply input-primary;
+}
+
+.textbox-color-secondary {
+  @apply input-secondary;
+}
+
+.textbox-color-accent {
+  @apply input-accent;
+}
+
+.textbox-color-success {
+  @apply input-success;
+}
+
+.textbox-color-warning {
+  @apply input-warning;
+}
+
+.textbox-color-info {
+  @apply input-info;
+}
+
+.textbox-color-error {
+  @apply input-error;
+}

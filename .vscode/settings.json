@@ -12,5 +12,9 @@
     "testid",
     "theming",
     "usehooks"
-  ]
+  ],
+  "files.associations": {
+    "*.css": "tailwindcss",
+    "*.scss": "scss"
+  }
 }

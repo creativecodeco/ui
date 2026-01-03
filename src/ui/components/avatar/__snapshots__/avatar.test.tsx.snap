@@ -3,7 +3,7 @@
 exports[`<Avatar /> Snapshot 1`] = `
 <div>
   <div
-    class="avatar placeholder"
+    class="avatar avatar-placeholder"
     data-testid="avatar"
   >
     <div

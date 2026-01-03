@@ -3,14 +3,14 @@
 exports[`<TextBox /> snapshot 1`] = `
 <div>
   <label
-    class="form-control w-full flex"
+    class="form-control w-full flex flex-row gap-2"
     for="test"
   >
     <div
       class="relative"
     >
       <input
-        class="input input-bordered w-full text-box-size-md"
+        class="input input-bordered w-full textbox-size-md"
         data-testid="test"
         id="test"
         name="test"
@@ -23,19 +23,23 @@ exports[`<TextBox /> snapshot 1`] = `
 exports[`<TextBox /> snapshot full 1`] = `
 <div>
   <label
-    class="form-control w-full flex"
+    class="form-control w-full flex flex-row gap-2"
     for="test"
   >
-    <span
-      class="label-text"
+    <div
+      class="label"
     >
-      Label
-    </span>
+      <span
+        class="label-text"
+      >
+        Label
+      </span>
+    </div>
     <div
       class="relative"
     >
       <svg
-        class="text-box-left-icon text-box-left-icon-size-lg cursor-not-allowed"
+        class="textbox-left-icon textbox-left-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -49,14 +53,14 @@ exports[`<TextBox /> snapshot full 1`] = `
         />
       </svg>
       <input
-        class="input input-bordered w-full text-box-size-lg input-error text-box-with-left-icon text-box-with-right-icon"
+        class="input input-bordered w-full textbox-size-lg input-error textbox-with-left-icon textbox-with-right-icon"
         data-testid="test"
         disabled=""
         id="test"
         name="test"
       />
       <svg
-        class="text-box-right-icon text-box-right-icon-size-lg cursor-not-allowed"
+        class="textbox-right-icon textbox-right-icon-size-lg cursor-not-allowed"
         fill="currentColor"
         height="1em"
         stroke="currentColor"
@@ -71,7 +75,7 @@ exports[`<TextBox /> snapshot full 1`] = `
       </svg>
     </div>
     <p
-      class="text-red-500"
+      class="text-red-500 flex items-center"
     >
       Error
     </p>

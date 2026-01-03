@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Avatar from './avatar.component';
 
-const imageAvatar = 'https://www.creativecode.com.co/wp-content/uploads/2020/07/Avatar-CC.png'
+const imageAvatar =
+  'https://www.creativecode.com.co/wp-content/uploads/2020/07/Avatar-CC.png';
 
 const meta: Meta<typeof Avatar> = {
   title: '@creativecodeco-ui/Components/Avatar',

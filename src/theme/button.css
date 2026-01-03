@@ -1,71 +1,67 @@
 .button {
-  &-link {
-    @apply btn-link;
-  }
-
-  &-outline {
-    @apply btn-outline;
-  }
-
-  &-color {
-    &-neutral {
-      @apply btn-neutral;
-    }
-
-    &-primary {
-      @apply btn-primary;
-    }
-
-    &-secondary {
-      @apply btn-secondary;
-    }
-
-    &-accent {
-      @apply btn-accent;
-    }
-
-    &-success {
-      @apply btn-success;
-    }
-
-    &-warning {
-      @apply btn-warning;
-    }
-
-    &-info {
-      @apply btn-info;
-    }
-
-    &-error {
-      @apply btn-error;
-    }
-
-    &-ghost {
-      @apply btn-ghost;
-    }
-  }
-
-  &-size {
-    &-lg {
-      @apply btn-lg;
-    }
-
-    &-sm {
-      @apply btn-sm;
-    }
-
-    &-xs {
-      @apply btn-xs;
-    }
-  }
-
-  &-loading {
-    @apply pointer-events-none cursor-default;
-  }
-
   &:focus,
   &:hover,
   &:active {
     @apply btn-active;
   }
+}
+
+.button-link {
+  @apply btn-link;
+}
+
+.button-outline {
+  @apply btn-outline;
+}
+
+.button-color-neutral {
+  @apply btn-neutral;
+}
+
+.button-color-primary {
+  @apply btn-primary;
+}
+
+.button-color-secondary {
+  @apply btn-secondary;
+}
+
+.button-color-accent {
+  @apply btn-accent;
+}
+
+.button-color-success {
+  @apply btn-success;
+}
+
+.button-color-warning {
+  @apply btn-warning;
+}
+
+.button-color-info {
+  @apply btn-info;
+}
+
+.button-color-error {
+  @apply btn-error;
+}
+
+.button-color-ghost {
+  @apply btn-ghost;
+}
+
+.button-size-lg {
+  @apply btn-lg;
+}
+
+.button-size-sm {
+  @apply btn-sm;
+}
+
+.button-size-xs {
+  @apply btn-xs;
+}
+
+.button-loading {
+  @apply pointer-events-none cursor-default;
 }

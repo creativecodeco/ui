@@ -6,14 +6,14 @@ exports[`<Dropdown /> snapshot 1`] = `
     class="dropdown block"
   >
     <label
-      class="form-control w-full flex"
+      class="form-control w-full flex flex-row gap-2"
       for="test"
     >
       <div
         class="relative"
       >
         <input
-          class="input input-bordered w-full text-box-size-md text-box-with-right-icon"
+          class="input input-bordered w-full textbox-size-md textbox-with-right-icon"
           data-testid="test"
           id="test"
           name="test"
@@ -21,7 +21,7 @@ exports[`<Dropdown /> snapshot 1`] = `
           value=""
         />
         <svg
-          class="text-box-right-icon text-box-right-icon-size-md cursor-pointer"
+          class="textbox-right-icon textbox-right-icon-size-md cursor-pointer"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -46,19 +46,23 @@ exports[`<Dropdown /> snapshot full 1`] = `
     class="dropdown block"
   >
     <label
-      class="form-control w-full flex"
+      class="form-control w-full flex flex-row gap-2"
       for="test"
     >
-      <span
-        class="label-text"
+      <div
+        class="label"
       >
-        Label
-      </span>
+        <span
+          class="label-text"
+        >
+          Label
+        </span>
+      </div>
       <div
         class="relative"
       >
         <input
-          class="input input-bordered w-full text-box-size-md input-error text-box-with-right-icon"
+          class="input input-bordered w-full textbox-size-md input-error textbox-with-right-icon"
           data-testid="test"
           disabled=""
           id="test"
@@ -67,7 +71,7 @@ exports[`<Dropdown /> snapshot full 1`] = `
           value=""
         />
         <svg
-          class="text-box-right-icon text-box-right-icon-size-md cursor-not-allowed"
+          class="textbox-right-icon textbox-right-icon-size-md cursor-not-allowed"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -82,7 +86,7 @@ exports[`<Dropdown /> snapshot full 1`] = `
         </svg>
       </div>
       <p
-        class="text-red-500"
+        class="text-red-500 flex items-center"
       >
         Error
       </p>

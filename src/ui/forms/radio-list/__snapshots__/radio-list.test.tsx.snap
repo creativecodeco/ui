@@ -7,74 +7,90 @@ exports[`<RadioList /> snapshot 1`] = `
   <div
     class="form-control"
   >
-    <label
-      class="label justify-start gap-3 cursor-pointer"
-      for="test"
+    <div
+      class="form-control"
     >
-      <input
-        class="radio radio-size-md"
-        data-testid="test"
-        id="test"
-        name="test"
-        type="radio"
-      />
-      <span
-        class="label-text"
+      <label
+        class="label justify-start gap-3 cursor-pointer"
+        for="test"
       >
-        Option 0
-      </span>
-    </label>
-    <label
-      class="label justify-start gap-3 cursor-pointer"
-      for="test"
+        <input
+          class="radio radio-size-md"
+          data-testid="test"
+          id="test"
+          name="test"
+          type="radio"
+        />
+        <span
+          class="label-text"
+        >
+          Option 0
+        </span>
+      </label>
+    </div>
+    <div
+      class="form-control"
     >
-      <input
-        class="radio radio-size-md"
-        data-testid="test"
-        id="test"
-        name="test"
-        type="radio"
-      />
-      <span
-        class="label-text"
+      <label
+        class="label justify-start gap-3 cursor-pointer"
+        for="test"
       >
-        Option 1
-      </span>
-    </label>
-    <label
-      class="label justify-start gap-3 cursor-pointer"
-      for="test"
+        <input
+          class="radio radio-size-md"
+          data-testid="test"
+          id="test"
+          name="test"
+          type="radio"
+        />
+        <span
+          class="label-text"
+        >
+          Option 1
+        </span>
+      </label>
+    </div>
+    <div
+      class="form-control"
     >
-      <input
-        class="radio radio-size-md"
-        data-testid="test"
-        id="test"
-        name="test"
-        type="radio"
-      />
-      <span
-        class="label-text"
+      <label
+        class="label justify-start gap-3 cursor-pointer"
+        for="test"
       >
-        Option 2
-      </span>
-    </label>
-    <label
-      class="label justify-start gap-3 cursor-pointer"
-      for="test"
+        <input
+          class="radio radio-size-md"
+          data-testid="test"
+          id="test"
+          name="test"
+          type="radio"
+        />
+        <span
+          class="label-text"
+        >
+          Option 2
+        </span>
+      </label>
+    </div>
+    <div
+      class="form-control"
     >
-      <input
-        class="radio radio-size-md"
-        data-testid="test"
-        id="test"
-        name="test"
-        type="radio"
-      />
-      <span
-        class="label-text"
+      <label
+        class="label justify-start gap-3 cursor-pointer"
+        for="test"
       >
-        Option 3
-      </span>
-    </label>
+        <input
+          class="radio radio-size-md"
+          data-testid="test"
+          id="test"
+          name="test"
+          type="radio"
+        />
+        <span
+          class="label-text"
+        >
+          Option 3
+        </span>
+      </label>
+    </div>
   </div>
 </div>
 `;

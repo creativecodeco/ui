@@ -1,34 +1,32 @@
-.avatar-size {
-  &-xs {
-    @apply w-8;
+.avatar-size-xs {
+  @apply w-8;
 
-    > span {
-      @apply text-xs;
-    }
+  > span {
+    @apply text-xs;
   }
+}
 
-  &-sm {
-    @apply w-12;
+.avatar-size-sm {
+  @apply w-12;
 
-    > span {
-      @apply text-sm;
-    }
+  > span {
+    @apply text-sm;
   }
+}
 
-  &-md {
-    @apply w-16;
+.avatar-size-md {
+  @apply w-16;
 
-    > span {
-      @apply text-xl;
-    }
+  > span {
+    @apply text-xl;
   }
+}
 
-  &-lg {
-    @apply w-24;
+.avatar-size-lg {
+  @apply w-24;
 
-    > span {
-      @apply text-3xl;
-    }
+  > span {
+    @apply text-3xl;
   }
 }
 

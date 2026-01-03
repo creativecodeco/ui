@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "CommonJS",
+    "module": "NodeNext",
     "lib": [
       "DOM",
       "DOM.Iterable",
@@ -15,7 +15,7 @@
     "rootDir": "./",
     "isolatedModules": true,
     "strict": true,
-    "moduleResolution": "Node",
+    "moduleResolution": "nodenext",
     "types": [
       "node",
       "jest"

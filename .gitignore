@@ -9,3 +9,4 @@ storybook-static
 **/migration-storybook.log
 **/storybook.log
 *.env
+debug-storybook.log
