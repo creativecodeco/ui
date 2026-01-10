@@ -10,3 +10,4 @@ storybook-static
 **/storybook.log
 *.env
 debug-storybook.log
+dependency-check-report.html
