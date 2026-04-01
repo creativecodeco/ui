@@ -16,7 +16,7 @@ export default function useSafeButtonProps({
         callback(event);
       }
     },
-    [props.disabled]
+    [props.disabled, loading]
   );
 
   const handleClick = useCallback(

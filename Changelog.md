@@ -2,6 +2,16 @@
 
 # Changelog
 
+## v1.0.4 - Update Libraries
+
+### 👾 Feature
+
+- Eslint
+
+### ☝🏻 Upgrade
+
+- Upgrade libs
+
 ## v1.0.3 - Update Libraries
 
 ### ☝🏻 Upgrade
