@@ -58,14 +58,14 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
 
       setLabel(option.label);
       setValueFilter(option.label);
-    }, [value]);
+    }, [value, options]);
 
     const handleFocus = useCallback(() => {
       if (disabled) {
         return;
       }
       setOpen(true);
-    }, [open, disabled]);
+    }, [disabled]);
 
     const handleSelect = useCallback(
       (option: DropdownOption) => {
@@ -98,7 +98,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
     );
 
     return (
-      <div className='dropdown block'>
+      <div className='block dropdown'>
         <TextBox
           name={name}
           tabIndex={0}
@@ -114,7 +114,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
         {open && (
           <ul
             tabIndex={0}
-            className='dropdown-content z-1 menu w-full bg-base-100 shadow rounded-box'
+            className='z-1 bg-base-100 shadow rounded-box w-full dropdown-content menu'
             id={`options-${name}`}
             ref={refOutside}
             role='listitem'

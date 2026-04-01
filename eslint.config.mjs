@@ -2,6 +2,7 @@ import globals from 'globals';
 import pluginJs from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import pluginReact from 'eslint-plugin-react';
+import pluginReactHooks from 'eslint-plugin-react-hooks';
 import pluginUnusedImports from 'eslint-plugin-unused-imports';
 import pluginPrettier from 'eslint-plugin-prettier';
 import configPrettier from 'eslint-config-prettier';
@@ -10,14 +11,20 @@ import configPrettier from 'eslint-config-prettier';
 export default [
   {
     ignores: [
-      '**/node_modules/*',
+      'node_modules/',
+      'dist/',
+      'lib/',
+      'coverage/',
+      'storybook-static/',
+      '.snapshots/',
       'jest.config.js',
       '__tests__/**/*.test.tsx',
       '**.d.ts',
       '**.config.js',
       '**.config.ts',
-      'lib/**',
-      'coverage/**'
+      '*.min.js',
+      '*.log',
+      'coverage.txt'
     ]
   },
   pluginJs.configs.recommended,
@@ -40,6 +47,7 @@ export default [
     },
     plugins: {
       react: pluginReact,
+      'react-hooks': pluginReactHooks,
       'unused-imports': pluginUnusedImports,
       prettier: pluginPrettier
     },
@@ -53,9 +61,10 @@ export default [
       'prettier/prettier': 'error',
       semi: 'off',
       '@typescript-eslint/semi': 'off',
-      'react-hooks/exhaustive-deps': 'off',
       'react/display-name': 'off',
       'react/react-in-jsx-scope': 'off',
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'error',
         {

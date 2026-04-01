@@ -10,7 +10,7 @@
     "framework design",
     "design system"
   ],
-  "version": "1.0.3",
+  "version": "1.0.4",
   "homepage": "https://github.com/creativecodeco/ui",
   "author": {
     "name": "John Toro",
@@ -79,18 +79,12 @@
     "classnames": "2.5.1",
     "cpx2": "8.0.0",
     "daisyui": "5.5.19",
-    "eslint": "8.57.1",
+    "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
-    "eslint-config-standard": "17.1.0",
-    "eslint-config-standard-react": "13.0.0",
-    "eslint-config-standard-with-typescript": "43.0.1",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-n": "16.6.2",
-    "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "5.5.5",
-    "eslint-plugin-promise": "6.6.0",
     "eslint-plugin-react": "7.37.5",
-    "eslint-plugin-standard": "5.0.0",
+    "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-storybook": "10.3.3",
     "eslint-plugin-unused-imports": "4.4.1",
     "globals": "17.4.0",
@@ -118,6 +112,7 @@
   ],
   "overrides": {
     "handlebars": "4.7.9",
-    "minimatch": "9.0.7"
+    "minimatch": "9.0.7",
+    "lodash": "4.17.23"
   }
 }

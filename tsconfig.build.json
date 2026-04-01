@@ -4,8 +4,7 @@
     "module": "NodeNext",
     "sourceMap": false,
     "removeComments": false,
-    "rootDir": "./src",
-    "ignoreDeprecations": "6.0"
+    "rootDir": "./src"
   },
   "exclude": [
     "**/*.test.ts",

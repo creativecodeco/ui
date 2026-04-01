@@ -14,7 +14,7 @@ const Avatar = ({
 }: AvatarType) => {
   const isUri = useMemo(() => isValidUrl(src), [src]);
 
-  const letters = useMemo(() => getInitials(src), [src, isUri]);
+  const letters = useMemo(() => getInitials(src), [src]);
 
   return (
     <div
