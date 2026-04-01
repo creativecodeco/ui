@@ -2,6 +2,12 @@
 
 # Changelog
 
+## v1.0.3 - Update Libraries
+
+### ☝🏻 Upgrade
+
+- Upgrade libs
+
 ## v1.0.0 - Update Libraries
 
 ### ☝🏻 Upgrade
