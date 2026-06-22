@@ -2,6 +2,12 @@
 
 # Changelog
 
+## v2.0.0 - Update Dependencies
+
+### ☝🏻 Upgrade
+
+- Upgrade react to v19
+
 ## v1.0.4 - Update Libraries
 
 ### 👾 Feature

@@ -3,7 +3,7 @@
 exports[`<Dropdown /> snapshot 1`] = `
 <div>
   <div
-    class="dropdown block"
+    class="block dropdown"
   >
     <label
       class="form-control w-full flex flex-row gap-2"
@@ -43,7 +43,7 @@ exports[`<Dropdown /> snapshot 1`] = `
 exports[`<Dropdown /> snapshot full 1`] = `
 <div>
   <div
-    class="dropdown block"
+    class="block dropdown"
   >
     <label
       class="form-control w-full flex flex-row gap-2"

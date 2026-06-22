@@ -15,7 +15,7 @@
 ## Configuration
 
 > [!NOTE]
-> This library uses **Tailwind CSS v4** and **DaisyUI v5**. The configuration is primarily CSS-first.
+> This library is designed for **React 19** and uses **Tailwind CSS v4** and **DaisyUI v5**. The configuration is primarily CSS-first.
 
 ### Install
 
