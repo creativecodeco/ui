@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import type { ButtonEvent, ButtonEventHandler } from '@/types';
+import type { ButtonEvent } from '@/types';
 
 export default function useSafeButtonProps({
   onClick,
@@ -11,9 +11,16 @@ export default function useSafeButtonProps({
   loading?: boolean;
 }) {
   const wrapper = useCallback(
-    (callback: ButtonEventHandler, event: ButtonEvent) => {
+    (
+      callback:
+        | React.MouseEventHandler<HTMLButtonElement>
+        | React.FormEventHandler<HTMLButtonElement>,
+      event:
+        | React.MouseEvent<HTMLButtonElement>
+        | React.FormEvent<HTMLButtonElement>
+    ) => {
       if (!props.disabled && !loading) {
-        callback(event);
+        (callback as (e: typeof event) => void)(event);
       }
     },
     [props.disabled, loading]
@@ -29,7 +36,7 @@ export default function useSafeButtonProps({
   );
 
   const handleSubmit = useCallback(
-    (event: ButtonEvent) => {
+    (event: React.FormEvent<HTMLButtonElement>) => {
       if (onSubmit) {
         wrapper(onSubmit, event);
       }

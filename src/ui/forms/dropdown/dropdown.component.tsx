@@ -29,7 +29,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
     const [open, setOpen] = useState(false);
     const [valueFilter, setValueFilter] = useState<string | undefined>();
 
-    const refOutside = useRef(null);
+    const refOutside = useRef<HTMLUListElement>(null!);
 
     const handleClickOutside = () => {
       const option = options.find(
