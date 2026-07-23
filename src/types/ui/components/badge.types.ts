@@ -1,6 +1,5 @@
-import type { ColorType, SizeType } from '@/types';
+import type { ColorType, PositionType, SizeType } from '@/types';
 import type { IconType } from 'react-icons';
-import type { PositionType } from '@/types';
 
 export interface BadgeType {
   children: React.ReactNode;

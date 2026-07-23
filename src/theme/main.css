@@ -1,6 +1,4 @@
 @import 'tailwindcss';
-@plugin "daisyui";
-
 @import './accordion.css';
 @import './avatar.css';
 @import './badge.css';
@@ -9,3 +7,5 @@
 @import './radio.css';
 @import './span.css';
 @import './textbox.css';
+
+@plugin "daisyui";

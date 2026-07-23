@@ -17,6 +17,7 @@ const Button = forwardRef<ButtonRef, ButtonType>(
       iconPosition = 'left',
       loading,
       loadingLabel,
+      type = 'button',
       ...otherProps
     },
     ref
@@ -53,6 +54,7 @@ const Button = forwardRef<ButtonRef, ButtonType>(
     return (
       <button
         ref={ref}
+        type={type}
         className={cls('btn', {
           'button-link': isLink,
           'btn-outline': !isLink && outline,

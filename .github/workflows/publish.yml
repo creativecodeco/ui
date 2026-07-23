@@ -18,7 +18,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Clean and Install
-        run: npm ci
+        run: npm ci --ignore-scripts
 
       - name: Configure git
         run: |

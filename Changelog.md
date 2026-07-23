@@ -2,6 +2,15 @@
 
 # Changelog
 
+## v2.1.1 - SonarQube Refactoring
+
+### 👾 Fix
+
+- Fix multiple code smells and bugs reported by SonarQube
+- Improve Dropdown keyboard accessibility and semantic HTML
+- Order CSS imports and fix duplicate type imports
+- Parametrize string utility tests
+
 ## v2.1.0 - Update Libraries
 
 ### ☝🏻 Upgrade
