@@ -4,7 +4,7 @@
 `@creativecodeco/ui` is the official Design System for **CreativeCode.com.co**. It provides a set of reusable, accessible, and highly customizable UI components built with modern web technologies.
 
 ## Technical Stack
-- **Framework**: [React 18](https://react.dev/)
+- **Framework**: [React 19](https://react.dev/)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (CSS-first configuration)
 - **UI Base**: [DaisyUI v5](https://daisyui.com/)
 - **Documentation**: [Storybook 10](https://storybook.js.org/)

@@ -2,6 +2,14 @@
 
 # Changelog
 
+## v2.1.0 - Update Libraries
+
+### ☝🏻 Upgrade
+
+- Upgrade Jest to v30
+- Upgrade @testing-library/jest-dom to v7
+- Upgrade Chromatic to v18
+
 ## v2.0.0 - Update Dependencies
 
 ### ☝🏻 Upgrade

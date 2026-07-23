@@ -16,8 +16,7 @@ export default function useSafeButtonProps({
         | React.MouseEventHandler<HTMLButtonElement>
         | React.FormEventHandler<HTMLButtonElement>,
       event:
-        | React.MouseEvent<HTMLButtonElement>
-        | React.FormEvent<HTMLButtonElement>
+        React.MouseEvent<HTMLButtonElement> | React.FormEvent<HTMLButtonElement>
     ) => {
       if (!props.disabled && !loading) {
         (callback as (e: typeof event) => void)(event);
