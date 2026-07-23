@@ -8,6 +8,7 @@ export interface AccordionType {
 }
 
 export interface AccordionOption {
+  key?: string;
   header: React.ReactElement;
   body: React.ReactElement;
 }

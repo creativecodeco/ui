@@ -30,13 +30,13 @@ describe('<Accordion />', () => {
   it('options - single', () => {
     const { getAllByRole } = render(<Accordion {...baseProps} />);
 
-    expect(getAllByRole('radio').length).toEqual(4);
+    expect(getAllByRole('radio')).toHaveLength(4);
   });
 
   it('options - multiple', () => {
     const { getAllByRole } = render(<Accordion {...baseProps} multiple />);
 
-    expect(getAllByRole('checkbox').length).toEqual(4);
+    expect(getAllByRole('checkbox')).toHaveLength(4);
   });
 
   it('not join', () => {

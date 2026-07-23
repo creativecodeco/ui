@@ -32,11 +32,11 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
     const refOutside = useRef<HTMLUListElement>(null!);
 
     const handleClickOutside = () => {
-      const option = options.find(
+      const hasOption = options.some(
         ({ label }) => String(label) === String(valueFilter)
       );
 
-      if (!option) {
+      if (!hasOption) {
         setLabel('');
         onTextChange?.();
       }
@@ -113,20 +113,21 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
         />
         {open && (
           <ul
-            tabIndex={0}
             className='z-1 bg-base-100 shadow rounded-box w-full dropdown-content menu'
             id={`options-${name}`}
             ref={refOutside}
-            role='listitem'
+            role='listbox'
             data-testid={`options-${name}`}
           >
             {filterOptions.map((option) => (
-              <li
-                key={option.value}
-                value={option.value}
-                onClick={() => handleSelect(option)}
-              >
-                <a>{option.label}</a>
+              <li key={option.value}>
+                <button
+                  type='button'
+                  onClick={() => handleSelect(option)}
+                  className='w-full text-left'
+                >
+                  {option.label}
+                </button>
               </li>
             ))}
           </ul>

@@ -22,17 +22,15 @@ describe('<RadioList />', () => {
   it('options', () => {
     const { getAllByRole } = render(<RadioList {...baseProps} />);
 
-    expect(getAllByRole('radio').length).toEqual(4);
+    expect(getAllByRole('radio')).toHaveLength(4);
   });
 
   it('not options', () => {
-    const { container, asFragment } = render(
-      <RadioList {...baseProps} options={[]} />
-    );
+    const { container } = render(<RadioList {...baseProps} options={[]} />);
 
     expect(container).toMatchSnapshot();
 
-    expect(asFragment.length).toEqual(0);
+    expect(container.querySelectorAll('input[type="radio"]')).toHaveLength(0);
   });
 
   it('with error', () => {

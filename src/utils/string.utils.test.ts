@@ -2,56 +2,23 @@ import { getInitials, isValidUrl } from './string.utils';
 
 describe('string utils', () => {
   describe('getInitials', () => {
-    it('One Name', () => {
-      const name = 'FirstName';
-
-      const result = getInitials(name);
-
-      expect(result).toEqual('FI');
-    });
-
-    it('Two names', () => {
-      const name = 'FirstName LastName';
-
-      const result = getInitials(name);
-
-      expect(result).toEqual('FL');
-    });
-
-    it('Three names', () => {
-      const name = 'FirstName SecondName LastName';
-
-      const result = getInitials(name);
-
-      expect(result).toEqual('FL');
-    });
-
-    it('Four names', () => {
-      const name = 'FirstName SecondName LastName SecondLastName';
-
-      const result = getInitials(name);
-
-      expect(result).toEqual('FL');
+    it.each([
+      ['One Name', 'FirstName', 'FI'],
+      ['Two names', 'FirstName LastName', 'FL'],
+      ['Three names', 'FirstName SecondName LastName', 'FL'],
+      ['Four names', 'FirstName SecondName LastName SecondLastName', 'FL']
+    ])('%s', (_, name, expected) => {
+      expect(getInitials(name)).toEqual(expected);
     });
   });
 
   describe('isValidUrl', () => {
-    it('undefined', () => {
-      const valid = isValidUrl();
-
-      expect(valid).toEqual(false);
-    });
-
-    it('url invalid', () => {
-      const valid = isValidUrl('text');
-
-      expect(valid).toEqual(false);
-    });
-
-    it('url valid', () => {
-      const valid = isValidUrl('https://www.google.com');
-
-      expect(valid).toEqual(true);
+    it.each([
+      ['undefined', undefined, false],
+      ['url invalid', 'text', false],
+      ['url valid', 'https://www.google.com', true]
+    ])('%s', (_, url, expected) => {
+      expect(isValidUrl(url)).toEqual(expected);
     });
   });
 });
