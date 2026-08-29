@@ -2,6 +2,17 @@
 
 # Changelog
 
+## v2.2.0 - Update Dependencies & Storybook
+
+### ☝🏻 Upgrade
+
+- Upgrade Storybook to v10.5.10
+- Upgrade daisyUI to v5.7.22
+- Upgrade React Hook Form to v7.86.0
+- Upgrade Chromatic to v18.6.1
+- Upgrade Testing Library packages (@testing-library/react v16.3.3, @testing-library/jest-dom v7.0.1, @testing-library/user-event v14.6.6)
+- Upgrade PostCSS to v8.5.26 and typescript-eslint to v8.68.0
+
 ## v2.1.1 - SonarQube Refactoring
 
 ### 👾 Fix
