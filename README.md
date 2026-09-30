@@ -99,8 +99,8 @@ export default function RootLayout({ children }) {
 
 ## Features
 
-- **Atomic Components**: Button, Avatar, Badge, Accordion.
-- **Form Controls**: TextBox, Checkbox, Radio, Dropdown.
+- **Atomic Components**: Button, Avatar, Badge, Accordion, Modal, Alert, Toast, Card, Tabs, Skeleton, Spinner, Breadcrumb, Pagination, Steps, Tooltip, Drawer, Navbar, Table, Stat, Divider.
+- **Form Controls**: TextBox, Checkbox, Radio, RadioList, Dropdown, Toggle, TextArea, FileInput.
 - **Theme Support**: Built on DaisyUI with custom CreativeCode branding.
 - **Visual Testing**: Integrated with Storybook and Chromatic.
 

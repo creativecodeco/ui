@@ -1,4 +1,4 @@
-# Project Context: @creativecodeco/ui (v2.3.0)
+# Project Context: @creativecodeco/ui (v2.6.1)
 
 ## Purpose
 `@creativecodeco/ui` is the official Design System for **CreativeCode.com.co**. It provides a set of reusable, accessible, and highly customizable UI components built with modern web technologies.
@@ -17,8 +17,8 @@
 The project follows an organized, modular structure designed for scalability and ease of maintenance:
 
 ### Directory Overview
-- **`src/ui/components/`**: Atomic UI components like `Button`, `Avatar`, `Badge`, and `Accordion`. These are designed to be "dumb" components focused on presentation.
-- **`src/ui/forms/`**: specialized components for form handling, such as `Textbox`, `Checkbox`, `Radio`, and `Dropdown`.
+- **`src/ui/components/`**: Atomic UI components like `Button`, `Avatar`, `Badge`, `Accordion`, `Modal`, `Alert`, `Toast`, `Card`, `Tabs`, `Skeleton`, `Spinner`, `Breadcrumb`, `Pagination`, `Steps`, `Tooltip`, `Drawer`, `Navbar`, `Table`, `Stat`, `Divider`.
+- **`src/ui/forms/`**: specialized components for form handling, such as `Textbox`, `Checkbox`, `Radio`, `RadioList`, `Dropdown`, `Toggle`, `TextArea`, `FileInput`.
 - **`src/ui/provider/`**: Contains the `CreativeCodeUIProvider`, which manages the application's theme (via `data-theme`) and provides necessary context for components.
 - **`src/theme/`**: The heart of the design system's styling. It uses Tailwind CSS v4's CSS-first approach. `main.css` is the entry point that imports component-specific styles and Tailwind/DaisyUI plugins.
 - **`src/hooks/`**: Custom React hooks shared across the library and available to consumers.
