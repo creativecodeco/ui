@@ -1,16 +1,16 @@
-# Project Context: @creativecodeco/ui
+# Project Context: @creativecodeco/ui (v2.3.0)
 
 ## Purpose
 `@creativecodeco/ui` is the official Design System for **CreativeCode.com.co**. It provides a set of reusable, accessible, and highly customizable UI components built with modern web technologies.
 
 ## Technical Stack
 - **Framework**: [React 19](https://react.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (CSS-first configuration)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (CSS-first configuration with PostCSS CLI 12)
 - **UI Base**: [DaisyUI v5](https://daisyui.com/)
-- **Documentation**: [Storybook 10](https://storybook.js.org/)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Documentation**: [Storybook 10](https://storybook.js.org/) (v10.6.1)
+- **Compilers**: [Babel 8](https://babeljs.io/) & [TypeScript 6](https://www.typescriptlang.org/)
 - **Testing**: [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- **Visual QA**: [Chromatic](https://www.chromatic.com/)
+- **Visual QA**: [Chromatic](https://www.chromatic.com/) (v18.10.1)
 
 ## Architecture & Structure
 
