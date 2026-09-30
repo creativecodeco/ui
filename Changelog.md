@@ -2,6 +2,20 @@
 
 # Changelog
 
+## v2.3.0 - Update Major & Minor Dependencies
+
+### ☝🏻 Upgrade
+
+- Upgrade Babel packages (@babel/core, @babel/preset-env, @babel/preset-react, @babel/preset-typescript) to v8.0.x
+- Upgrade PostCSS CLI to v12.0.0
+- Upgrade Storybook to v10.6.1
+- Upgrade daisyUI to v5.7.47
+- Upgrade React Hook Form to v7.89.0
+- Upgrade Chromatic to v18.10.1
+- Upgrade React & React-DOM types to v19.3.0
+- Upgrade Tailwind CSS / PostCSS to v4.3.3
+- Add package override for `webpack-dev-middleware` (^7.4.5) to fix security vulnerability GHSA-g84c-rxfj-3j2c
+
 ## v2.2.0 - Update Dependencies & Storybook
 
 ### ☝🏻 Upgrade
