@@ -2,6 +2,12 @@
 
 # Changelog
 
+## v2.4.2 - Fix Storybook Form Category Hierarchy
+
+### 👾 Fix
+
+- Unify `Range` component Storybook story title under `@creativecodeco-ui/Form/Range` to eliminate duplicate `Form` / `Forms` categories.
+
 ## v2.4.1 - Fix Chromatic CI Workflow
 
 ### 👾 Fix
