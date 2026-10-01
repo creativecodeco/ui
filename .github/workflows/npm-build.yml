@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.2.2
 
       - name: Clean and Install
         run: npm ci --ignore-scripts
@@ -20,7 +20,7 @@ jobs:
         run: npm run test:action
 
       - name: Jest coverage comment
-        uses: MishaKav/jest-coverage-comment@main
+        uses: MishaKav/jest-coverage-comment@14d08a64515f6fd4b28ae6a67c5c43364cea1357 # v1.0.95
         with:
           coverage-summary-path: ./coverage/coverage-summary.json
           title: Pull Request Coverage - By CreativeCode.com.co
