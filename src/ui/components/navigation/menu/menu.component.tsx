@@ -29,7 +29,11 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
             {item.label}
             {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
           </summary>
-          <ul>{item.children?.map(renderMenuItem)}</ul>
+          <ul>
+            {item.children?.map((child, childIndex) =>
+              renderMenuItem(child, childIndex)
+            )}
+          </ul>
         </details>
       ) : item.href ? (
         <a
@@ -81,7 +85,7 @@ const Menu = ({
         className
       )}
     >
-      {items.map(renderMenuItem)}
+      {items.map((item, index) => renderMenuItem(item, index))}
     </ul>
   );
 };
