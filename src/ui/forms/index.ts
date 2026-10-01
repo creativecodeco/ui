@@ -6,3 +6,4 @@ export * from '@/ui/forms/radio-list';
 export * from '@/ui/forms/textarea';
 export * from '@/ui/forms/textbox';
 export * from '@/ui/forms/toggle';
+export * from '@/ui/forms/range';
