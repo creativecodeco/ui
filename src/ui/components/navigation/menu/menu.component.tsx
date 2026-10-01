@@ -15,30 +15,11 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
 
   const hasSubmenu = Boolean(item.children && item.children.length > 0);
 
-  return (
-    <li key={key}>
-      {hasSubmenu ? (
-        <details open>
-          <summary
-            className={cls({
-              active: item.active,
-              disabled: item.disabled
-            })}
-          >
-            {item.icon}
-            {item.label}
-            {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
-          </summary>
-          <ul>
-            {item.children?.map((child, childIndex) =>
-              renderMenuItem(child, childIndex)
-            )}
-          </ul>
-        </details>
-      ) : item.href ? (
-        <a
-          href={item.href}
-          onClick={item.onClick}
+  let content;
+  if (hasSubmenu) {
+    content = (
+      <details open>
+        <summary
           className={cls({
             active: item.active,
             disabled: item.disabled
@@ -47,24 +28,48 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
           {item.icon}
           {item.label}
           {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
-        </a>
-      ) : (
-        <button
-          type='button'
-          onClick={item.onClick}
-          disabled={item.disabled}
-          className={cls({
-            active: item.active,
-            disabled: item.disabled
-          })}
-        >
-          {item.icon}
-          {item.label}
-          {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
-        </button>
-      )}
-    </li>
-  );
+        </summary>
+        <ul>
+          {item.children?.map((child, childIndex) =>
+            renderMenuItem(child, childIndex)
+          )}
+        </ul>
+      </details>
+    );
+  } else if (item.href) {
+    content = (
+      <a
+        href={item.href}
+        onClick={item.onClick}
+        className={cls({
+          active: item.active,
+          disabled: item.disabled
+        })}
+      >
+        {item.icon}
+        {item.label}
+        {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
+      </a>
+    );
+  } else {
+    content = (
+      <button
+        type='button'
+        onClick={item.onClick}
+        disabled={item.disabled}
+        className={cls({
+          active: item.active,
+          disabled: item.disabled
+        })}
+      >
+        {item.icon}
+        {item.label}
+        {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
+      </button>
+    );
+  }
+
+  return <li key={key}>{content}</li>;
 };
 
 const Menu = ({

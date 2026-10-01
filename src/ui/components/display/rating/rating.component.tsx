@@ -45,7 +45,7 @@ const Rating = ({
 
         return (
           <input
-            key={`rating-item-${idx}`}
+            key={`rating-item-${itemValue}`}
             type='radio'
             name={name}
             value={itemValue}

@@ -7,7 +7,7 @@ describe('<Rating />', () => {
     const { container } = render(<Rating value={3} name='test-rating' />);
     const inputs = container.querySelectorAll('input[type="radio"]');
     // 1 hidden reset input + 5 rating item inputs
-    expect(inputs.length).toBe(6);
+    expect(inputs).toHaveLength(6);
     expect(inputs[3]).toBeChecked(); // 3rd star (index 3)
   });
 
@@ -27,7 +27,7 @@ describe('<Rating />', () => {
     );
     // 1 hidden input + 10 half star inputs
     const inputs = container.querySelectorAll('input[type="radio"]');
-    expect(inputs.length).toBe(11);
+    expect(inputs).toHaveLength(11);
   });
 
   it('respects readonly state', () => {
