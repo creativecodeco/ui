@@ -1,5 +1,5 @@
 # Workflow name
-name: "Chromatic"
+name: 'Chromatic'
 
 # Event for the workflow
 on:
@@ -31,5 +31,5 @@ jobs:
           onlyChanged: true
           autoAcceptChanges: true
         env:
-          LOG_LEVEL: "debug"
+          LOG_LEVEL: 'debug'
           DISABLE_LOGGING: false

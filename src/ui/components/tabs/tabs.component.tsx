@@ -45,6 +45,7 @@ const Tabs = ({
               type='button'
               key={item.id}
               role='tab'
+              aria-selected={item.id === activeId}
               className={cls('tab', {
                 'tab-active': item.id === activeId,
                 'tab-disabled': item.disabled

@@ -14,7 +14,7 @@ const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <div className='modal modal-open role-dialog aria-modal' role='dialog'>
+    <div className='modal modal-open' role='dialog' aria-modal='true'>
       <div
         className={cls('modal-box', {
           'max-w-xs': size === 'xs',

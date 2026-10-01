@@ -16,6 +16,7 @@ Follow this standardized 6-step workflow whenever creating a new component or fo
 Create the props interface in `src/types/ui/components/<component-name>.types.ts` (or `src/types/ui/forms/` for form controls).
 
 **Rules:**
+
 - Name the interface `<ComponentName>Type` (e.g. `CardType`, `StepsType`).
 - Mark all optional props with `?`.
 - Use specific types (`React.ReactNode`, `React.Key`, `ColorType`, etc.).
@@ -39,6 +40,7 @@ export interface ComponentNameType {
 Create `src/ui/components/<component-name>/<component-name>.component.tsx`.
 
 **Rules:**
+
 - Use `classnames` imported as `import cls from 'classnames'`.
 - Import types from `@/types`.
 - Use default parameters for optional props.
@@ -87,6 +89,7 @@ export default ComponentName;
 Create `src/ui/components/<component-name>/<component-name>.test.tsx`.
 
 **Rules:**
+
 - Test default render and text content.
 - Test active/disabled states and class assignments.
 - Test user interactions (clicks, input changes).
@@ -111,16 +114,23 @@ describe('<ComponentName />', () => {
 Create `src/ui/components/<component-name>/<component-name>.stories.tsx`.
 
 **Rules:**
+
 - Set `title: '@creativecodeco-ui/Components/<ComponentName>'` (or `Forms`).
 - Include `tags: ['autodocs']`.
 - Provide `Default` and variant stories (`Disabled`, `WithIcons`, etc.).
 
 ---
 
-## Step 6: Verify Build & Tests
+## Step 6: Execute Full Validation Suite
 
-Run validation commands to guarantee zero regressions:
+After creating or modifying a component, ALWAYS run the full validation suite to guarantee code quality, proper formatting, type safety, test passing, and successful build integrity:
+
 ```bash
+npm run lint
+npm run format:check
 npx tsc --noEmit
 npm run test
+npm run build
 ```
+
+If any step fails, fix the issue immediately before declaring completion.

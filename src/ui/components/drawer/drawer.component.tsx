@@ -21,7 +21,7 @@ const Drawer = ({
         type='checkbox'
         className='drawer-toggle'
         checked={isOpen}
-        onChange={() => {}}
+        onChange={() => undefined}
         aria-label='Toggle drawer'
       />
       <div className='drawer-side z-50'>

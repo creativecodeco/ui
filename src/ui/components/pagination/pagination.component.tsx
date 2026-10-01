@@ -11,7 +11,7 @@ const Pagination = ({
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div className='join'>
+    <nav aria-label='Pagination' className='join'>
       <button
         type='button'
         className={cls('join-item btn', {
@@ -31,6 +31,7 @@ const Pagination = ({
         <button
           type='button'
           key={page}
+          aria-current={page === currentPage ? 'page' : undefined}
           className={cls('join-item btn', {
             'btn-active': page === currentPage,
             'btn-xs': size === 'xs',
@@ -58,7 +59,7 @@ const Pagination = ({
       >
         »
       </button>
-    </div>
+    </nav>
   );
 };
 

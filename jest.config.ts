@@ -16,14 +16,14 @@ export default {
   coveragePathIgnorePatterns: ['/node_modules/'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   moduleNameMapper: {
-    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
+    ...pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' })
   },
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/example/'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   transformIgnorePatterns: ['node_modules/(?!variables/.*)'],
-  verbose: true,
+  verbose: true
 };
