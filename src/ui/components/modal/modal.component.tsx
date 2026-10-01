@@ -38,11 +38,14 @@ const Modal = ({
         {actions && <div className='modal-action'>{actions}</div>}
       </div>
       {closeOnBackdropClick && (
-        <div
+        <button
+          type='button'
           className='modal-backdrop'
           onClick={onClose}
           data-testid='modal-backdrop'
-        />
+        >
+          close
+        </button>
       )}
     </div>
   );
