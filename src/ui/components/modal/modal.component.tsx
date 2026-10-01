@@ -14,7 +14,7 @@ const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <div className='modal modal-open' role='dialog' aria-modal='true'>
+    <dialog className='modal modal-open' open aria-modal='true'>
       <div
         className={cls('modal-box', {
           'max-w-xs': size === 'xs',
@@ -47,7 +47,7 @@ const Modal = ({
           close
         </button>
       )}
-    </div>
+    </dialog>
   );
 };
 
