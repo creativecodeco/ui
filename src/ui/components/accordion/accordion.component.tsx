@@ -28,7 +28,15 @@ const Accordion = ({
             'join-item border border-base-300': join
           })}
         >
-          <input type={multiple ? 'checkbox' : 'radio'} name={name} />
+          <input
+            type={multiple ? 'checkbox' : 'radio'}
+            name={name}
+            aria-label={
+              typeof option.header === 'string'
+                ? option.header
+                : `Accordion item ${index + 1}`
+            }
+          />
           <div className='collapse-title text-xl font-medium'>
             {option.header}
           </div>

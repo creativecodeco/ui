@@ -9,6 +9,7 @@ exports[`<Accordion /> snapshot 1`] = `
       class="collapse bg-base-200 accordion-type-arrow"
     >
       <input
+        aria-label="Accordion item 1"
         name="test"
         type="radio"
       />
@@ -30,6 +31,7 @@ exports[`<Accordion /> snapshot 1`] = `
       class="collapse bg-base-200 accordion-type-arrow"
     >
       <input
+        aria-label="Accordion item 2"
         name="test"
         type="radio"
       />
@@ -51,6 +53,7 @@ exports[`<Accordion /> snapshot 1`] = `
       class="collapse bg-base-200 accordion-type-arrow"
     >
       <input
+        aria-label="Accordion item 3"
         name="test"
         type="radio"
       />
@@ -72,6 +75,7 @@ exports[`<Accordion /> snapshot 1`] = `
       class="collapse bg-base-200 accordion-type-arrow"
     >
       <input
+        aria-label="Accordion item 4"
         name="test"
         type="radio"
       />
@@ -102,6 +106,7 @@ exports[`<Accordion /> snapshot all props 1`] = `
       class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
     >
       <input
+        aria-label="Accordion item 1"
         name="test"
         type="checkbox"
       />
@@ -123,6 +128,7 @@ exports[`<Accordion /> snapshot all props 1`] = `
       class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
     >
       <input
+        aria-label="Accordion item 2"
         name="test"
         type="checkbox"
       />
@@ -144,6 +150,7 @@ exports[`<Accordion /> snapshot all props 1`] = `
       class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
     >
       <input
+        aria-label="Accordion item 3"
         name="test"
         type="checkbox"
       />
@@ -165,6 +172,7 @@ exports[`<Accordion /> snapshot all props 1`] = `
       class="collapse bg-base-200 accordion-type-plus join-item border border-base-300"
     >
       <input
+        aria-label="Accordion item 4"
         name="test"
         type="checkbox"
       />

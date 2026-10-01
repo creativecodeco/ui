@@ -2,6 +2,46 @@
 
 # Changelog
 
+## v2.6.1 - Fix Storybook Hierarchy
+
+### 👾 Fix
+
+- Align Storybook story titles for all new components under `@creativecodeco-ui/Components` and `@creativecodeco-ui/Form`
+
+## v2.6.0 - New Structure & Data Display Components (Block 3)
+
+### 👾 Feature
+
+- Add `Drawer` / `Sidebar` sliding panel component (left/right sides, backdrop, title)
+- Add `Navbar` header navigation component (brand, start, center, end sections)
+- Add `Table` data grid component (columns, zebra, compact, hover, custom cell renderers)
+- Add `Stat` KPI card component (titles, values, descriptions, icons & color accents)
+- Add `FileInput` form upload component (sizes, colors, borders, error states)
+- Add `Divider` visual separator component (horizontal/vertical layout, custom labels, start/center/end positions)
+
+## v2.5.0 - New Advanced Forms & Navigation Components (Block 2)
+
+### 👾 Feature
+
+- Add `Toggle` / `Switch` form component (sizes, colors, labels, error states)
+- Add `TextArea` multiline form component (rows, sizes, colors, error states)
+- Add `Breadcrumb` navigation component (icons, links, active state)
+- Add `Pagination` control component (join layout, active page, prev/next buttons)
+- Add `Steps` wizard component (horizontal/vertical layout, step states)
+- Add `Tooltip` floating info component (positions & color themes)
+
+## v2.4.0 - New Core Components (Block 1)
+
+### 👾 Feature
+
+- Add `Modal` component (dialogs, backdrops, sizes, custom actions)
+- Add `Alert` component (info, success, warning, error variants with dismiss & icon support)
+- Add `Toast` component (configurable positions & alert color themes)
+- Add `Card` component (images, titles, subtitles, actions, compact & glass variants)
+- Add `Tabs` component (bordered, lifted, boxed variants with disabled states)
+- Add `Skeleton` component (text, circular, rectangular shimmer loading states)
+- Add `Spinner` component (spinner, dots, ring, ball, bars, infinity loading variants)
+
 ## v2.3.0 - Update Major & Minor Dependencies
 
 ### ☝🏻 Upgrade

@@ -52,15 +52,15 @@ module.exports = {
 In your main CSS entry point (e.g., `globals.css` or `main.css`), import Tailwind and DaisyUI:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 
 /* Optional: Custom Theme Configuration */
 @theme {
   --color-primary: #08448c;
-  --color-secondary: #427AA1;
+  --color-secondary: #427aa1;
   --color-accent: #679436;
-  --color-neutral: #EBF2FA;
+  --color-neutral: #ebf2fa;
 }
 ```
 
@@ -69,7 +69,7 @@ In your main CSS entry point (e.g., `globals.css` or `main.css`), import Tailwin
 If you prefer using a `tailwind.config.js` file, you can import it in your CSS:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 @config "../tailwind.config.js";
 @plugin "daisyui";
 ```
@@ -88,7 +88,7 @@ import '@creativecodeco/ui/lib/theme/css/main.css';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <CreativeCodeUIProvider>{children}</CreativeCodeUIProvider>
       </body>
@@ -99,8 +99,8 @@ export default function RootLayout({ children }) {
 
 ## Features
 
-- **Atomic Components**: Button, Avatar, Badge, Accordion.
-- **Form Controls**: TextBox, Checkbox, Radio, Dropdown.
+- **Atomic Components**: Button, Avatar, Badge, Accordion, Modal, Alert, Toast, Card, Tabs, Skeleton, Spinner, Breadcrumb, Pagination, Steps, Tooltip, Drawer, Navbar, Table, Stat, Divider.
+- **Form Controls**: TextBox, Checkbox, Radio, RadioList, Dropdown, Toggle, TextArea, FileInput.
 - **Theme Support**: Built on DaisyUI with custom CreativeCode branding.
 - **Visual Testing**: Integrated with Storybook and Chromatic.
 

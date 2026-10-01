@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "NodeNext",
-    "lib": [
-      "DOM",
-      "DOM.Iterable",
-      "ESNext"
-    ],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "jsx": "react-jsx",
     "declaration": true,
@@ -16,32 +12,16 @@
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "nodenext",
-    "types": [
-      "node",
-      "jest"
-    ],
+    "types": ["node", "jest"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"]
     },
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "src",
-    "**.d.ts",
-    "./jest.setup.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib",
-    "dist",
-    "coverage"
-  ]
+  "include": ["src", "**.d.ts", "./jest.setup.ts"],
+  "exclude": ["node_modules", "lib", "dist", "coverage"]
 }

@@ -123,6 +123,8 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
               <li key={option.value}>
                 <button
                   type='button'
+                  role='option'
+                  aria-selected={String(option.value) === String(value)}
                   onClick={() => handleSelect(option)}
                   className='w-full text-left'
                 >
