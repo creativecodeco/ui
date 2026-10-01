@@ -1,5 +1,4 @@
 import React from 'react';
-
 import * as Icons from 'react-icons/fa';
 
 import type { Meta, StoryObj } from '@storybook/react';
@@ -15,11 +14,7 @@ const meta: Meta<typeof Button> = {
     isLink: {
       description: 'Is Link',
       type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
+      table: { type: { summary: 'boolean' } }
     },
     color: {
       description: 'Color',
@@ -36,71 +31,43 @@ const meta: Meta<typeof Button> = {
         'neutral'
       ],
       control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        }
-      }
+      table: { type: { summary: 'string' } }
     },
     outline: {
       description: 'Is Outline',
       type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
+      table: { type: { summary: 'boolean' } }
     },
     size: {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'md' }
-      }
+      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
     },
     icon: {
       description: 'Left Icon',
       type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: {
-        type: 'select'
-      }
+      control: { type: 'select' }
     },
     iconPosition: {
       description: 'Icon Position',
       type: 'string',
       options: ['left', 'right'],
       control: { type: 'radio' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'left' }
-      }
+      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
     },
     disabled: {
       description: 'Disabled',
       type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
+      table: { type: { summary: 'boolean' } }
     },
     loading: {
       description: 'Loading',
       type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
+      table: { type: { summary: 'boolean' } }
     },
     loadingLabel: {
       description: 'Loading Label',
@@ -118,196 +85,81 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
-  args: {}
-};
+const createBtnStory = (args: Story['args'] = {}): Story => ({ args });
 
-export const WithBadge: Story = {
-  args: {
-    children: (
-      <>
-        Button
-        <Badge color='primary'>+100</Badge>
-      </>
-    )
-  }
-};
+export const Primary: Story = createBtnStory();
 
-export const Outline: Story = {
-  args: {
-    outline: true
-  }
-};
+export const WithBadge: Story = createBtnStory({
+  children: (
+    <>
+      Button
+      <Badge color='primary'>+100</Badge>
+    </>
+  )
+});
 
-export const Link: Story = {
-  args: {
-    isLink: true
-  }
-};
+export const Outline: Story = createBtnStory({ outline: true });
+export const Link: Story = createBtnStory({ isLink: true });
+export const Loading: Story = createBtnStory({ loading: true });
+export const LoadingLabel: Story = createBtnStory({
+  loading: true,
+  loadingLabel: 'Loading...'
+});
 
-export const Loading: Story = {
-  args: {
-    loading: true
-  }
-};
+export const IconLeft: Story = createBtnStory({ icon: Icons.FaAd });
+export const IconRight: Story = createBtnStory({
+  icon: Icons.FaAd,
+  iconPosition: 'right'
+});
 
-export const LoadingLabel: Story = {
-  args: {
-    loading: true,
-    loadingLabel: 'Loading...'
-  }
-};
+export const SizeXs: Story = createBtnStory({ size: 'xs' });
+export const SizeSm: Story = createBtnStory({ size: 'sm' });
+export const SizeMd: Story = createBtnStory({ size: 'md' });
+export const SizeLg: Story = createBtnStory({ size: 'lg' });
 
-export const IconLeft: Story = {
-  args: {
-    icon: Icons.FaAd
-  }
-};
+export const ColorPrimary: Story = createBtnStory({ color: 'primary' });
+export const ColorSecondary: Story = createBtnStory({ color: 'secondary' });
+export const ColorAccent: Story = createBtnStory({ color: 'accent' });
+export const ColorSuccess: Story = createBtnStory({ color: 'success' });
+export const ColorWarning: Story = createBtnStory({ color: 'warning' });
+export const ColorInfo: Story = createBtnStory({ color: 'info' });
+export const ColorError: Story = createBtnStory({ color: 'error' });
+export const ColorGhost: Story = createBtnStory({ color: 'ghost' });
+export const ColorNeutral: Story = createBtnStory({ color: 'neutral' });
 
-export const IconRight: Story = {
-  args: {
-    icon: Icons.FaAd,
-    iconPosition: 'right'
-  }
-};
-
-export const SizeXs: Story = {
-  args: {
-    size: 'xs'
-  }
-};
-
-export const SizeSm: Story = {
-  args: {
-    size: 'sm'
-  }
-};
-
-export const SizeMd: Story = {
-  args: {
-    size: 'md'
-  }
-};
-
-export const SizeLg: Story = {
-  args: {
-    size: 'lg'
-  }
-};
-
-export const ColorPrimary: Story = {
-  args: {
-    color: 'primary'
-  }
-};
-
-export const ColorSecondary: Story = {
-  args: {
-    color: 'secondary'
-  }
-};
-
-export const ColorAccent: Story = {
-  args: {
-    color: 'accent'
-  }
-};
-
-export const ColorSuccess: Story = {
-  args: {
-    color: 'success'
-  }
-};
-
-export const ColorWarning: Story = {
-  args: {
-    color: 'warning'
-  }
-};
-
-export const ColorInfo: Story = {
-  args: {
-    color: 'info'
-  }
-};
-
-export const ColorError: Story = {
-  args: {
-    color: 'error'
-  }
-};
-
-export const ColorGhost: Story = {
-  args: {
-    color: 'ghost'
-  }
-};
-
-export const ColorNeutral: Story = {
-  args: {
-    color: 'neutral'
-  }
-};
-
-export const ColorPrimaryOutline: Story = {
-  args: {
-    color: 'primary',
-    outline: true
-  }
-};
-
-export const ColorSecondaryOutline: Story = {
-  args: {
-    color: 'secondary',
-    outline: true
-  }
-};
-
-export const ColorAccentOutline: Story = {
-  args: {
-    color: 'accent',
-    outline: true
-  }
-};
-
-export const ColorSuccessOutline: Story = {
-  args: {
-    color: 'success',
-    outline: true
-  }
-};
-
-export const ColorWarningOutline: Story = {
-  args: {
-    color: 'warning',
-    outline: true
-  }
-};
-
-export const ColorInfoOutline: Story = {
-  args: {
-    color: 'info',
-    outline: true
-  }
-};
-
-export const ColorErrorOutline: Story = {
-  args: {
-    color: 'error',
-    outline: true
-  }
-};
-
-export const ColorNeutralOutline: Story = {
-  args: {
-    color: 'neutral',
-    outline: true
-  }
-};
-
-export const ColorGhostOutline: Story = {
-  args: {
-    color: 'ghost',
-    outline: true
-  }
-};
+export const ColorPrimaryOutline: Story = createBtnStory({
+  color: 'primary',
+  outline: true
+});
+export const ColorSecondaryOutline: Story = createBtnStory({
+  color: 'secondary',
+  outline: true
+});
+export const ColorAccentOutline: Story = createBtnStory({
+  color: 'accent',
+  outline: true
+});
+export const ColorSuccessOutline: Story = createBtnStory({
+  color: 'success',
+  outline: true
+});
+export const ColorWarningOutline: Story = createBtnStory({
+  color: 'warning',
+  outline: true
+});
+export const ColorInfoOutline: Story = createBtnStory({
+  color: 'info',
+  outline: true
+});
+export const ColorErrorOutline: Story = createBtnStory({
+  color: 'error',
+  outline: true
+});
+export const ColorNeutralOutline: Story = createBtnStory({
+  color: 'neutral',
+  outline: true
+});
+export const ColorGhostOutline: Story = createBtnStory({
+  color: 'ghost',
+  outline: true
+});

@@ -21,53 +21,33 @@ const meta: Meta<typeof Badge> = {
         'error'
       ],
       control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        }
-      }
+      table: { type: { summary: 'string' } }
     },
     outline: {
       description: 'Is Outline',
       type: 'boolean',
-      table: {
-        type: {
-          summary: 'boolean'
-        }
-      }
+      table: { type: { summary: 'boolean' } }
     },
     size: {
       description: 'Size',
       type: 'string',
       options: ['xs', 'sm', 'md', 'lg'],
       control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'md' }
-      }
+      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
     },
     icon: {
       description: 'Left Icon',
       type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: {
-        type: 'select'
-      }
+      control: { type: 'select' }
     },
     iconPosition: {
       description: 'Icon Position',
       type: 'string',
       options: ['left', 'right'],
       control: { type: 'radio' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'left' }
-      }
+      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
     }
   },
   args: {
@@ -81,140 +61,54 @@ export default meta;
 
 type Story = StoryObj<typeof Badge>;
 
-export const Primary: Story = {
-  args: {}
-};
+const createBadgeStory = (args: Story['args'] = {}): Story => ({ args });
 
-export const Outline: Story = {
-  args: {
-    outline: true
-  }
-};
+export const Primary: Story = createBadgeStory();
+export const Outline: Story = createBadgeStory({ outline: true });
+export const IconLeft: Story = createBadgeStory({ icon: Icons.FaAd });
+export const IconRight: Story = createBadgeStory({
+  icon: Icons.FaAd,
+  iconPosition: 'right'
+});
 
-export const IconLeft: Story = {
-  args: {
-    icon: Icons.FaAd
-  }
-};
+export const SizeXs: Story = createBadgeStory({ size: 'xs' });
+export const SizeSm: Story = createBadgeStory({ size: 'sm' });
+export const SizeMd: Story = createBadgeStory({ size: 'md' });
+export const SizeLg: Story = createBadgeStory({ size: 'lg' });
 
-export const IconRight: Story = {
-  args: {
-    icon: Icons.FaAd,
-    iconPosition: 'right'
-  }
-};
+export const ColorPrimary: Story = createBadgeStory({ color: 'primary' });
+export const ColorSecondary: Story = createBadgeStory({ color: 'secondary' });
+export const ColorAccent: Story = createBadgeStory({ color: 'accent' });
+export const ColorSuccess: Story = createBadgeStory({ color: 'success' });
+export const ColorWarning: Story = createBadgeStory({ color: 'warning' });
+export const ColorInfo: Story = createBadgeStory({ color: 'info' });
+export const ColorError: Story = createBadgeStory({ color: 'error' });
 
-export const SizeXs: Story = {
-  args: {
-    size: 'xs'
-  }
-};
-
-export const SizeSm: Story = {
-  args: {
-    size: 'sm'
-  }
-};
-
-export const SizeMd: Story = {
-  args: {
-    size: 'md'
-  }
-};
-
-export const SizeLg: Story = {
-  args: {
-    size: 'lg'
-  }
-};
-
-export const ColorPrimary: Story = {
-  args: {
-    color: 'primary'
-  }
-};
-
-export const ColorSecondary: Story = {
-  args: {
-    color: 'secondary'
-  }
-};
-
-export const ColorAccent: Story = {
-  args: {
-    color: 'accent'
-  }
-};
-
-export const ColorSuccess: Story = {
-  args: {
-    color: 'success'
-  }
-};
-
-export const ColorWarning: Story = {
-  args: {
-    color: 'warning'
-  }
-};
-
-export const ColorInfo: Story = {
-  args: {
-    color: 'info'
-  }
-};
-
-export const ColorError: Story = {
-  args: {
-    color: 'error'
-  }
-};
-
-export const ColorPrimaryOutline: Story = {
-  args: {
-    color: 'primary',
-    outline: true
-  }
-};
-
-export const ColorSecondaryOutline: Story = {
-  args: {
-    color: 'secondary',
-    outline: true
-  }
-};
-
-export const ColorAccentOutline: Story = {
-  args: {
-    color: 'accent',
-    outline: true
-  }
-};
-
-export const ColorSuccessOutline: Story = {
-  args: {
-    color: 'success',
-    outline: true
-  }
-};
-
-export const ColorWarningOutline: Story = {
-  args: {
-    color: 'warning',
-    outline: true
-  }
-};
-
-export const ColorInfoOutline: Story = {
-  args: {
-    color: 'info',
-    outline: true
-  }
-};
-
-export const ColorErrorOutline: Story = {
-  args: {
-    color: 'error',
-    outline: true
-  }
-};
+export const ColorPrimaryOutline: Story = createBadgeStory({
+  color: 'primary',
+  outline: true
+});
+export const ColorSecondaryOutline: Story = createBadgeStory({
+  color: 'secondary',
+  outline: true
+});
+export const ColorAccentOutline: Story = createBadgeStory({
+  color: 'accent',
+  outline: true
+});
+export const ColorSuccessOutline: Story = createBadgeStory({
+  color: 'success',
+  outline: true
+});
+export const ColorWarningOutline: Story = createBadgeStory({
+  color: 'warning',
+  outline: true
+});
+export const ColorInfoOutline: Story = createBadgeStory({
+  color: 'info',
+  outline: true
+});
+export const ColorErrorOutline: Story = createBadgeStory({
+  color: 'error',
+  outline: true
+});
