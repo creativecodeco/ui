@@ -2,6 +2,12 @@
 
 # Changelog
 
+## v2.4.1 - Fix Chromatic CI Workflow
+
+### 👾 Fix
+
+- Add `fetch-depth: 0` to `actions/checkout` in Chromatic workflow (`.github/workflows/chromatic.yml`) to ensure full Git history is fetched for Chromatic baseline commit detection.
+
 ## v2.6.1 - Fix Storybook Hierarchy
 
 ### 👾 Fix
