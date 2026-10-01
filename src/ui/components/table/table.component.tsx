@@ -27,17 +27,26 @@ const Table = <T extends Record<string, unknown>>({
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {columns.map((col) => (
-                <td key={col.key}>
-                  {col.render
-                    ? col.render(row, rowIndex)
-                    : String(row[col.key] ?? '')}
-                </td>
-              ))}
-            </tr>
-          ))}
+          {data.map((row, rowIndex) => {
+            const rowKey =
+              (row.id as string | number) ??
+              (row.key as string | number) ??
+              `row-${rowIndex}`;
+            return (
+              <tr key={rowKey}>
+                {columns.map((col) => {
+                  const cellValue = row[col.key];
+                  return (
+                    <td key={col.key}>
+                      {col.render
+                        ? col.render(row, rowIndex)
+                        : (cellValue as React.ReactNode)}
+                    </td>
+                  );
+                })}
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

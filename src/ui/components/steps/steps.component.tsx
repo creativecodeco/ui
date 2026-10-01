@@ -14,7 +14,12 @@ const Steps = ({ items, activeStep = 0, vertical = false }: StepsType) => {
         const isPrimary = item.color === 'primary' || index <= activeStep;
         return (
           <li
-            key={index}
+            key={
+              item.id ||
+              (typeof item.title === 'string' || typeof item.title === 'number'
+                ? item.title
+                : index)
+            }
             data-content={item.icon ? undefined : index + 1}
             className={cls('step', {
               'step-primary': isPrimary,

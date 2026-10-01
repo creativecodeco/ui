@@ -9,8 +9,7 @@ const Spinner = ({
   className
 }: SpinnerType) => {
   return (
-    <span
-      role='status'
+    <output
       aria-label='loading'
       className={cls('loading', className, {
         'loading-spinner': variant === 'spinner',

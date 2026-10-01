@@ -22,12 +22,15 @@ const Drawer = ({
         className='drawer-toggle'
         checked={isOpen}
         onChange={() => {}}
+        aria-label='Toggle drawer'
       />
       <div className='drawer-side z-50'>
-        <label
+        <button
+          type='button'
           className='drawer-overlay'
           onClick={onClose}
           data-testid='drawer-overlay'
+          aria-label='Close drawer overlay'
         />
         <div className='menu p-4 w-80 min-h-full bg-base-200 text-base-content'>
           <div className='flex justify-between items-center mb-4'>

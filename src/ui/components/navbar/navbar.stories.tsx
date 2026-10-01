@@ -16,13 +16,13 @@ export const Default: Story = {
     centerContent: (
       <ul className='menu menu-horizontal px-1 gap-2'>
         <li>
-          <a>Home</a>
+          <a href='#'>Home</a>
         </li>
         <li>
-          <a>Components</a>
+          <a href='#'>Components</a>
         </li>
         <li>
-          <a>Documentation</a>
+          <a href='#'>Documentation</a>
         </li>
       </ul>
     ),
