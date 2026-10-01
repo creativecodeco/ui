@@ -1,4 +1,4 @@
-# Project Context: @creativecodeco/ui (v2.6.1)
+# Project Context: @creativecodeco/ui (v2.4.0)
 
 ## Purpose
 `@creativecodeco/ui` is the official Design System for **CreativeCode.com.co**. It provides a set of reusable, accessible, and highly customizable UI components built with modern web technologies.
