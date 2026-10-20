@@ -1,8 +1,8 @@
-# Project Context: @creativecodeco/ui (v2.5.0)
+# Project Context: @creativecodeco/ui (v2.5.1)
 
 ## Purpose
 
-`@creativecodeco/ui` is the official Design System for **CreativeCode.com.co**. It provides a set of reusable, accessible, and highly customizable UI components built with modern web technologies.
+`@creativecodeco/ui` is the official React 19 UI component library & Design System for **CreativeCode.com.co**, built with TypeScript, Tailwind CSS v4, and DaisyUI v5. It provides a set of reusable, accessible, and highly customizable UI and form components built with modern web technologies.
 
 ## Technical Stack
 
