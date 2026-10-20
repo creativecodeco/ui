@@ -13,14 +13,14 @@ Follow this standardized 6-step workflow whenever creating a new component or fo
 
 ## Step 1: Define Props Interface
 
-Create the props interface in `src/types/ui/components/<component-name>.types.ts` (or `src/types/ui/forms/` for form controls).
+Create the props interface co-located in `src/ui/components/<category>/<component-name>/<component-name>.types.ts` (where `<category>` is `display`, `feedback`, `layout`, or `navigation`) or `src/ui/forms/<component-name>/<component-name>.types.ts` for form controls.
 
 **Rules:**
 
 - Name the interface `<ComponentName>Type` (e.g. `CardType`, `StepsType`).
 - Mark all optional props with `?`.
-- Use specific types (`React.ReactNode`, `React.Key`, `ColorType`, etc.).
-- Re-export the new interface in `src/types/index.ts`.
+- Use specific types (`React.ReactNode`, `React.Key`, `ColorType`, `SizeType`, etc.).
+- Re-export the types from the component's `index.ts` (`export type * from './<component-name>.types';`), which automatically flows through `src/types/index.ts`.
 
 ```ts
 import type { ColorType } from '@/types';
@@ -37,7 +37,7 @@ export interface ComponentNameType {
 
 ## Step 2: Implement Component Logic & Layout
 
-Create `src/ui/components/<component-name>/<component-name>.component.tsx`.
+Create `src/ui/components/<category>/<component-name>/<component-name>.component.tsx` (or `src/ui/forms/<component-name>/<component-name>.component.tsx`).
 
 **Rules:**
 
@@ -76,17 +76,21 @@ export default ComponentName;
 
 ## Step 3: Configure Module Exports
 
-1. Create `src/ui/components/<component-name>/index.ts`:
+1. Create `src/ui/components/<category>/<component-name>/index.ts` (or `src/ui/forms/<component-name>/index.ts`):
    ```ts
-   export { default } from './<component-name>.component';
+   import ComponentName from './<component-name>.component';
+
+   export { ComponentName };
+   export type * from './<component-name>.types';
+   export default ComponentName;
    ```
-2. Re-export the directory in `src/ui/components/index.ts` (or `src/ui/forms/index.ts`).
+2. Re-export the directory in `src/ui/components/<category>/index.ts` (or `src/ui/forms/index.ts`).
 
 ---
 
 ## Step 4: Write Unit Tests
 
-Create `src/ui/components/<component-name>/<component-name>.test.tsx`.
+Create `src/ui/components/<category>/<component-name>/<component-name>.test.tsx` (or `src/ui/forms/<component-name>/<component-name>.test.tsx`).
 
 **Rules:**
 
@@ -111,11 +115,11 @@ describe('<ComponentName />', () => {
 
 ## Step 5: Write Storybook Stories
 
-Create `src/ui/components/<component-name>/<component-name>.stories.tsx`.
+Create `src/ui/components/<category>/<component-name>/<component-name>.stories.tsx` (or `src/ui/forms/<component-name>/<component-name>.stories.tsx`).
 
 **Rules:**
 
-- Set `title: '@creativecodeco-ui/Components/<ComponentName>'` (or `Forms`).
+- Set `title: '@creativecodeco-ui/<Category>/<ComponentName>'` (where `<Category>` is `Display`, `Feedback`, `Layout`, `Navigation`, or `Form`).
 - Include `tags: ['autodocs']`.
 - Provide `Default` and variant stories (`Disabled`, `WithIcons`, etc.).
 

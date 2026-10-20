@@ -99,8 +99,11 @@ export default function RootLayout({ children }) {
 
 ## Features
 
-- **Atomic Components**: Button, Avatar, Badge, Accordion, Modal, Alert, Toast, Card, Tabs, Skeleton, Spinner, Breadcrumb, Pagination, Steps, Tooltip, Drawer, Navbar, Table, Stat, Divider.
-- **Form Controls**: TextBox, Checkbox, Radio, RadioList, Dropdown, Toggle, TextArea, FileInput.
+- **Display Components**: Accordion, Aura, Avatar, AvatarGroup, Badge, Button, Card, Carousel, ChatBubble, Hover3D, HoverGallery, Indicator, Kbd, List, Mask, Rating, Stat, Status, Swap, Table, TextRotate, Timeline.
+- **Feedback Components**: Alert, Countdown, Diff, Modal, Progress, RadialProgress, Skeleton, Spinner, Toast, Tooltip.
+- **Layout Components**: Collapse, Divider, Footer, Hero, Join, Mockup, Stack.
+- **Navigation Components**: ActionDropdown, Breadcrumb, Dock, Drawer, Fab, Link, MegaMenu, Menu, Navbar, Pagination, Steps, Tabs.
+- **Form Controls**: Calendar, Checkbox, Dropdown, Fieldset, FileInput, Filter, Label, Otp, Radio, RadioList, Range, Select, TextArea, TextBox, Toggle, Validator.
 - **Theme Support**: Built on DaisyUI with custom CreativeCode branding.
 - **Visual Testing**: Integrated with Storybook and Chromatic.
 
