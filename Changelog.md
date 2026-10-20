@@ -2,6 +2,14 @@
 
 # Changelog
 
+## v2.5.1 - Repository Metadata, Documentation & MIT License
+
+### 📝 Documentation & Metadata
+
+- Update package `description`, `keywords`, `repository`, and `bugs` metadata in `package.json`.
+- Enhance `README.md` and `CONTEXT.md` project descriptions and live preview links.
+- Add root `LICENSE` (MIT) file for GitHub repository license detection.
+
 ## v2.5.0 - Complete DaisyUI v5 Component Catalog, Dependency Upgrades & Security Audit Fixes
 
 ### 👾 Feature

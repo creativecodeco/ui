@@ -2,13 +2,15 @@
 
 ![CreativeCode.com.co](https://www.creativecode.com.co/wp-content/uploads/2024/01/CreativeCode.png)
 
-> System Design CreativeCode.com.co
+> React 19 UI component library & Design System built with TypeScript, Tailwind CSS v4, and DaisyUI v5 by CreativeCode.
 
 ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Tailwindcss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Daisyui](https://img.shields.io/badge/daisyUI-16D1A5?style=for-the-badge&logo=daisyui&logoColor=white) ![Storybook](https://img.shields.io/badge/storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)
 
-## Chromatic
+## Links & Live Preview
 
-[View Components](https://master--658273f7c6c3c10a909dea3b.chromatic.com/)
+- **Storybook / Chromatic**: [View Interactive Components](https://master--658273f7c6c3c10a909dea3b.chromatic.com/)
+- **NPM Package**: [@creativecodeco/ui](https://www.npmjs.com/package/@creativecodeco/ui)
+- **Website**: [CreativeCode.com.co](https://creativecode.com.co)
 
 ---
 
