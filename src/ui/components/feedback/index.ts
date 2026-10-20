@@ -3,6 +3,7 @@ export * from './countdown';
 export * from './diff';
 export * from './modal';
 export * from './progress';
+export * from './radial-progress';
 export * from './skeleton';
 export * from './spinner';
 export * from './toast';

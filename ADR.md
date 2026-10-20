@@ -12,20 +12,23 @@ El objetivo de `@creativecodeco/ui` es proveer el Sistema de Diseño oficial par
 
 ## STACK
 
-- **Core**: React 19 (v19.2.8)
-- **Estilos**: Tailwind CSS v4 (CSS-first) + DaisyUI v5 (v5.7.0)
-- **Documentación**: Storybook 10 & Chromatic v18
-- **Tipado**: TypeScript 6 (v6.0.3)
-- **Pruebas**: Jest 30 (v30.4.2) & React Testing Library v16 (v16.3.2)
+- **Core**: React 19 (v19.3.1)
+- **Estilos**: Tailwind CSS v4 (v4.3.3, CSS-first) + DaisyUI v5 (v5.7.50)
+- **Documentación**: Storybook 10 (v10.6.2) & Chromatic v18 (v18.13.0)
+- **Compilación y Tipado**: Babel 8 (v8.0.7) & TypeScript 6 (v6.0.3)
+- **Pruebas**: Jest 30 (v30.5.2) & React Testing Library v16 (v16.3.3)
 
 ---
 
 ## ARCHITECTURE
 
-El proyecto sigue una arquitectura modular en la cual:
+El proyecto sigue una arquitectura modular organizada por dominios:
 
-- **`src/ui/components/`**: Componentes de presentación sin dependencias de estado global (Avatar, Badge, Button, Accordion).
-- **`src/ui/forms/`**: Componentes controladores e interactivos (TextBox, Checkbox, Radio, Dropdown, RadioList).
+- **`src/ui/components/display/`**: Componentes de presentación y visualización de datos (`Accordion`, `Aura`, `Avatar`, `AvatarGroup`, `Badge`, `Button`, `Card`, `Carousel`, `ChatBubble`, `Hover3D`, `HoverGallery`, `Indicator`, `Kbd`, `List`, `Mask`, `Rating`, `Stat`, `Status`, `Swap`, `Table`, `TextRotate`, `Timeline`).
+- **`src/ui/components/feedback/`**: Componentes de retroalimentación y estados (`Alert`, `Countdown`, `Diff`, `Modal`, `Progress`, `RadialProgress`, `Skeleton`, `Spinner`, `Toast`, `Tooltip`).
+- **`src/ui/components/layout/`**: Componentes estructurales y contenedores (`Collapse`, `Divider`, `Footer`, `Hero`, `Join`, `Mockup`, `Stack`).
+- **`src/ui/components/navigation/`**: Componentes de navegación y acciones (`ActionDropdown`, `Breadcrumb`, `Dock`, `Drawer`, `Fab`, `Link`, `MegaMenu`, `Menu`, `Navbar`, `Pagination`, `Steps`, `Tabs`).
+- **`src/ui/forms/`**: Controles de formulario e interactivos (`Calendar`, `Checkbox`, `Dropdown`, `Fieldset`, `FileInput`, `Filter`, `Label`, `Otp`, `Radio`, `RadioList`, `Range`, `Select`, `TextArea`, `TextBox`, `Toggle`, `Validator`).
 - **`src/ui/provider/`**: Contiene `CreativeCodeUIProvider` para inyectar el tema visual `creativecode` (usando el atributo HTML `data-theme="creativecode"`).
 - **`src/theme/`**: La capa de diseño visual construida sobre Tailwind CSS v4, gestionada mediante tokens CSS-first en `main.css`.
 
@@ -33,19 +36,21 @@ El proyecto sigue una arquitectura modular en la cual:
 
 ## PATTERNS
 
-### 1. React Version Alignment via Overrides
+### 1. Security & Dependency Resolution via Overrides
 
-Durante la actualización de dependencias, diferencias en el árbol resolutivo provocaban que `react` y `react-dom` se instalaran en versiones dispares (`19.2.7` y `19.2.8`), disparando fallos críticos de incompatibilidad en testing-library.
+Para mantener `0 vulnerabilities` en `npm audit` sin introducir cambios disruptivos en herramientas de compilación y pruebas:
 
-- **Decisión**: Se forzó la alineación estricta de React a la versión `19.2.8` utilizando la sección `overrides` en `package.json`.
+- **`webpack-dev-middleware` (`^7.4.5`)**: Mitiga GHSA-g84c-rxfj-3j2c en el servidor de desarrollo de Storybook.
+- **`js-yaml` (`^4.1.1`)**: Reemplaza `js-yaml@3.x` en `@istanbuljs/load-nyc-config` (usado por `jest`/`ts-jest`), eliminando la dependencia transitiva vulnerable `sprintf-js@1.0.3` (GHSA-hp3w-g68c-fv3c).
+- **`tsc-alias > chokidar` (`^4.0.3`) y `braces` (`npm:brace-expansion@^2.1.7`)**: Elimina el uso de `braces@3.0.3` (GHSA-vfj7-8cjw-p6xm) reemplazándolo por `brace-expansion@^2.1.7` con límite de profundidad recursiva (`EXPANSION_MAX_DEPTH`).
 
 ---
 
 ## TRADEOFFS
 
 - **Conservar TypeScript 6.0.3**:
-  Se decidió no forzar la actualización a TypeScript 7.0.2 para evitar incompatibilidades críticas con herramientas del ecosistema de testing (como `ts-jest`), las cuales requieren APIs de compilación programática ausentes en la versión Go del compilador nativo de TS 7.0. Esto evita configuraciones complejas de aliasing o el uso de flags de instalación inseguros (`--legacy-peer-deps`).
-- **Babel y ESLint Conservadores**: Se retuvo Babel en la rama 7.x y ESLint en la 9.x debido a incompatibilidades de peer dependencies de los plugins core del ecosistema (`eslint-plugin-react` y `ts-jest`), priorizando la consistencia y la instalación limpia en `npm install`.
+  Se decidió no forzar la actualización a TypeScript 7.0.2 para evitar incompatibilidades de `peerDependencies` con `typescript-eslint` (`>=4.8.4 <6.1.0`) y `ts-jest` (`>=4.3 <7`). Esto evita configuraciones complejas de aliasing o el uso de flags de instalación inseguros (`--legacy-peer-deps`).
+- **Conservar ESLint 9.39.5**: Se retuvo ESLint en la rama `9.x` debido a que `eslint-plugin-react@7.37.5` aún declara soporte hasta `^9.7`, priorizando la consistencia y la instalación limpia en `npm install`.
 
 ---
 

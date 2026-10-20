@@ -1,4 +1,4 @@
-# Project Context: @creativecodeco/ui (v2.4.2)
+# Project Context: @creativecodeco/ui (v2.5.0)
 
 ## Purpose
 
@@ -6,13 +6,13 @@
 
 ## Technical Stack
 
-- **Framework**: [React 19](https://react.dev/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (CSS-first configuration with PostCSS CLI 12)
-- **UI Base**: [DaisyUI v5](https://daisyui.com/)
-- **Documentation**: [Storybook 10](https://storybook.js.org/) (v10.6.1)
-- **Compilers**: [Babel 8](https://babeljs.io/) & [TypeScript 6](https://www.typescriptlang.org/)
-- **Testing**: [Jest](https://jestjs.io/) & [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
-- **Visual QA**: [Chromatic](https://www.chromatic.com/) (v18.10.1)
+- **Framework**: [React 19](https://react.dev/) (v19.3.1)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (v4.3.3, CSS-first configuration with PostCSS CLI 12)
+- **UI Base**: [DaisyUI v5](https://daisyui.com/) (v5.7.50)
+- **Documentation**: [Storybook 10](https://storybook.js.org/) (v10.6.2)
+- **Compilers**: [Babel 8](https://babeljs.io/) (v8.0.7) & [TypeScript 6](https://www.typescriptlang.org/) (v6.0.3)
+- **Testing**: [Jest 30](https://jestjs.io/) (v30.5.2) & [React Testing Library 16](https://testing-library.com/docs/react-testing-library/intro/) (v16.3.3)
+- **Visual QA**: [Chromatic](https://www.chromatic.com/) (v18.13.0)
 
 ## Architecture & Structure
 
@@ -20,8 +20,12 @@ The project follows an organized, modular structure designed for scalability and
 
 ### Directory Overview
 
-- **`src/ui/components/`**: Atomic UI components like `Button`, `Avatar`, `Badge`, `Accordion`, `Modal`, `Alert`, `Toast`, `Card`, `Tabs`, `Skeleton`, `Spinner`, `Breadcrumb`, `Pagination`, `Steps`, `Tooltip`, `Drawer`, `Navbar`, `Table`, `Stat`, `Divider`.
-- **`src/ui/forms/`**: specialized components for form handling, such as `Textbox`, `Checkbox`, `Radio`, `RadioList`, `Dropdown`, `Toggle`, `TextArea`, `FileInput`.
+- **`src/ui/components/`**: Atomic UI components organized by domain:
+  - **Display**: `Accordion`, `Aura`, `Avatar`, `AvatarGroup`, `Badge`, `Button`, `Card`, `Carousel`, `ChatBubble`, `Hover3D`, `HoverGallery`, `Indicator`, `Kbd`, `List`, `Mask`, `Rating`, `Stat`, `Status`, `Swap`, `Table`, `TextRotate`, `Timeline`.
+  - **Feedback**: `Alert`, `Countdown`, `Diff`, `Modal`, `Progress`, `RadialProgress`, `Skeleton`, `Spinner`, `Toast`, `Tooltip`.
+  - **Layout**: `Collapse`, `Divider`, `Footer`, `Hero`, `Join`, `Mockup`, `Stack`.
+  - **Navigation**: `ActionDropdown`, `Breadcrumb`, `Dock`, `Drawer`, `Fab`, `Link`, `MegaMenu`, `Menu`, `Navbar`, `Pagination`, `Steps`, `Tabs`.
+- **`src/ui/forms/`**: Specialized components for form handling: `Calendar`, `Checkbox`, `Dropdown`, `Fieldset`, `FileInput`, `Filter`, `Label`, `Otp`, `Radio`, `RadioList`, `Range`, `Select`, `TextArea`, `TextBox`, `Toggle`, `Validator`.
 - **`src/ui/provider/`**: Contains the `CreativeCodeUIProvider`, which manages the application's theme (via `data-theme`) and provides necessary context for components.
 - **`src/theme/`**: The heart of the design system's styling. It uses Tailwind CSS v4's CSS-first approach. `main.css` is the entry point that imports component-specific styles and Tailwind/DaisyUI plugins.
 - **`src/hooks/`**: Custom React hooks shared across the library and available to consumers.
@@ -30,12 +34,13 @@ The project follows an organized, modular structure designed for scalability and
 
 ### Component Pattern
 
-Each component typically resides in its own directory with:
+Each component resides in its own directory (`src/ui/components/<category>/<name>/` or `src/ui/forms/<name>/`) with:
 
-- `[Component].tsx`: The implementation.
-- `[Component].stories.tsx`: Storybook definitions for documentation and testing.
-- `[Component].spec.tsx`: Unit tests (if applicable).
-- `index.ts`: Public export for that component.
+- `[name].component.tsx`: The component implementation.
+- `[name].types.ts`: The TypeScript props interface (`<ComponentName>Type`).
+- `[name].stories.tsx`: Storybook definitions for documentation and visual testing.
+- `[name].test.tsx`: Unit tests with Jest and React Testing Library.
+- `index.ts`: Public export for that component and its types.
 
 ## Styling System
 

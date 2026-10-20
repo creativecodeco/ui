@@ -2,11 +2,44 @@
 
 # Changelog
 
-## v2.4.2 - Fix Storybook Form Category Hierarchy
+## v2.5.0 - Complete DaisyUI v5 Component Catalog, Dependency Upgrades & Security Audit Fixes
+
+### 👾 Feature
+
+- **Display Components**: Add `Aura`, `Hover3D`, `HoverGallery`, `List`, `Status`, and `TextRotate`.
+- **Feedback Components**: Add `RadialProgress`.
+- **Layout Components**: Add `Footer`, `Mockup` (`code`, `browser`, `window`, `phone`), and `Stack`.
+- **Navigation Components**: Add `ActionDropdown`, `Fab` (Floating Action Button / Speed Dial), `Link`, and `MegaMenu`.
+- **Form Controls**: Add `Calendar`, `Fieldset`, `Filter`, `Label` (with `floating-label` support), `Otp`, `Select`, and `Validator`.
+
+### ☝🏻 Upgrade
+
+- Upgrade `react` and `react-dom` to `v19.3.1`
+- Upgrade `react-hook-form` to `v7.90.0`
+- Upgrade `postcss` to `v8.5.31`
+- Upgrade `daisyui` to `v5.7.50`
+- Upgrade `storybook`, `@storybook/addon-docs`, `@storybook/addon-links`, `@storybook/react-webpack5`, and `eslint-plugin-storybook` to `v10.6.2`
+- Upgrade `@chromatic-com/storybook` to `v5.5.1` and `chromatic` to `v18.13.0`
+- Upgrade `@babel/core`, `@babel/preset-env`, and `@babel/preset-typescript` to `v8.0.7`
+- Upgrade `typescript-eslint` to `v8.72.0`, `ts-jest` to `v29.4.15`, `tsc-alias` to `v1.9.8`, `prettier` to `v3.9.10`, `@types/node` to `v26.6.5`, `@testing-library/user-event` to `v14.6.8`, and `eslint-plugin-prettier` to `v5.5.7`
+
+### 🔒 Security
+
+- Add `overrides` in `package.json` for `js-yaml` (`^4.1.1`), `tsc-alias > chokidar` (`^4.0.3`), and `braces` (`npm:brace-expansion@^2.1.7`) to resolve all 29 `npm audit` vulnerabilities (GHSA-hp3w-g68c-fv3c and GHSA-vfj7-8cjw-p6xm).
+
+## v2.4.2 - Extended UI Components & Storybook Domain Hierarchy
+
+### 👾 Feature
+
+- Add Display components: `AvatarGroup`, `Carousel`, `ChatBubble`, `Indicator`, `Kbd`, `Mask`, `Rating`, `Swap`, `Timeline`
+- Add Feedback components: `Countdown`, `Diff`, `Progress`
+- Add Layout components: `Collapse`, `Hero`, `Join`
+- Add Navigation components: `Dock`, `Menu`
+- Add Form control: `Range`
 
 ### 👾 Fix
 
-- Unify `Range` component Storybook story title under `@creativecodeco-ui/Form/Range` to eliminate duplicate `Form` / `Forms` categories.
+- Restructure components into domain directories (`display`, `feedback`, `layout`, `navigation`, `forms`) and unify `Range` Storybook story title under `@creativecodeco-ui/Form/Range`.
 
 ## v2.4.1 - Fix Chromatic CI Workflow
 
@@ -14,45 +47,15 @@
 
 - Add `fetch-depth: 0` to `actions/checkout` in Chromatic workflow (`.github/workflows/chromatic.yml`) to ensure full Git history is fetched for Chromatic baseline commit detection.
 
-## v2.6.1 - Fix Storybook Hierarchy
-
-### 👾 Fix
-
-- Align Storybook story titles for all new components under `@creativecodeco-ui/Components` and `@creativecodeco-ui/Form`
-
-## v2.6.0 - New Structure & Data Display Components (Block 3)
+## v2.4.0 - Core, Navigation, Data Display & Form Components
 
 ### 👾 Feature
 
-- Add `Drawer` / `Sidebar` sliding panel component (left/right sides, backdrop, title)
-- Add `Navbar` header navigation component (brand, start, center, end sections)
-- Add `Table` data grid component (columns, zebra, compact, hover, custom cell renderers)
-- Add `Stat` KPI card component (titles, values, descriptions, icons & color accents)
-- Add `FileInput` form upload component (sizes, colors, borders, error states)
-- Add `Divider` visual separator component (horizontal/vertical layout, custom labels, start/center/end positions)
-
-## v2.5.0 - New Advanced Forms & Navigation Components (Block 2)
-
-### 👾 Feature
-
-- Add `Toggle` / `Switch` form component (sizes, colors, labels, error states)
-- Add `TextArea` multiline form component (rows, sizes, colors, error states)
-- Add `Breadcrumb` navigation component (icons, links, active state)
-- Add `Pagination` control component (join layout, active page, prev/next buttons)
-- Add `Steps` wizard component (horizontal/vertical layout, step states)
-- Add `Tooltip` floating info component (positions & color themes)
-
-## v2.4.0 - New Core Components (Block 1)
-
-### 👾 Feature
-
-- Add `Modal` component (dialogs, backdrops, sizes, custom actions)
-- Add `Alert` component (info, success, warning, error variants with dismiss & icon support)
-- Add `Toast` component (configurable positions & alert color themes)
-- Add `Card` component (images, titles, subtitles, actions, compact & glass variants)
-- Add `Tabs` component (bordered, lifted, boxed variants with disabled states)
-- Add `Skeleton` component (text, circular, rectangular shimmer loading states)
-- Add `Spinner` component (spinner, dots, ring, ball, bars, infinity loading variants)
+- Add Core & Feedback components: `Modal`, `Alert`, `Toast`, `Card`, `Skeleton`, `Spinner`, `Tooltip`
+- Add Navigation components: `Tabs`, `Breadcrumb`, `Pagination`, `Steps`, `Drawer`, `Navbar`
+- Add Data Display & Layout components: `Table`, `Stat`, `Divider`
+- Add Form components: `Toggle`, `TextArea`, `FileInput`
+- Align Storybook story titles and enhance component accessibility with semantic HTML and ARIA attributes.
 
 ## v2.3.0 - Update Major & Minor Dependencies
 
