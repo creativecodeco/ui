@@ -11,6 +11,7 @@
 @plugin "daisyui";
 
 @source inline("{btn,badge,alert,toggle,range,select,textarea,file-input,progress,status,chat-bubble,step,tooltip,checkbox,radio,input,otp,divider,link,text,bg,border}-{primary,secondary,accent,info,success,warning,error,neutral,ghost}");
+@source inline("{btn,badge,toggle,range,select,textarea,file-input,checkbox,radio,input,otp,tab,table,menu,dock,kbd,loading,status}-{xs,sm,md,lg,xl}");
 
 :root {
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

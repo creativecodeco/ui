@@ -21,4 +21,9 @@ describe('<FileInput />', () => {
     fireEvent.change(input, { target: { files: [file] } });
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
+
+  it('renders error alert when error prop is provided', () => {
+    render(<FileInput label='Resume' error='File is too large' />);
+    expect(screen.getByRole('alert')).toHaveTextContent('File is too large');
+  });
 });

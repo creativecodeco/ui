@@ -18,34 +18,34 @@ const FileInput = forwardRef<HTMLInputElement, FileInputType>(
     },
     ref
   ) => {
+    const hasError = Boolean(isError || error);
+    const inputClasses = cls('file-input w-full', className, {
+      'file-input-bordered': bordered,
+      [`file-input-${color}`]: Boolean(color),
+      [`file-input-${size}`]: Boolean(size),
+      'file-input-error': hasError
+    });
+
     return (
       <div className='form-control w-full'>
-        {label && (
+        {label ? (
           <label className='label' htmlFor={id}>
             <span className='label-text'>{label}</span>
           </label>
-        )}
+        ) : null}
         <input
+          {...restProps}
           ref={ref}
           id={id}
           type='file'
-          aria-invalid={Boolean(isError || error) || undefined}
-          className={cls('file-input w-full', className, {
-            'file-input-bordered': bordered,
-            [`file-input-${color}`]: color,
-            'file-input-xs': size === 'xs',
-            'file-input-sm': size === 'sm',
-            'file-input-md': size === 'md',
-            'file-input-lg': size === 'lg',
-            'file-input-error': Boolean(isError || error)
-          })}
-          {...restProps}
+          aria-invalid={hasError || undefined}
+          className={inputClasses}
         />
-        {error && (
+        {error ? (
           <span role='alert' className='text-xs text-error mt-1'>
             {error}
           </span>
-        )}
+        ) : null}
       </div>
     );
   }

@@ -33,11 +33,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaType>(
           aria-invalid={Boolean(isError || error) || undefined}
           className={cls('textarea w-full', className, {
             'textarea-bordered': bordered,
-            [`textarea-${color}`]: color,
-            'textarea-xs': size === 'xs',
-            'textarea-sm': size === 'sm',
-            'textarea-md': size === 'md',
-            'textarea-lg': size === 'lg',
+            [`textarea-${color}`]: Boolean(color),
+            [`textarea-${size}`]: Boolean(size),
             'textarea-error': Boolean(isError || error)
           })}
           {...restProps}
