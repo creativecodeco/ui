@@ -11,6 +11,7 @@ export interface TextBoxType
 
   size?: SizeType;
   color?: ColorType;
+  ghost?: boolean;
 
   leftIcon?: IconType;
   rightIcon?: IconType;

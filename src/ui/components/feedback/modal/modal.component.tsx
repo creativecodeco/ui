@@ -10,6 +10,7 @@ const Modal = ({
   children,
   actions,
   size = 'md',
+  position,
   closeOnBackdropClick = true,
   className
 }: ModalType) => {
@@ -30,7 +31,9 @@ const Modal = ({
 
   return (
     <dialog
-      className='modal modal-open'
+      className={cls('modal modal-open', {
+        [`modal-${position}`]: Boolean(position)
+      })}
       open
       aria-modal='true'
       aria-label={typeof title === 'string' ? title : 'Modal dialog'}
@@ -40,7 +43,8 @@ const Modal = ({
           'max-w-xs': size === 'xs',
           'max-w-sm': size === 'sm',
           'max-w-lg': size === 'md',
-          'max-w-3xl': size === 'lg'
+          'max-w-3xl': size === 'lg',
+          'max-w-5xl': size === 'xl'
         })}
       >
         {onClose && (

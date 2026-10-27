@@ -60,4 +60,14 @@ describe('<Modal />', () => {
     fireEvent.keyDown(document, { key: 'Escape' });
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
+
+  it('applies position and xl size classes', () => {
+    const { container } = render(
+      <Modal isOpen={true} position='bottom' size='xl'>
+        Bottom XL Modal
+      </Modal>
+    );
+    expect(container.querySelector('.modal')).toHaveClass('modal-bottom');
+    expect(container.querySelector('.modal-box')).toHaveClass('max-w-5xl');
+  });
 });

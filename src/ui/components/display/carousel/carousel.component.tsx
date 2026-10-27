@@ -16,9 +16,11 @@ const Carousel = ({
       className={cls(
         'carousel',
         {
+          'carousel-start': snap === 'start',
           'carousel-center': snap === 'center',
           'carousel-end': snap === 'end',
-          'carousel-vertical': vertical
+          'carousel-vertical': vertical,
+          'carousel-horizontal': !vertical
         },
         className
       )}

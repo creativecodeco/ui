@@ -22,7 +22,9 @@ describe('<ActionDropdown />', () => {
     );
     fireEvent.click(screen.getByRole('button', { name: 'Edit Profile' }));
     expect(handleEdit).toHaveBeenCalledTimes(1);
-    expect(screen.getByRole('button', { name: 'Delete' })).toBeDisabled();
+    const deleteBtn = screen.getByRole('button', { name: 'Delete' });
+    expect(deleteBtn).toBeDisabled();
+    expect(deleteBtn.closest('li')).toHaveClass('menu-disabled');
   });
 
   it('renders custom children content when provided', () => {

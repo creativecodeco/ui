@@ -9,6 +9,7 @@ const meta: Meta<typeof ChatBubble> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',

@@ -17,10 +17,20 @@ describe('<Steps />', () => {
     expect(screen.getByText('Payment')).toBeInTheDocument();
   });
 
-  it('applies step-primary to completed steps', () => {
-    const { container } = render(<Steps items={items} activeStep={1} />);
+  it('applies step-primary to completed steps and renders step-icon when icon is provided', () => {
+    const { container } = render(
+      <Steps
+        items={[
+          { title: 'Register', icon: <span>✓</span> },
+          { title: 'Choose Plan' },
+          { title: 'Payment' }
+        ]}
+        activeStep={1}
+      />
+    );
     const stepElements = container.querySelectorAll('.step');
     expect(stepElements[0]).toHaveClass('step-primary');
+    expect(stepElements[0].querySelector('.step-icon')).toHaveTextContent('✓');
     expect(stepElements[1]).toHaveClass('step-primary');
     expect(stepElements[2]).not.toHaveClass('step-primary');
   });

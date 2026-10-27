@@ -8,11 +8,12 @@ const meta: Meta<typeof Tooltip> = {
   argTypes: {
     position: {
       control: 'select',
-      options: ['top', 'bottom', 'left', 'right']
+      options: ['top', 'bottom', 'left', 'right', 'start', 'center', 'end']
     },
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -21,7 +22,8 @@ const meta: Meta<typeof Tooltip> = {
         'warning',
         'error'
       ]
-    }
+    },
+    open: { control: 'boolean' }
   }
 };
 
@@ -33,5 +35,19 @@ export const Default: Story = {
     content: 'Useful info tooltip',
     position: 'top',
     children: <button className='btn btn-primary'>Hover Over Me</button>
+  }
+};
+
+export const RichContent: Story = {
+  args: {
+    content: (
+      <div className='flex items-center gap-1'>
+        <span>✨</span>
+        <strong>Rich JSX Tooltip</strong>
+      </div>
+    ),
+    open: true,
+    color: 'primary',
+    children: <button className='btn'>With Tooltip Content</button>
   }
 };

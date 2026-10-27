@@ -9,6 +9,7 @@ const meta: Meta<typeof Progress> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -18,7 +19,7 @@ const meta: Meta<typeof Progress> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 };
 

@@ -15,17 +15,17 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
   }
 
   const hasSubmenu = Boolean(item.children && item.children.length > 0);
+  const itemClasses = cls({
+    'menu-active': item.active,
+    'menu-focus': item.focus,
+    'menu-disabled': item.disabled
+  });
 
   let content;
   if (hasSubmenu) {
     content = (
       <details open>
-        <summary
-          className={cls({
-            active: item.active,
-            disabled: item.disabled
-          })}
-        >
+        <summary className={itemClasses}>
           {item.icon}
           {item.label}
           {item.badge && <span className='badge badge-sm'>{item.badge}</span>}
@@ -42,10 +42,7 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
       <a
         href={sanitizeUrl(item.href)}
         onClick={item.onClick}
-        className={cls({
-          active: item.active,
-          disabled: item.disabled
-        })}
+        className={itemClasses}
       >
         {item.icon}
         {item.label}
@@ -58,10 +55,7 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
         type='button'
         onClick={item.onClick}
         disabled={item.disabled}
-        className={cls({
-          active: item.active,
-          disabled: item.disabled
-        })}
+        className={itemClasses}
       >
         {item.icon}
         {item.label}
@@ -70,7 +64,11 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
     );
   }
 
-  return <li key={key}>{content}</li>;
+  return (
+    <li key={key} className={cls({ 'menu-disabled': item.disabled })}>
+      {content}
+    </li>
+  );
 };
 
 const Menu = ({

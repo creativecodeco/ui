@@ -12,14 +12,9 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    isLink: {
-      description: 'Is Link',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
+    isLink: { control: 'boolean', description: 'Render as link style' },
     color: {
-      description: 'Color',
-      type: 'string',
+      control: 'select',
       options: [
         'primary',
         'secondary',
@@ -30,50 +25,27 @@ const meta: Meta<typeof Button> = {
         'error',
         'ghost',
         'neutral'
-      ],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+      ]
     },
-    outline: {
-      description: 'Is Outline',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
+    outline: { control: 'boolean' },
+    variant: {
+      control: 'select',
+      options: ['outline', 'dash', 'soft', 'ghost', 'link']
     },
-    size: {
-      description: 'Size',
-      type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
-    },
+    shape: { control: 'select', options: ['square', 'circle'] },
+    wide: { control: 'boolean' },
+    block: { control: 'boolean' },
+    active: { control: 'boolean' },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     icon: {
-      description: 'Left Icon',
-      type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
       control: { type: 'select' }
     },
-    iconPosition: {
-      description: 'Icon Position',
-      type: 'string',
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
-    },
-    disabled: {
-      description: 'Disabled',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    loading: {
-      description: 'Loading',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    loadingLabel: {
-      description: 'Loading Label',
-      type: 'string'
-    }
+    iconPosition: { control: 'radio', options: ['left', 'right'] },
+    disabled: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    loadingLabel: { control: 'text' }
   },
   args: {
     size: 'md',
@@ -117,6 +89,27 @@ export const SizeXs: Story = createBtnStory({ size: 'xs' });
 export const SizeSm: Story = createBtnStory({ size: 'sm' });
 export const SizeMd: Story = createBtnStory({ size: 'md' });
 export const SizeLg: Story = createBtnStory({ size: 'lg' });
+export const SizeXl: Story = createBtnStory({ size: 'xl' });
+
+export const Soft: Story = createBtnStory({
+  color: 'primary',
+  variant: 'soft'
+});
+export const Dash: Story = createBtnStory({
+  color: 'primary',
+  variant: 'dash'
+});
+export const GhostVariant: Story = createBtnStory({ variant: 'ghost' });
+export const Wide: Story = createBtnStory({ wide: true, color: 'primary' });
+export const Block: Story = createBtnStory({ block: true, color: 'primary' });
+export const Square: Story = createBtnStory({
+  shape: 'square',
+  children: '✕'
+});
+export const Circle: Story = createBtnStory({
+  shape: 'circle',
+  children: '✕'
+});
 
 export const ColorPrimary: Story = createBtnStory({ color: 'primary' });
 export const ColorSecondary: Story = createBtnStory({ color: 'secondary' });

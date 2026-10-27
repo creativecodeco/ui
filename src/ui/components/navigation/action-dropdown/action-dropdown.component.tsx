@@ -54,7 +54,7 @@ const ActionDropdown = ({
           {items.map((item, index) => (
             <li
               key={item.id ?? index}
-              className={cls({ disabled: item.disabled })}
+              className={cls({ 'menu-disabled': item.disabled })}
             >
               <button
                 type='button'

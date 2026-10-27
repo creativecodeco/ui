@@ -13,6 +13,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
       disabled,
       size = 'md',
       color,
+      ghost = false,
       leftIcon: LeftIcon,
       rightIcon: RightIcon,
       rightButton,
@@ -54,6 +55,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
               `textbox-size-${size}`,
               className,
               {
+                'input-ghost': ghost,
                 'input-error': isError,
                 'textbox-with-left-icon': LeftIcon,
                 'textbox-with-right-icon': RightIcon,

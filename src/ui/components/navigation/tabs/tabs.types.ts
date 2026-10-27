@@ -13,7 +13,8 @@ export interface TabsType {
   items: TabItem[];
   activeId?: string;
   onChange?: (id: string) => void;
-  variant?: 'bordered' | 'lifted' | 'boxed';
+  variant?: 'bordered' | 'lifted' | 'boxed' | 'border' | 'lift' | 'box';
+  position?: 'top' | 'bottom';
   size?: SizeType;
   className?: string;
 }

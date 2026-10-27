@@ -6,7 +6,9 @@ const meta: Meta<typeof Collapse> = {
   component: Collapse,
   tags: ['autodocs'],
   argTypes: {
-    icon: { control: 'select', options: ['arrow', 'plus'] }
+    icon: { control: 'select', options: ['arrow', 'plus'] },
+    open: { control: 'boolean' },
+    close: { control: 'boolean' }
   }
 };
 
@@ -27,5 +29,23 @@ export const PlusIcon: Story = {
     title: 'What browsers are supported?',
     children: 'All modern evergreen browsers (Chrome, Firefox, Safari, Edge).',
     icon: 'plus'
+  }
+};
+
+export const ForceOpen: Story = {
+  args: {
+    title: 'Always Open Collapse',
+    children: 'Forced open using collapse-open modifier.',
+    open: true,
+    icon: 'arrow'
+  }
+};
+
+export const ForceClose: Story = {
+  args: {
+    title: 'Always Closed Collapse',
+    children: 'Forced closed using collapse-close modifier.',
+    close: true,
+    icon: 'arrow'
   }
 };

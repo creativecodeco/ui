@@ -9,6 +9,13 @@ const meta: Meta<typeof Alert> = {
     status: {
       control: 'select',
       options: ['info', 'success', 'warning', 'error']
+    },
+    variant: {
+      control: 'select',
+      options: ['soft', 'outline', 'dash']
+    },
+    vertical: {
+      control: 'boolean'
     }
   }
 };
@@ -45,5 +52,41 @@ export const ErrorAlert: Story = {
     status: 'error',
     title: 'Error Encountered',
     children: 'Failed to process request. Please try again later.'
+  }
+};
+
+export const Soft: Story = {
+  args: {
+    status: 'info',
+    variant: 'soft',
+    title: 'Soft Alert',
+    children: 'DaisyUI v5 alert-soft style variant.'
+  }
+};
+
+export const Outline: Story = {
+  args: {
+    status: 'warning',
+    variant: 'outline',
+    title: 'Outline Alert',
+    children: 'DaisyUI v5 alert-outline style variant.'
+  }
+};
+
+export const Dash: Story = {
+  args: {
+    status: 'error',
+    variant: 'dash',
+    title: 'Dashed Alert',
+    children: 'DaisyUI v5 alert-dash style variant.'
+  }
+};
+
+export const Vertical: Story = {
+  args: {
+    status: 'info',
+    vertical: true,
+    title: 'Vertical Layout',
+    children: 'Alert content stacked vertically.'
   }
 };

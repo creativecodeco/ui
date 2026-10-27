@@ -24,4 +24,13 @@ describe('<TextArea />', () => {
     render(<TextArea label='Description' error='Description is required' />);
     expect(screen.getByText('Description is required')).toBeInTheDocument();
   });
+
+  it('applies ghost, size xl and color neutral classes', () => {
+    render(<TextArea ghost size='xl' color='neutral' />);
+    expect(screen.getByRole('textbox')).toHaveClass(
+      'textarea-ghost',
+      'textarea-xl',
+      'textarea-neutral'
+    );
+  });
 });

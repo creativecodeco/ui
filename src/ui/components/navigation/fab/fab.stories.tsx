@@ -9,6 +9,7 @@ const meta: Meta<typeof Fab> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -44,5 +45,28 @@ export const Default: Story = {
     icon: '+',
     color: 'primary',
     flower: false
+  }
+};
+
+export const Flower: Story = {
+  render: (args) => (
+    <div className='relative h-64 w-full'>
+      <Fab
+        {...args}
+        className='!absolute'
+        closeIcon='✕'
+        mainAction={{ icon: '★', color: 'secondary', label: 'Main' }}
+        actions={[
+          { id: 1, icon: '✎' },
+          { id: 2, icon: '↑' },
+          { id: 3, icon: '♥' }
+        ]}
+      />
+    </div>
+  ),
+  args: {
+    icon: '+',
+    color: 'primary',
+    flower: true
   }
 };

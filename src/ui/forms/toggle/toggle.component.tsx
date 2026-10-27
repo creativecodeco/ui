@@ -42,10 +42,7 @@ const Toggle = forwardRef<HTMLInputElement, ToggleType>(
             aria-invalid={Boolean(isError || error) || undefined}
             className={cls('toggle', className, {
               [`toggle-${color}`]: color,
-              'toggle-xs': size === 'xs',
-              'toggle-sm': size === 'sm',
-              'toggle-md': size === 'md',
-              'toggle-lg': size === 'lg',
+              [`toggle-${size}`]: Boolean(size),
               'toggle-error': Boolean(isError || error)
             })}
           />

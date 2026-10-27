@@ -29,7 +29,11 @@ describe('<Range />', () => {
   });
 
   it('applies color and size classes', () => {
-    render(<Range color='primary' size='lg' />);
-    expect(screen.getByRole('slider')).toHaveClass('range-primary', 'range-lg');
+    render(<Range color='neutral' size='xl' vertical />);
+    expect(screen.getByRole('slider')).toHaveClass(
+      'range-neutral',
+      'range-xl',
+      'range-vertical'
+    );
   });
 });

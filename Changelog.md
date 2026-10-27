@@ -2,6 +2,28 @@
 
 # Changelog
 
+## v2.7.0 - Full DaisyUI v5 Specification Alignment, Combinations, Stories & Unit Tests
+
+### 👾 Feature & DaisyUI v5 Alignment
+
+- **Global Types (`SizeType` & `ColorType`)**: Add `'xl'` size (`'xs' | 'sm' | 'md' | 'lg' | 'xl'`) and `'neutral'` semantic color across base types (`src/types/ui/base/constants.types.ts`) and custom theme CSS files (`avatar.css`, `badge.css`, `button.css`, `checkbox.css`, `radio.css`, `textbox.css`).
+- **Display Components**:
+  - `Button`: Add DaisyUI v5 `variant` (`'outline' | 'dash' | 'soft' | 'ghost' | 'link'`), `shape` (`'square' | 'circle'`), `wide`, `block`, `active`, `size='xl'`, and automatic `<Badge />` rendering when `withBadge` and `badge` are provided.
+  - `Badge`: Add `variant` (`'outline' | 'dash' | 'soft' | 'ghost'`), `ColorButtonType` (`neutral`, `ghost`), and `size='xl'`.
+  - `Card`: Migrate legacy v4 classes (`card-bordered` -> `card-border`, `card-compact` -> `card-sm`) and add `size` (`xs`–`xl`), `dash` (`card-dash`), `side` (`card-side`), and `imageFull` (`image-full`).
+  - `Table`: Migrate to DaisyUI v5 `table-xs` and `row-hover` on `<tr>`, and add `size` (`xs`–`xl`), `pinRows` (`table-pin-rows`), and `pinCols` (`table-pin-cols`).
+  - `Carousel`, `Stat`, `Swap`, `Timeline`, `AvatarGroup`: Add `snap='start'` and `carousel-horizontal` in `Carousel`, `actions` (`.stat-actions`) in `Stat`, `indeterminateContent` (`.swap-indeterminate`) in `Swap`, `snapIcon` (`timeline-snap-icon`) in `Timeline`, and `xl` size in `AvatarGroup`.
+- **Feedback & Layout Components**:
+  - `Alert`: Add DaisyUI v5 style variants (`'soft' | 'outline' | 'dash'`) and `vertical` (`alert-vertical` / `alert-horizontal`) layout.
+  - `Modal`, `Toast`, `Tooltip`, `Skeleton`, `Spinner`, `Collapse`: Add `position` (`'top' | 'middle' | 'bottom' | 'start' | 'end'`) and `size='xl'` in `Modal`, `middle-*` (`toast-middle`) positions in `Toast`, `'start' | 'center' | 'end'` positions and `.tooltip-content` rich JSX support in `Tooltip`, `skeleton-text` in `Skeleton`, `loading-xl` in `Spinner`, and `close` (`collapse-close`) in `Collapse`.
+- **Navigation Components**:
+  - `Tabs`: Migrate to DaisyUI v5 `tabs-border`, `tabs-lift`, `tabs-box` (preserving backward compatibility with `bordered`, `lifted`, `boxed`), add `position` (`'top' | 'bottom'`), and support `tabs-xl`.
+  - `Menu`, `ActionDropdown`, `Steps`, `Fab`, `Drawer`, `Pagination`: Migrate to `menu-active`, `menu-disabled`, and `menu-focus`, wrap step icons in `<span className='step-icon'>`, add `mainAction` (`.fab-main-action`) in `Fab`, add `.drawer-content` in `Drawer`, and support `btn-xl` in `Pagination`.
+- **Form Controls**:
+  - `TextBox`, `TextArea`, `FileInput`, `Range`, `Toggle`: Add `ghost` modifier (`input-ghost`, `textarea-ghost`, `file-input-ghost`), `vertical` (`range-vertical`) in `Range`, and full `xl` size / `neutral` color support.
+- **Tailwind CSS v4 Safelisting**: Expand `@source inline(...)` in `src/theme/main.css` to guarantee all dynamic DaisyUI v5 modifiers, variants, sizes, and component classes are emitted in `lib/theme/main.css`.
+- **Storybook & Unit Tests**: Update 34 Storybook files (`*.stories.tsx`) with new `argTypes` and interactive stories, and expand unit tests (`*.test.tsx`) to 245 passing tests across 70 test suites.
+
 ## v2.6.0 - Component Standardization, A11y, Security Hardening & Dependency Upgrades
 
 ### 👾 Component Standardization & Design Polish

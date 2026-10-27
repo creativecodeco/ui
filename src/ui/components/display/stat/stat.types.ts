@@ -5,6 +5,7 @@ export interface StatType {
   title?: React.ReactNode;
   value: React.ReactNode;
   description?: React.ReactNode;
+  actions?: React.ReactNode;
   icon?: IconType;
   color?: ColorType;
   className?: string;

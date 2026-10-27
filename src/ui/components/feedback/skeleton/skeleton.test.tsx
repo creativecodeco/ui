@@ -18,4 +18,10 @@ describe('<Skeleton />', () => {
     expect(skeleton).toHaveClass('rounded-full');
     expect(skeleton).toHaveStyle({ width: '40px', height: '40px' });
   });
+
+  it('applies skeleton-text class for text variant', () => {
+    const { container } = render(<Skeleton variant='text' />);
+    const skeleton = container.firstChild as HTMLElement;
+    expect(skeleton).toHaveClass('skeleton', 'skeleton-text');
+  });
 });

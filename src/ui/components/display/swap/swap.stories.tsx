@@ -28,3 +28,11 @@ export const FlipEffect: Story = {
     effect: 'flip'
   }
 };
+
+export const Indeterminate: Story = {
+  args: {
+    onContent: '🌞 ON',
+    offContent: '🌙 OFF',
+    indeterminateContent: '🌤️ AUTO'
+  }
+};

@@ -9,6 +9,7 @@ const meta: Meta<typeof Stat> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -30,5 +31,19 @@ export const Default: Story = {
     value: '$89,400',
     description: '↗︎ 21% more than last month',
     color: 'success'
+  }
+};
+
+export const WithActions: Story = {
+  args: {
+    title: 'Account Balance',
+    value: '$89,400',
+    description: 'Available for withdrawal',
+    actions: (
+      <div className='flex gap-2'>
+        <button className='btn btn-xs btn-success'>Add funds</button>
+        <button className='btn btn-xs'>Withdrawal</button>
+      </div>
+    )
   }
 };

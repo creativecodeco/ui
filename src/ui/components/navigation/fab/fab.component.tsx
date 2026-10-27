@@ -6,6 +6,7 @@ const Fab = ({
   icon = '+',
   color = 'primary',
   actions = [],
+  mainAction,
   flower = false,
   closeIcon,
   className
@@ -30,6 +31,22 @@ const Fab = ({
       >
         {icon}
       </div>
+      {mainAction && (
+        <div className='fab-main-action'>
+          {mainAction.label && <span>{mainAction.label}</span>}
+          <button
+            type='button'
+            onClick={mainAction.onClick}
+            className={cls('btn btn-circle btn-lg', {
+              [`btn-${mainAction.color ?? color}`]: Boolean(
+                mainAction.color ?? color
+              )
+            })}
+          >
+            {mainAction.icon}
+          </button>
+        </div>
+      )}
       {closeIcon && (
         <div className='fab-close'>
           <span className='btn btn-circle btn-lg btn-error'>{closeIcon}</span>

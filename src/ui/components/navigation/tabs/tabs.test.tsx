@@ -16,7 +16,12 @@ describe('<Tabs />', () => {
   ];
 
   it('renders all tabs and first tab content by default', () => {
-    render(<Tabs items={items} />);
+    render(<Tabs items={items} variant='lift' size='xl' position='bottom' />);
+    expect(screen.getByRole('tablist')).toHaveClass(
+      'tabs-lift',
+      'tabs-xl',
+      'tabs-bottom'
+    );
     expect(screen.getByText('Tab One')).toBeInTheDocument();
     expect(screen.getByText('Tab Two')).toBeInTheDocument();
     expect(screen.getByText('Content 1')).toBeInTheDocument();

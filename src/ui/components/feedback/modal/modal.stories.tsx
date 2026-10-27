@@ -7,7 +7,11 @@ const meta: Meta<typeof Modal> = {
   tags: ['autodocs'],
   argTypes: {
     isOpen: { control: 'boolean' },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+    position: {
+      control: 'select',
+      options: ['top', 'middle', 'bottom', 'start', 'end']
+    },
     closeOnBackdropClick: { control: 'boolean' }
   }
 };
@@ -31,5 +35,14 @@ export const Large: Story = {
     title: 'Large Modal',
     children:
       'This is a large modal window suitable for detailed content or forms.'
+  }
+};
+
+export const BottomPosition: Story = {
+  args: {
+    isOpen: true,
+    position: 'bottom',
+    title: 'Bottom Sheet Modal',
+    children: 'Modal aligned to the bottom using modal-bottom.'
   }
 };

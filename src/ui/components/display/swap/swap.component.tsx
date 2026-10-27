@@ -5,6 +5,7 @@ import type { SwapType } from '@/types';
 const Swap = ({
   onContent,
   offContent,
+  indeterminateContent,
   active,
   onChange,
   effect,
@@ -32,6 +33,9 @@ const Swap = ({
       />
       <div className='swap-on'>{onContent}</div>
       <div className='swap-off'>{offContent}</div>
+      {indeterminateContent && (
+        <div className='swap-indeterminate'>{indeterminateContent}</div>
+      )}
     </label>
   );
 };

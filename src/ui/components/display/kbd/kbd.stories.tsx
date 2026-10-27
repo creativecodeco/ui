@@ -6,7 +6,7 @@ const meta: Meta<typeof Kbd> = {
   component: Kbd,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 };
 
@@ -39,6 +39,7 @@ export const Sizes: Story = {
       <Kbd size='sm'>sm</Kbd>
       <Kbd size='md'>md</Kbd>
       <Kbd size='lg'>lg</Kbd>
+      <Kbd size='xl'>xl</Kbd>
     </div>
   )
 };

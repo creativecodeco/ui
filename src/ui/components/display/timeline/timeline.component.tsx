@@ -21,6 +21,7 @@ const Timeline = ({
   items = [],
   vertical = true,
   compact = false,
+  snapIcon = false,
   className
 }: TimelineType) => {
   return (
@@ -30,7 +31,8 @@ const Timeline = ({
         {
           'timeline-vertical': vertical,
           'timeline-horizontal': !vertical,
-          'timeline-compact': compact
+          'timeline-compact': compact,
+          'timeline-snap-icon': snapIcon
         },
         className
       )}

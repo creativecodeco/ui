@@ -46,6 +46,18 @@
   }
 }
 
+.textbox-size-xl {
+  @apply input-xl;
+
+  &.textbox-with-left-icon {
+    @apply pl-10;
+  }
+
+  &.textbox-with-right-icon {
+    @apply pr-10;
+  }
+}
+
 .textbox-left-icon {
   @apply absolute z-10;
 }
@@ -64,6 +76,10 @@
 
 .textbox-left-icon-size-lg {
   @apply top-6 left-3;
+}
+
+.textbox-left-icon-size-xl {
+  @apply top-7 left-3;
 }
 
 .textbox-right-icon {
@@ -86,6 +102,10 @@
   @apply top-6 right-3;
 }
 
+.textbox-right-icon-size-xl {
+  @apply top-7 right-3;
+}
+
 .textbox-color-primary {
   @apply input-primary;
 }
@@ -96,6 +116,10 @@
 
 .textbox-color-accent {
   @apply input-accent;
+}
+
+.textbox-color-neutral {
+  @apply input-neutral;
 }
 
 .textbox-color-success {

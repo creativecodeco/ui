@@ -21,4 +21,12 @@ describe('<Toggle />', () => {
     render(<Toggle label='Option' error='Field required' />);
     expect(screen.getByText('Field required')).toBeInTheDocument();
   });
+
+  it('applies size xl and color neutral classes', () => {
+    render(<Toggle size='xl' color='neutral' />);
+    expect(screen.getByRole('checkbox')).toHaveClass(
+      'toggle-xl',
+      'toggle-neutral'
+    );
+  });
 });

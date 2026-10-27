@@ -20,6 +20,8 @@ export interface FabType {
   color?: ColorType;
   /** Speed dial action items */
   actions?: FabActionType[];
+  /** Optional main action shown when FAB opens */
+  mainAction?: FabActionType;
   /** Enable flower (quarter-circle) radial layout */
   flower?: boolean;
   /** Optional close button label/icon when open */

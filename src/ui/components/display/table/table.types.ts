@@ -1,3 +1,5 @@
+import type { SizeType } from '@/types';
+
 export interface TableColumn<T> {
   key: string;
   header: React.ReactNode;
@@ -9,8 +11,11 @@ export interface TableType<
 > {
   columns: TableColumn<T>[];
   data: T[];
+  size?: SizeType;
   zebra?: boolean;
   compact?: boolean;
   hover?: boolean;
+  pinRows?: boolean;
+  pinCols?: boolean;
   className?: string;
 }

@@ -10,45 +10,44 @@ const meta: Meta<typeof Badge> = {
   tags: ['autodocs'],
   argTypes: {
     color: {
-      description: 'Color',
-      type: 'string',
+      description: 'Badge color token',
+      control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
         'success',
         'warning',
         'info',
-        'error'
-      ],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+        'error',
+        'ghost'
+      ]
+    },
+    variant: {
+      description: 'Badge style variant',
+      control: 'select',
+      options: ['outline', 'dash', 'soft', 'ghost']
     },
     outline: {
-      description: 'Is Outline',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
+      description: 'Outline style',
+      control: 'boolean'
     },
     size: {
-      description: 'Size',
-      type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
+      description: 'Badge size',
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl']
     },
     icon: {
-      description: 'Left Icon',
-      type: 'function',
+      description: 'Badge icon component',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: { type: 'select' }
+      control: 'select'
     },
     iconPosition: {
-      description: 'Icon Position',
-      type: 'string',
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
+      description: 'Badge icon placement',
+      control: 'inline-radio',
+      options: ['left', 'right']
     }
   },
   args: {
@@ -76,7 +75,19 @@ export const SizeXs: Story = createBadgeStory({ size: 'xs' });
 export const SizeSm: Story = createBadgeStory({ size: 'sm' });
 export const SizeMd: Story = createBadgeStory({ size: 'md' });
 export const SizeLg: Story = createBadgeStory({ size: 'lg' });
+export const SizeXl: Story = createBadgeStory({ size: 'xl' });
 
+export const Soft: Story = createBadgeStory({
+  color: 'primary',
+  variant: 'soft'
+});
+export const Dash: Story = createBadgeStory({
+  color: 'primary',
+  variant: 'dash'
+});
+export const Ghost: Story = createBadgeStory({ variant: 'ghost' });
+
+export const ColorNeutral: Story = createBadgeStory({ color: 'neutral' });
 export const ColorPrimary: Story = createBadgeStory({ color: 'primary' });
 export const ColorSecondary: Story = createBadgeStory({ color: 'secondary' });
 export const ColorAccent: Story = createBadgeStory({ color: 'accent' });

@@ -1,4 +1,4 @@
-# Project Context: @creativecodeco/ui (v2.6.0)
+# Project Context: @creativecodeco/ui (v2.7.0)
 
 ## Purpose
 

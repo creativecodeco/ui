@@ -126,4 +126,31 @@ describe('<Button />', () => {
 
     expect(getByText(loadingLabel)).toBeInTheDocument();
   });
+
+  it('DaisyUI v5 variants, shape, modifiers and badge', () => {
+    const { container } = render(
+      <Button
+        variant='soft'
+        color='primary'
+        size='xl'
+        shape='circle'
+        wide
+        block
+        active
+        withBadge
+        badge='+9'
+      >
+        Btn
+      </Button>
+    );
+    const btn = container.querySelector('button');
+    expect(btn?.className).toContain('btn-soft');
+    expect(btn?.className).toContain('btn-primary');
+    expect(btn?.className).toContain('button-size-xl');
+    expect(btn?.className).toContain('btn-circle');
+    expect(btn?.className).toContain('btn-wide');
+    expect(btn?.className).toContain('btn-block');
+    expect(btn?.className).toContain('btn-active');
+    expect(container.querySelector('.badge')).toHaveTextContent('+9');
+  });
 });

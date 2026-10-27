@@ -10,8 +10,8 @@ export interface CarouselType {
   items?: CarouselItemType[];
   /** Custom children elements */
   children?: React.ReactNode;
-  /** Snap position mode (center or end) */
-  snap?: 'center' | 'end';
+  /** Snap position mode (start, center, or end) */
+  snap?: 'start' | 'center' | 'end';
   /** Vertical scroll orientation */
   vertical?: boolean;
   /** Full width items */

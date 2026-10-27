@@ -13,10 +13,10 @@ describe('<Spinner />', () => {
   });
 
   it('applies variant, size and color classes', () => {
-    render(<Spinner variant='dots' size='lg' color='primary' />);
+    render(<Spinner variant='dots' size='xl' color='neutral' />);
     const spinnerElement = screen.getByRole('status');
     expect(spinnerElement).toHaveClass('loading-dots');
-    expect(spinnerElement).toHaveClass('loading-lg');
-    expect(spinnerElement).toHaveClass('text-primary');
+    expect(spinnerElement).toHaveClass('loading-xl');
+    expect(spinnerElement).toHaveClass('text-neutral');
   });
 });

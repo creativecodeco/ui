@@ -17,6 +17,8 @@ export interface RangeType extends ErrorType {
   color?: ColorType;
   /** Size variant */
   size?: SizeType;
+  /** Vertical orientation */
+  vertical?: boolean;
   /** Disabled state */
   disabled?: boolean;
   /** Input name attribute */

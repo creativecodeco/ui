@@ -53,7 +53,7 @@ const meta: Meta<typeof Avatar> = {
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: {
         type: {
@@ -98,6 +98,12 @@ export const SizeMd: Story = {
 export const SizeLg: Story = {
   args: {
     size: 'lg'
+  }
+};
+
+export const SizeXl: Story = {
+  args: {
+    size: 'xl'
   }
 };
 

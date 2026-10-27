@@ -7,48 +7,17 @@ const meta: Meta<typeof Checkbox> = {
   component: Checkbox,
   tags: ['autodocs'],
   argTypes: {
-    name: {
-      description: 'Unique Name',
-      type: { name: 'string', required: true }
-    },
-    label: {
-      description: 'Label',
-      type: 'string'
-    },
-    isError: {
-      description: 'Checkbox has error',
-      type: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' }
-      }
-    },
-    error: {
-      description: 'Error message',
-      type: 'string'
-    },
-    disabled: {
-      description: 'Disabled',
-      type: 'boolean',
-      table: {
-        defaultValue: { summary: 'false' }
-      }
-    },
-    position: {
-      description: 'Position',
-      type: 'string',
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'left' }
-      }
-    },
+    name: { control: 'text', description: 'Checkbox input name' },
+    label: { control: 'text', description: 'Checkbox label text' },
+    checked: { control: 'boolean' },
+    isError: { control: 'boolean' },
+    error: { control: 'text' },
+    disabled: { control: 'boolean' },
+    position: { control: 'radio', options: ['left', 'right'] },
     color: {
-      description: 'Color',
-      type: 'string',
+      control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -56,21 +25,9 @@ const meta: Meta<typeof Checkbox> = {
         'warning',
         'info',
         'error'
-      ],
-      control: { type: 'select' }
+      ]
     },
-    size: {
-      description: 'Size',
-      type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
-      control: { type: 'select' },
-      table: {
-        type: {
-          summary: 'string'
-        },
-        defaultValue: { summary: 'md' }
-      }
-    }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   },
   args: {
     name: 'checkbox',
@@ -86,124 +43,70 @@ Checkbox.displayName = 'Checkbox';
 
 type Story = StoryObj<typeof Checkbox>;
 
-export const Primary: Story = {
-  args: {}
-};
+const createCheckboxStory = (args: Story['args'] = {}): Story => ({ args });
 
-export const Checked: Story = {
-  args: {
-    checked: true
-  }
-};
+export const Primary: Story = createCheckboxStory();
+export const Checked: Story = createCheckboxStory({ checked: true });
+export const Label: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  checked: true
+});
+export const Left: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  position: 'left'
+});
+export const Right: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  position: 'right'
+});
+export const Disabled: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  disabled: true
+});
 
-export const Label: Story = {
-  args: {
-    label: 'Eres humano?',
-    checked: true
-  }
-};
+export const ColorNeutral: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'neutral',
+  checked: true
+});
+export const ColorPrimary: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'primary',
+  checked: true
+});
+export const ColorSecondary: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'secondary',
+  checked: true
+});
+export const ColorAccent: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'accent',
+  checked: true
+});
+export const ColorSuccess: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'success',
+  checked: true
+});
+export const ColorWarning: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'warning',
+  checked: true
+});
+export const ColorInfo: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'info',
+  checked: true
+});
+export const ColorError: Story = createCheckboxStory({
+  label: 'Eres humano?',
+  color: 'error',
+  checked: true
+});
 
-export const Left: Story = {
-  args: {
-    label: 'Eres humano?',
-    position: 'left'
-  }
-};
-
-export const Right: Story = {
-  args: {
-    label: 'Eres humano?',
-    position: 'right'
-  }
-};
-
-export const Disabled: Story = {
-  args: {
-    label: 'Eres humano?',
-    disabled: true
-  }
-};
-
-export const ColorPrimary: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'primary',
-    checked: true
-  }
-};
-
-export const ColorSecondary: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'secondary',
-    checked: true
-  }
-};
-
-export const ColorAccent: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'accent',
-    checked: true
-  }
-};
-
-export const ColorSuccess: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'success',
-    checked: true
-  }
-};
-
-export const ColorWarning: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'warning',
-    checked: true
-  }
-};
-
-export const ColorInfo: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'info',
-    checked: true
-  }
-};
-
-export const ColorError: Story = {
-  args: {
-    label: 'Eres humano?',
-    color: 'error',
-    checked: true
-  }
-};
-
-export const SizeXs: Story = {
-  args: {
-    size: 'xs',
-    checked: true
-  }
-};
-
-export const SizeSm: Story = {
-  args: {
-    size: 'sm',
-    checked: true
-  }
-};
-
-export const SizeMd: Story = {
-  args: {
-    size: 'md',
-    checked: true
-  }
-};
-
-export const SizeLg: Story = {
-  args: {
-    size: 'lg',
-    checked: true
-  }
-};
+export const SizeXs: Story = createCheckboxStory({ size: 'xs', checked: true });
+export const SizeSm: Story = createCheckboxStory({ size: 'sm', checked: true });
+export const SizeMd: Story = createCheckboxStory({ size: 'md', checked: true });
+export const SizeLg: Story = createCheckboxStory({ size: 'lg', checked: true });
+export const SizeXl: Story = createCheckboxStory({ size: 'xl', checked: true });

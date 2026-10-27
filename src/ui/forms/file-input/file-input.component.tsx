@@ -12,6 +12,7 @@ const FileInput = forwardRef<HTMLInputElement, FileInputType>(
       color,
       size = 'md',
       bordered = true,
+      ghost = false,
       className,
       id,
       ...restProps
@@ -20,7 +21,8 @@ const FileInput = forwardRef<HTMLInputElement, FileInputType>(
   ) => {
     const hasError = Boolean(isError || error);
     const inputClasses = cls('file-input w-full', className, {
-      'file-input-bordered': bordered,
+      'file-input-bordered': bordered && !ghost,
+      'file-input-ghost': ghost,
       [`file-input-${color}`]: Boolean(color),
       [`file-input-${size}`]: Boolean(size),
       'file-input-error': hasError

@@ -6,10 +6,11 @@ const meta: Meta<typeof Toggle> = {
   component: Toggle,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -38,4 +39,16 @@ export const Checked: Story = {
     checked: true,
     color: 'success'
   }
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div className='flex items-center gap-4'>
+      <Toggle size='xs' checked color='primary' />
+      <Toggle size='sm' checked color='primary' />
+      <Toggle size='md' checked color='primary' />
+      <Toggle size='lg' checked color='primary' />
+      <Toggle size='xl' checked color='primary' />
+    </div>
+  )
 };

@@ -10,6 +10,10 @@
   @apply checkbox-accent;
 }
 
+.checkbox-color-neutral {
+  @apply checkbox-neutral;
+}
+
 .checkbox-color-success {
   @apply checkbox-success;
 }
@@ -40,4 +44,8 @@
 
 .checkbox-size-lg {
   @apply checkbox-lg;
+}
+
+.checkbox-size-xl {
+  @apply checkbox-xl;
 }

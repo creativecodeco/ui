@@ -26,4 +26,14 @@ describe('<FileInput />', () => {
     render(<FileInput label='Resume' error='File is too large' />);
     expect(screen.getByRole('alert')).toHaveTextContent('File is too large');
   });
+
+  it('applies ghost, size xl and color neutral classes', () => {
+    const { container } = render(<FileInput ghost size='xl' color='neutral' />);
+    const input = container.querySelector('input[type="file"]');
+    expect(input).toHaveClass(
+      'file-input-ghost',
+      'file-input-xl',
+      'file-input-neutral'
+    );
+  });
 });

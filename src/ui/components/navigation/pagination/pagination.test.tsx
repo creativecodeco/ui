@@ -43,4 +43,16 @@ describe('<Pagination />', () => {
     );
     expect(screen.getByLabelText('Previous page')).toBeDisabled();
   });
+
+  it('applies size class including xl to pagination buttons', () => {
+    render(
+      <Pagination
+        currentPage={1}
+        totalPages={2}
+        size='xl'
+        onPageChange={() => {}}
+      />
+    );
+    expect(screen.getByText('1')).toHaveClass('btn-xl');
+  });
 });

@@ -6,6 +6,7 @@ export interface MenuItemType {
   icon?: React.ReactNode;
   badge?: React.ReactNode;
   active?: boolean;
+  focus?: boolean;
   disabled?: boolean;
   href?: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;

@@ -18,6 +18,8 @@ export interface TimelineType {
   vertical?: boolean;
   /** Compact density layout */
   compact?: boolean;
+  /** Snap icon to the start of the timeline item */
+  snapIcon?: boolean;
   /** Custom CSS classes */
   className?: string;
 }

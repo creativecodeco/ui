@@ -6,10 +6,11 @@ const meta: Meta<typeof TextArea> = {
   component: TextArea,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -18,7 +19,8 @@ const meta: Meta<typeof TextArea> = {
         'warning',
         'error'
       ]
-    }
+    },
+    ghost: { control: 'boolean' }
   }
 };
 
@@ -30,6 +32,14 @@ export const Default: Story = {
     label: 'Bio / Notes',
     placeholder: 'Tell us a little bit about yourself...',
     rows: 4
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    label: 'Ghost TextArea',
+    placeholder: 'Borderless textarea...',
+    ghost: true
   }
 };
 

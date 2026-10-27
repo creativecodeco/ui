@@ -5,18 +5,23 @@ import type { TableType } from '@/types';
 const Table = <T extends Record<string, unknown>>({
   columns,
   data,
+  size,
   zebra = true,
   compact,
   hover = true,
+  pinRows = false,
+  pinCols = false,
   className
 }: TableType<T>) => {
   return (
     <div className='overflow-x-auto'>
       <table
         className={cls('table w-full', className, {
+          [`table-${size}`]: Boolean(size),
           'table-zebra': zebra,
-          'table-compact': compact,
-          'table-hover': hover
+          'table-xs': compact && !size,
+          'table-pin-rows': pinRows,
+          'table-pin-cols': pinCols
         })}
       >
         <thead>
@@ -33,7 +38,7 @@ const Table = <T extends Record<string, unknown>>({
               (row.key as string | number) ??
               `row-${rowIndex}`;
             return (
-              <tr key={rowKey}>
+              <tr key={rowKey} className={cls({ 'row-hover': hover })}>
                 {columns.map((col) => {
                   const cellValue = row[col.key];
                   return (

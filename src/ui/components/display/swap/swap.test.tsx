@@ -16,4 +16,19 @@ describe('<Swap />', () => {
     fireEvent.click(checkbox);
     expect(handleChange).toHaveBeenCalledTimes(1);
   });
+
+  it('renders indeterminate content when provided', () => {
+    const { container } = render(
+      <Swap
+        onContent='ON'
+        offContent='OFF'
+        indeterminateContent='AUTO'
+        effect='flip'
+      />
+    );
+    expect(container.querySelector('.swap-indeterminate')).toHaveTextContent(
+      'AUTO'
+    );
+    expect(container.querySelector('.swap')).toHaveClass('swap-flip');
+  });
 });
