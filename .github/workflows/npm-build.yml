@@ -20,9 +20,6 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
-      - name: Update npm to latest
-        run: npm install -g npm@latest
-
       - name: Clean and Install
         run: npm ci --ignore-scripts
 
@@ -33,7 +30,7 @@ jobs:
         run: npm run lint && npm run format:check
 
       - name: TypeScript Check
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Build
         run: npm run build

@@ -70,7 +70,8 @@
     "test": "jest .",
     "test:action": "jest --coverage | tee ./coverage.txt && jest --ci --reporters=default --reporters=jest-junit",
     "test:update": "jest --updateSnapshot",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@tailwindcss/postcss": "4.3.3",
