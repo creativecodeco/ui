@@ -43,7 +43,7 @@ const Timeline = ({
           <li key={key}>
             {index > 0 && <hr className={cls({ [colorClass]: item.active })} />}
             {item.date && (
-              <div className='timeline-start timeline-text-secondary font-mono text-xs'>
+              <div className='timeline-start text-secondary font-mono text-xs'>
                 {item.date}
               </div>
             )}

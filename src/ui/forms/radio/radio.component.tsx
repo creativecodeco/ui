@@ -17,6 +17,7 @@ const Radio = forwardRef<RadioRef, RadioType>(
       checked,
       value,
       onChange,
+      className,
       ...otherProps
     },
     ref
@@ -36,7 +37,7 @@ const Radio = forwardRef<RadioRef, RadioType>(
         name={name}
         data-testid={name}
         type='radio'
-        className={cls('radio', {
+        className={cls('radio', className, {
           [`radio-color-${color}`]: color,
           [`radio-size-${size}`]: size
         })}
@@ -59,7 +60,7 @@ const Radio = forwardRef<RadioRef, RadioType>(
           {position === 'left' && radio()}
           {label && <span className='label-text'>{label}</span>}
           {position === 'right' && radio()}
-          {isError && <p className='text-red-500'>{error}</p>}
+          {isError && <p className='text-error'>{error}</p>}
         </label>
       </div>
     );

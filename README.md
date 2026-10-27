@@ -17,7 +17,7 @@
 ## Configuration
 
 > [!NOTE]
-> This library is designed for **React 19** and uses **Tailwind CSS v4** and **DaisyUI v5**. The configuration is primarily CSS-first.
+> **Current Version: `v2.6.0`** — This library is designed for **React 19** (`v19.3.1`), **Tailwind CSS v4** (`v4.3.3`), and **DaisyUI v5** (`v5.7.50`), and requires **Node.js 24 LTS** (`>=24.22.1`) and **npm 12** (`>=12.2.1`). The configuration is primarily CSS-first.
 
 ### Install
 
@@ -85,8 +85,8 @@ Add on layout `layout.tsx` (for Next.js) or your root component:
 ```tsx
 import { CreativeCodeUIProvider } from '@creativecodeco/ui';
 
-// Import the design system CSS
-import '@creativecodeco/ui/lib/theme/css/main.css';
+// Import the design system CSS (supports subpath export or legacy lib path)
+import '@creativecodeco/ui/theme/main.css';
 
 export default function RootLayout({ children }) {
   return (
@@ -105,9 +105,10 @@ export default function RootLayout({ children }) {
 - **Feedback Components**: Alert, Countdown, Diff, Modal, Progress, RadialProgress, Skeleton, Spinner, Toast, Tooltip.
 - **Layout Components**: Collapse, Divider, Footer, Hero, Join, Mockup, Stack.
 - **Navigation Components**: ActionDropdown, Breadcrumb, Dock, Drawer, Fab, Link, MegaMenu, Menu, Navbar, Pagination, Steps, Tabs.
-- **Form Controls**: Calendar, Checkbox, Dropdown, Fieldset, FileInput, Filter, Label, Otp, Radio, RadioList, Range, Select, TextArea, TextBox, Toggle, Validator.
-- **Theme Support**: Built on DaisyUI with custom CreativeCode branding.
-- **Visual Testing**: Integrated with Storybook and Chromatic.
+- **Form Controls**: Calendar, Checkbox, Dropdown, Fieldset, FileInput, Filter, Label, Otp, Radio, RadioList, Range, Select, TextArea, TextBox, Toggle, Validator (with full `forwardRef` and React Hook Form `Controller` support).
+- **Accessibility & Security**: WAI-ARIA compliant semantics (`aria-invalid`, `role="alert"`, `role="tabpanel"`, keyboard navigation) and OWASP frontend URL sanitization (`sanitizeUrl`).
+- **Theme Support**: Built on DaisyUI with custom CreativeCode semantic branding tokens.
+- **Visual Testing**: Integrated with Storybook 10 and Chromatic 18.
 
 ## Development
 

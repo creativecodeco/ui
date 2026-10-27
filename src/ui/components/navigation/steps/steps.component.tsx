@@ -2,10 +2,15 @@ import cls from 'classnames';
 
 import type { StepsType } from '@/types';
 
-const Steps = ({ items, activeStep = 0, vertical = false }: StepsType) => {
+const Steps = ({
+  items,
+  activeStep = 0,
+  vertical = false,
+  className
+}: StepsType) => {
   return (
     <ul
-      className={cls('steps', {
+      className={cls('steps overflow-x-auto', className, {
         'steps-vertical': vertical,
         'steps-horizontal': !vertical
       })}
@@ -20,6 +25,7 @@ const Steps = ({ items, activeStep = 0, vertical = false }: StepsType) => {
                 ? item.title
                 : index)
             }
+            aria-current={index === activeStep ? 'step' : undefined}
             data-content={item.icon ? undefined : index + 1}
             className={cls('step', {
               'step-primary': isPrimary,

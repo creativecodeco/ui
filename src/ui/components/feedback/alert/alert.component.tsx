@@ -8,7 +8,8 @@ const Alert = ({
   status = 'info',
   title,
   icon: Icon,
-  onClose
+  onClose,
+  className
 }: AlertType) => {
   const renderedIcon = useMemo(() => {
     if (!Icon) return null;
@@ -18,7 +19,7 @@ const Alert = ({
   return (
     <div
       role='alert'
-      className={cls('alert', {
+      className={cls('alert', className, {
         'alert-info': status === 'info',
         'alert-success': status === 'success',
         'alert-warning': status === 'warning',

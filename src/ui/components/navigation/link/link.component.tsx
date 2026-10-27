@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { LinkType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Link = ({
   children,
@@ -12,11 +13,18 @@ const Link = ({
   onClick,
   className
 }: LinkType) => {
+  const safeRel =
+    target === '_blank'
+      ? Array.from(
+          new Set([...(rel ? rel.split(/\s+/) : []), 'noopener', 'noreferrer'])
+        ).join(' ')
+      : rel;
+
   return (
     <a
-      href={href}
+      href={sanitizeUrl(href)}
       target={target}
-      rel={target === '_blank' ? (rel ?? 'noopener noreferrer') : rel}
+      rel={safeRel}
       onClick={onClick}
       className={cls(
         'link',

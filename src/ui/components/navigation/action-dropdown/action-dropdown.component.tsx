@@ -30,6 +30,8 @@ const ActionDropdown = ({
       <div
         tabIndex={0}
         role='button'
+        aria-haspopup='true'
+        aria-expanded={open}
         className={cls('btn', {
           [`btn-${color}`]: Boolean(color),
           [`btn-${size}`]: Boolean(size)

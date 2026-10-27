@@ -1,6 +1,6 @@
-import type { ColorType, SizeType } from '@/types';
+import type { ColorType, ErrorType, SizeType } from '@/types';
 
-export interface RangeType {
+export interface RangeType extends ErrorType {
   /** Current range value */
   value?: number;
   /** Minimum range value */
@@ -19,8 +19,6 @@ export interface RangeType {
   size?: SizeType;
   /** Disabled state */
   disabled?: boolean;
-  /** Error message */
-  error?: string;
   /** Input name attribute */
   name?: string;
   /** Input id attribute */

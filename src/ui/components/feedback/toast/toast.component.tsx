@@ -2,10 +2,17 @@ import cls from 'classnames';
 
 import type { ToastType } from '@/types';
 
-const Toast = ({ children, position = 'bottom-end', color }: ToastType) => {
+const Toast = ({
+  children,
+  position = 'bottom-end',
+  color,
+  className
+}: ToastType) => {
   return (
     <div
-      className={cls('toast', {
+      role='status'
+      aria-live='polite'
+      className={cls('toast', className, {
         'toast-start': position.endsWith('-start'),
         'toast-center': position.endsWith('-center'),
         'toast-end': position.endsWith('-end'),

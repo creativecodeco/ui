@@ -9,7 +9,8 @@ const Badge = ({
   icon: Icon,
   iconPosition = 'left',
   outline,
-  size = 'md'
+  size = 'md',
+  className
 }: BadgeType) => {
   const newIcon = useMemo(() => {
     if (!Icon) {
@@ -21,7 +22,7 @@ const Badge = ({
 
   return (
     <div
-      className={cls('badge', {
+      className={cls('badge', className, {
         [`badge-color-${color}`]: !outline && color,
         [`badge-${color}`]: outline && color,
         'badge-outline': outline,

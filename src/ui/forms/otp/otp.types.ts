@@ -1,6 +1,6 @@
-import type { ColorType, SizeType } from '@/types';
+import type { ColorType, ErrorType, SizeType } from '@/types';
 
-export interface OtpType {
+export interface OtpType extends ErrorType {
   /** Number of OTP character slots */
   length?: number;
   /** Controlled OTP string value */
@@ -17,8 +17,6 @@ export interface OtpType {
   disabled?: boolean;
   /** Optional field label */
   label?: string;
-  /** Error message */
-  error?: string;
   /** Input name attribute */
   name?: string;
   /** Input id attribute */

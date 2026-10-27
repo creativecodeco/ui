@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { ChatBubbleType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const ChatBubble = ({
   message,
@@ -27,7 +28,7 @@ const ChatBubble = ({
         <div className='chat-image avatar'>
           <div className='w-10 rounded-full'>
             {typeof avatar === 'string' ? (
-              <img src={avatar} alt='Avatar' />
+              <img src={sanitizeUrl(avatar, '')} alt='Avatar' />
             ) : (
               avatar
             )}

@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { AvatarGroupType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const sizeClasses: Record<string, string> = {
   xs: 'w-6 h-6',
@@ -23,19 +24,22 @@ const AvatarGroup = ({
     <div
       className={cls('avatar-group -space-x-6 rtl:space-x-reverse', className)}
     >
-      {visibleAvatars.map((avatar, index) => (
-        <div key={avatar.id ?? index} className='avatar'>
-          <div className={cls('rounded-full', sizeClass)}>
-            {avatar.src ? (
-              <img src={avatar.src} alt={avatar.alt || `Avatar ${index + 1}`} />
-            ) : (
-              <div className='bg-neutral text-neutral-content flex items-center justify-center h-full w-full font-bold text-xs uppercase'>
-                {avatar.initials || 'CC'}
-              </div>
-            )}
+      {visibleAvatars.map((avatar, index) => {
+        const safeSrc = avatar.src ? sanitizeUrl(avatar.src, '') : '';
+        return (
+          <div key={avatar.id ?? index} className='avatar'>
+            <div className={cls('rounded-full', sizeClass)}>
+              {safeSrc ? (
+                <img src={safeSrc} alt={avatar.alt || `Avatar ${index + 1}`} />
+              ) : (
+                <div className='bg-neutral text-neutral-content flex items-center justify-center h-full w-full font-bold text-xs uppercase'>
+                  {avatar.initials || 'CC'}
+                </div>
+              )}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       {remainingCount > 0 && (
         <div className='avatar avatar-placeholder'>

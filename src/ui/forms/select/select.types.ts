@@ -1,4 +1,4 @@
-import type { ColorType, SizeType } from '@/types';
+import type { ColorType, ErrorType, SizeType } from '@/types';
 
 export interface SelectOptionType {
   /** Option value */
@@ -9,7 +9,7 @@ export interface SelectOptionType {
   disabled?: boolean;
 }
 
-export interface SelectType {
+export interface SelectType extends ErrorType {
   /** Select options */
   options?: SelectOptionType[];
   /** Currently selected value */
@@ -30,8 +30,6 @@ export interface SelectType {
   ghost?: boolean;
   /** Disabled state */
   disabled?: boolean;
-  /** Error message */
-  error?: string;
   /** Select name attribute */
   name?: string;
   /** Select id attribute */

@@ -1,8 +1,14 @@
-import type { BreadcrumbType } from '@/types';
+import cls from 'classnames';
 
-const Breadcrumb = ({ items }: BreadcrumbType) => {
+import type { BreadcrumbType } from '@/types';
+import { sanitizeUrl } from '@/utils';
+
+const Breadcrumb = ({ items, className }: BreadcrumbType) => {
   return (
-    <nav aria-label='Breadcrumb' className='text-sm breadcrumbs'>
+    <nav
+      aria-label='Breadcrumb'
+      className={cls('text-sm breadcrumbs', className)}
+    >
       <ul>
         {items.map((item, index) => {
           const Icon = item.icon;
@@ -12,9 +18,13 @@ const Breadcrumb = ({ items }: BreadcrumbType) => {
                 item.href ||
                 (typeof item.label === 'string' ? item.label : index)
               }
+              aria-current={index === items.length - 1 ? 'page' : undefined}
             >
               {item.href ? (
-                <a href={item.href} className='inline-flex items-center gap-2'>
+                <a
+                  href={sanitizeUrl(item.href)}
+                  className='inline-flex items-center gap-2'
+                >
                   {Icon && <Icon className='stroke-current w-4 h-4' />}
                   {item.label}
                 </a>

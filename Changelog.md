@@ -2,6 +2,36 @@
 
 # Changelog
 
+## v2.6.0 - Component Standardization, A11y, Security Hardening & Dependency Upgrades
+
+### 👾 Component Standardization & Design Polish
+
+- Unify `className?: string` prop support and `classnames` (`cls`) merging across all 67 UI and Form components (`Accordion`, `Avatar`, `Badge`, `Button`, `Alert`, `Modal`, `Toast`, `Tooltip`, `Breadcrumb`, `Pagination`, `Steps`, `Tabs`, `Checkbox`, `Dropdown`, `Radio`, `RadioList`, `TextBox`, `Toggle`).
+- Standardize form validation error contracts by extending `ErrorType` (`isError?: boolean; error?: string`) across `Select`, `TextArea`, `Toggle`, `FileInput`, `Range`, and `Otp`, and prevent `isError` from leaking onto native DOM elements.
+- Add dedicated `radio-list.types.ts` (`RadioListType`) and standardized exports in `src/ui/forms/radio-list/`.
+- Expand React Hook Form `Controller` (`ControllerType`) to support all form controls (`TextBox`, `Dropdown`, `Select`, `TextArea`, `Checkbox`, `Radio`, `RadioList`, `Toggle`, `Range`, `FileInput`, `Otp`).
+- Add `autodocs` tags to all remaining Storybook stories and `readOnly` fallback handling for static `Swap`, `Range`, `Collapse`, and `Toggle` states.
+- Enhance accessibility (WAI-ARIA) and responsive mobile-first design across form, feedback, display, layout, and navigation components (`aria-invalid` and `role="alert"` on form controls, `htmlFor`/`id` label association in `TextArea`, `FileInput`, and `Toggle`, `role="radiogroup"` and `aria-label` in `Rating`, `role="status"` and `aria-live="polite"` in `Toast`, `role="tabpanel"` in `Tabs`, `aria-current` in `Steps` and `Breadcrumb`, `aria-haspopup`/`aria-expanded` in `ActionDropdown` and `MegaMenu`, and responsive viewport sizing in `Modal`, `Drawer`, `Calendar`, `Pagination`, `Tabs`, `Steps`, `Progress`, and `MegaMenu`).
+- Standardize theme color tokens across all components by replacing hardcoded colors (`text-red-500` -> `text-error` in `Checkbox`, `Radio`, `RadioList`, and `TextBox`; `bg-black` -> `bg-neutral/60` in `Hero`; default `color = 'primary'` in `Rating`; `text-secondary` in `Timeline`) and adding `@source inline(...)` in `src/theme/main.css` so all DaisyUI semantic color classes are generated in the compiled stylesheet.
+- Harden components against OWASP frontend security risks: restrict `isValidUrl` to `http:`/`https:`, add `sanitizeUrl` in `src/utils/string.utils.ts` to block `javascript:`/`vbscript:`/`data:` XSS schemes across `Link`, `Breadcrumb`, `Footer`, `Menu`, `MegaMenu`, `Hero`, `Card`, `Carousel`, `ChatBubble`, `HoverGallery`, `Mask`, and `AvatarGroup`, enforce `noopener noreferrer` on `target="_blank"` links, prevent CSS `url(...)` breakout in `Hero`, and set `autoComplete="one-time-code"` in `Otp`.
+- Add `forwardRef` support across `Select`, `TextArea`, `Toggle`, `FileInput`, `Range`, and `Otp`, plus keyboard navigation (`Escape` to close `Modal` and `Drawer`, `ArrowRight`/`ArrowLeft`/`Home`/`End` in `Tabs`).
+- Add `exports` map, `types`, `sideEffects`, `typecheck` script, `engines` (`node >=24.22.1`, `npm >=12.2.1`), and `packageManager` (`npm@12.2.1`) in `package.json`, update `.nvmrc` to `v24.22.1` (Node 24 LTS Krypton), and harden GitHub Actions workflows (`npm-build.yml`, `publish.yml`, `chromatic.yml`) with least-privilege `permissions`, `npm audit`, `npm run typecheck`, NPM `--provenance`, and latest SHA-pinned stable actions (`actions/checkout@v7.0.1`, `actions/setup-node@v7.1.0`, `chromaui/action@v18.13.3`, and `MishaKav/jest-coverage-comment@v1.0.38`).
+- Add custom easing tokens (`--ease-out`, `--ease-in-out`, `--ease-drawer`) and tactile button active feedback (`scale(0.97)` with `prefers-reduced-motion` support) in `src/theme/`.
+
+### ☝🏻 Upgrade
+
+- Upgrade `eslint` to `v10.13.0` and `@eslint/js` to `v10.0.1` (resolving `eslint@9.x` end-of-life deprecation)
+- Upgrade `storybook`, `@storybook/addon-docs`, `@storybook/addon-links`, `@storybook/react-webpack5`, and `eslint-plugin-storybook` to `v10.6.4`
+- Upgrade `@chromatic-com/storybook` to `v5.6.0` and `chromatic` to `v18.13.3`
+- Upgrade `react-hook-form` to `v7.91.0` and `postcss` to `v8.5.32`
+- Align `peerDependencies` versions in `package.json` with current `dependencies` (`react@19.3.1`, `react-hook-form@7.91.0`, `postcss@8.5.32`, `tailwindcss@4.3.3`, `@tailwindcss/postcss@4.3.3`)
+- Upgrade `@babel/core` to `v8.0.9`, `typescript-eslint` to `v8.72.1`, and `tsc-alias` to `v1.9.9`
+
+### 🧹 Maintenance & Security Audit
+
+- Add `overrides` in `package.json` for `flat-cache` (`^4.0.1`), `glob` (`^13.0.6`), `jsdom` (`^29.1.1`), and `eslint-plugin-react > eslint` (`$eslint`) to eliminate all transitive deprecated packages (`rimraf@3.0.2`, `glob@7.2.3`, `glob@10.5.0`, `inflight@1.0.6`, and `whatwg-encoding@3.1.1`) while maintaining `0 vulnerabilities` in `npm audit`.
+- Replace deprecated `jsxBracketSameLine` option with `bracketSameLine` in `.prettierrc`.
+
 ## v2.5.1 - Repository Metadata, Documentation & MIT License
 
 ### 📝 Documentation & Metadata

@@ -17,6 +17,7 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
       checked,
       value,
       onChange,
+      className,
       ...otherProps
     },
     ref
@@ -36,7 +37,7 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
         data-testid={name}
         ref={ref}
         type='checkbox'
-        className={cls('checkbox', {
+        className={cls('checkbox', className, {
           [`checkbox-color-${color}`]: color,
           [`checkbox-size-${size}`]: size
         })}
@@ -59,7 +60,7 @@ const Checkbox = forwardRef<CheckboxRef, CheckboxType>(
           {position === 'left' && checkbox()}
           {label && <span className='label-text'>{label}</span>}
           {position === 'right' && checkbox()}
-          {isError && <p className='text-red-500'>{error}</p>}
+          {isError && <p className='text-error'>{error}</p>}
         </label>
       </div>
     );

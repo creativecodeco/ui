@@ -8,6 +8,7 @@ const imageAvatar =
 const meta: Meta<typeof Avatar> = {
   title: '@creativecodeco-ui/Display/Avatar',
   component: Avatar,
+  tags: ['autodocs'],
   argTypes: {
     src: {
       description: 'Source',

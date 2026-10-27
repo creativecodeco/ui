@@ -86,7 +86,7 @@ exports[`<Dropdown /> snapshot full 1`] = `
         </svg>
       </div>
       <p
-        class="text-red-500 flex items-center"
+        class="text-error flex items-center"
       >
         Error
       </p>

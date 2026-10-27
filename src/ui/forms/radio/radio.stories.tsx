@@ -5,6 +5,7 @@ import Radio from './radio.component';
 const meta: Meta<typeof Radio> = {
   title: '@creativecodeco-ui/Form/Radio',
   component: Radio,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Unique Name',

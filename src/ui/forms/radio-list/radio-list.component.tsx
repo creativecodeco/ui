@@ -1,4 +1,4 @@
-import React from 'react';
+import cls from 'classnames';
 
 import { Radio } from '../radio';
 
@@ -10,24 +10,25 @@ const RadioList = ({
   isError,
   error,
   value,
+  className,
   ...otherOptions
 }: RadioListType) => {
   if (!options || options.length === 0) {
-    return;
+    return null;
   }
 
   return (
-    <div className='form-control'>
-      {options.map((option) => (
+    <div className={cls('form-control', className)}>
+      {options.map((option, index) => (
         <Radio
-          key={option.value}
+          key={option.value ?? index}
           name={name}
           {...option}
           {...otherOptions}
           checked={String(option.value) === String(value)}
         />
       ))}
-      {isError && <p className='text-red-500'>{error}</p>}
+      {isError && <p className='text-error'>{error}</p>}
     </div>
   );
 };

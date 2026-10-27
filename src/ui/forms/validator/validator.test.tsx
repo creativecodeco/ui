@@ -16,4 +16,14 @@ describe('<Validator />', () => {
       'validator-hint'
     );
   });
+
+  it('renders without aria-invalid when invalid is false', () => {
+    const { container } = render(
+      <Validator>
+        <input type='text' />
+      </Validator>
+    );
+    const validator = container.querySelector('.validator');
+    expect(validator).not.toHaveAttribute('aria-invalid');
+  });
 });

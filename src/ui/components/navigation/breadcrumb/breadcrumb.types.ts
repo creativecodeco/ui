@@ -8,4 +8,5 @@ export interface BreadcrumbItem {
 
 export interface BreadcrumbType {
   items: BreadcrumbItem[];
+  className?: string;
 }

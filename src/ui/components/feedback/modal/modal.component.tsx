@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import cls from 'classnames';
 
 import type { ModalType } from '@/types';
@@ -9,14 +10,33 @@ const Modal = ({
   children,
   actions,
   size = 'md',
-  closeOnBackdropClick = true
+  closeOnBackdropClick = true,
+  className
 }: ModalType) => {
+  useEffect(() => {
+    if (!isOpen || !onClose) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
-    <dialog className='modal modal-open' open aria-modal='true'>
+    <dialog
+      className='modal modal-open'
+      open
+      aria-modal='true'
+      aria-label={typeof title === 'string' ? title : 'Modal dialog'}
+    >
       <div
-        className={cls('modal-box', {
+        className={cls('modal-box w-11/12', className, {
           'max-w-xs': size === 'xs',
           'max-w-sm': size === 'sm',
           'max-w-lg': size === 'md',

@@ -7,12 +7,13 @@ const Tooltip = ({
   content,
   position = 'top',
   color,
-  open
+  open,
+  className
 }: TooltipType) => {
   return (
     <div
       data-tip={typeof content === 'string' ? content : undefined}
-      className={cls('tooltip', {
+      className={cls('tooltip', className, {
         'tooltip-top': position === 'top',
         'tooltip-bottom': position === 'bottom',
         'tooltip-left': position === 'left',

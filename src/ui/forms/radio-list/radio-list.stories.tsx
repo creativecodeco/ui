@@ -14,6 +14,7 @@ const options = Array.from({ length: 4 }).map<Omit<RadioType, 'name'>>(
 const meta: Meta<typeof RadioList> = {
   title: '@creativecodeco-ui/Form/RadioList',
   component: RadioList,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Unique Name',

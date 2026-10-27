@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { MaskType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Mask = ({
   shape = 'squircle',
@@ -10,9 +11,10 @@ const Mask = ({
   className
 }: MaskType) => {
   const maskClass = cls('mask', `mask-${shape}`, className);
+  const safeSrc = src ? sanitizeUrl(src, '') : '';
 
-  if (src) {
-    return <img src={src} alt={alt} className={maskClass} />;
+  if (safeSrc) {
+    return <img src={safeSrc} alt={alt} className={maskClass} />;
   }
 
   return <div className={maskClass}>{children}</div>;

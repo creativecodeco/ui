@@ -45,7 +45,7 @@ exports[`<Checkbox /> snapshot full props 1`] = `
         type="checkbox"
       />
       <p
-        class="text-red-500"
+        class="text-error"
       >
         Error test
       </p>

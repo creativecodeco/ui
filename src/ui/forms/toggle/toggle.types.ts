@@ -1,6 +1,6 @@
-import type { ColorType, PositionType, SizeType } from '@/types';
+import type { ColorType, ErrorType, PositionType, SizeType } from '@/types';
 
-export interface ToggleType {
+export interface ToggleType extends ErrorType {
   checked?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
@@ -11,7 +11,7 @@ export interface ToggleType {
   size?: SizeType;
 
   disabled?: boolean;
-  error?: string;
   name?: string;
   id?: string;
+  className?: string;
 }

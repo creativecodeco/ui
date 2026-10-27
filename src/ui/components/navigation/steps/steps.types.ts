@@ -11,4 +11,5 @@ export interface StepsType {
   items: StepItem[];
   activeStep?: number;
   vertical?: boolean;
+  className?: string;
 }

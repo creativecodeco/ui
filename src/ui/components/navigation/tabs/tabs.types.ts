@@ -15,4 +15,5 @@ export interface TabsType {
   onChange?: (id: string) => void;
   variant?: 'bordered' | 'lifted' | 'boxed';
   size?: SizeType;
+  className?: string;
 }

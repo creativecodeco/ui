@@ -4,17 +4,38 @@ import type {
   ControllerProps as RHFControllerProps
 } from 'react-hook-form';
 
-import { Dropdown, TextBox } from '@/ui/forms';
+import type {
+  Checkbox,
+  Dropdown,
+  FileInput,
+  Otp,
+  Radio,
+  RadioList,
+  Range,
+  Select,
+  TextArea,
+  TextBox,
+  Toggle
+} from '@/ui/forms';
 
-type TextBoxType = {
-  as: typeof TextBox;
-} & React.ComponentProps<typeof TextBox>;
+type FormControlComponent =
+  | typeof TextBox
+  | typeof Dropdown
+  | typeof Select
+  | typeof TextArea
+  | typeof Checkbox
+  | typeof Radio
+  | typeof RadioList
+  | typeof Toggle
+  | typeof Range
+  | typeof FileInput
+  | typeof Otp;
 
-type DropdownType = {
-  as: typeof Dropdown;
-} & React.ComponentProps<typeof Dropdown>;
-
-type Inputs = TextBoxType | DropdownType;
+type Inputs = {
+  [K in FormControlComponent as string]: {
+    as: K;
+  } & React.ComponentProps<K>;
+}[string];
 
 export type ControllerType<
   TFieldValues extends FieldValues = FieldValues,

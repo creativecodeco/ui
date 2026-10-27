@@ -1,39 +1,56 @@
+import { forwardRef } from 'react';
 import cls from 'classnames';
 
 import type { FileInputType } from '@/types';
 
-const FileInput = ({
-  label,
-  error,
-  color,
-  size = 'md',
-  bordered = true,
-  className,
-  ...restProps
-}: FileInputType) => {
-  return (
-    <div className='form-control w-full'>
-      {label && (
-        <label className='label'>
-          <span className='label-text'>{label}</span>
-        </label>
-      )}
-      <input
-        type='file'
-        className={cls('file-input w-full', className, {
-          'file-input-bordered': bordered,
-          [`file-input-${color}`]: color,
-          'file-input-xs': size === 'xs',
-          'file-input-sm': size === 'sm',
-          'file-input-md': size === 'md',
-          'file-input-lg': size === 'lg',
-          'file-input-error': Boolean(error)
-        })}
-        {...restProps}
-      />
-      {error && <span className='text-xs text-error mt-1'>{error}</span>}
-    </div>
-  );
-};
+const FileInput = forwardRef<HTMLInputElement, FileInputType>(
+  (
+    {
+      label,
+      isError,
+      error,
+      color,
+      size = 'md',
+      bordered = true,
+      className,
+      id,
+      ...restProps
+    },
+    ref
+  ) => {
+    const hasError = Boolean(isError || error);
+    const inputClasses = cls('file-input w-full', className, {
+      'file-input-bordered': bordered,
+      [`file-input-${color}`]: Boolean(color),
+      [`file-input-${size}`]: Boolean(size),
+      'file-input-error': hasError
+    });
+
+    return (
+      <div className='form-control w-full'>
+        {label ? (
+          <label className='label' htmlFor={id}>
+            <span className='label-text'>{label}</span>
+          </label>
+        ) : null}
+        <input
+          {...restProps}
+          ref={ref}
+          id={id}
+          type='file'
+          aria-invalid={hasError || undefined}
+          className={inputClasses}
+        />
+        {error ? (
+          <span role='alert' className='text-xs text-error mt-1'>
+            {error}
+          </span>
+        ) : null}
+      </div>
+    );
+  }
+);
+
+FileInput.displayName = 'FileInput';
 
 export default FileInput;

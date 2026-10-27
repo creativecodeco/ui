@@ -72,9 +72,55 @@ export function isValidUrl(uri?: string) {
   }
 
   try {
-    new URL(uri);
-    return true;
+    const parsed = new URL(uri);
+    return parsed.protocol === 'http:' || parsed.protocol === 'https:';
   } catch {
     return false;
+  }
+}
+
+const SAFE_URL_PROTOCOLS = new Set(['http:', 'https:', 'mailto:', 'tel:']);
+const UNSAFE_SCHEME_REGEX = /^\s*(?:javascript|vbscript|data)\s*:/i;
+
+/**
+ * Sanitizes a URL string to prevent XSS via `javascript:`, `vbscript:`, or `data:` URI schemes.
+ * Allows relative URLs (`/`, `#`, `?`, `./`, `../`) and safe protocols (`http:`, `https:`, `mailto:`, `tel:`).
+ *
+ * @param uri - The URL string to sanitize.
+ * @param fallback - Fallback URL when the input is unsafe or empty (defaults to `'#'`).
+ * @returns A safe URL string.
+ */
+export function sanitizeUrl(uri?: string, fallback = '#'): string {
+  if (!uri) {
+    return fallback;
+  }
+
+  // Strip Unicode control characters and whitespace
+  const cleaned = uri.replace(/\p{Cc}+/gu, '').trim();
+  if (!cleaned) {
+    return fallback;
+  }
+
+  if (UNSAFE_SCHEME_REGEX.test(cleaned)) {
+    return fallback;
+  }
+
+  // Allow relative paths, query strings, and fragment identifiers
+  if (
+    cleaned.startsWith('/') ||
+    cleaned.startsWith('#') ||
+    cleaned.startsWith('?') ||
+    cleaned.startsWith('./') ||
+    cleaned.startsWith('../')
+  ) {
+    return cleaned;
+  }
+
+  try {
+    const parsed = new URL(cleaned);
+    return SAFE_URL_PROTOCOLS.has(parsed.protocol) ? cleaned : fallback;
+  } catch {
+    // Relative path without leading slash (e.g. "docs/getting-started")
+    return /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(cleaned) ? fallback : cleaned;
   }
 }

@@ -9,6 +9,7 @@ import Accordion from './accordion.component';
 const meta: Meta<typeof Accordion> = {
   title: '@creativecodeco-ui/Display/Accordion',
   component: Accordion,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Name',

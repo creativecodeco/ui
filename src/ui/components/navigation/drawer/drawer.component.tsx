@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import cls from 'classnames';
 
 import type { DrawerType } from '@/types';
@@ -10,6 +11,19 @@ const Drawer = ({
   side = 'left',
   className
 }: DrawerType) => {
+  useEffect(() => {
+    if (!isOpen || !onClose) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   return (
     <div
       className={cls('drawer', className, {
@@ -32,7 +46,7 @@ const Drawer = ({
           data-testid='drawer-overlay'
           aria-label='Close drawer overlay'
         />
-        <div className='menu p-4 w-80 min-h-full bg-base-200 text-base-content'>
+        <div className='menu p-4 w-80 max-w-[85vw] min-h-full bg-base-200 text-base-content'>
           <div className='flex justify-between items-center mb-4'>
             {title && <h3 className='font-bold text-lg'>{title}</h3>}
             <button

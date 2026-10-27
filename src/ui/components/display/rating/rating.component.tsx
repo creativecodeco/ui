@@ -6,7 +6,7 @@ const Rating = ({
   value = 0,
   max = 5,
   onChange,
-  color = 'warning',
+  color = 'primary',
   size = 'md',
   half = false,
   shape = 'star-2',
@@ -19,6 +19,8 @@ const Rating = ({
 
   return (
     <div
+      role='radiogroup'
+      aria-label='Rating'
       className={cls(
         'rating',
         {
@@ -32,6 +34,7 @@ const Rating = ({
       <input
         type='radio'
         name={name}
+        aria-label='Reset rating'
         className='rating-hidden'
         checked={value === 0}
         disabled={disabled || readonly}
@@ -49,6 +52,7 @@ const Rating = ({
             type='radio'
             name={name}
             value={itemValue}
+            aria-label={`Rate ${itemValue} out of ${max}`}
             checked={value === itemValue}
             disabled={disabled || readonly}
             onChange={() => !readonly && onChange?.(itemValue)}

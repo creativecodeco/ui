@@ -1,4 +1,4 @@
-# Project Context: @creativecodeco/ui (v2.5.1)
+# Project Context: @creativecodeco/ui (v2.6.0)
 
 ## Purpose
 
@@ -6,13 +6,15 @@
 
 ## Technical Stack
 
+- **Runtime & Package Manager**: [Node.js 24 LTS](https://nodejs.org/) (v24.22.1 Krypton) & [npm 12](https://www.npmjs.com/) (v12.2.1)
 - **Framework**: [React 19](https://react.dev/) (v19.3.1)
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) (v4.3.3, CSS-first configuration with PostCSS CLI 12)
 - **UI Base**: [DaisyUI v5](https://daisyui.com/) (v5.7.50)
-- **Documentation**: [Storybook 10](https://storybook.js.org/) (v10.6.2)
-- **Compilers**: [Babel 8](https://babeljs.io/) (v8.0.7) & [TypeScript 6](https://www.typescriptlang.org/) (v6.0.3)
+- **Documentation**: [Storybook 10](https://storybook.js.org/) (v10.6.4)
+- **Compilers**: [Babel 8](https://babeljs.io/) (v8.0.9) & [TypeScript 6](https://www.typescriptlang.org/) (v6.0.3)
+- **Linter & Formatter**: [ESLint 10](https://eslint.org/) (v10.13.0) & [Prettier 3](https://prettier.io/) (v3.9.10)
 - **Testing**: [Jest 30](https://jestjs.io/) (v30.5.2) & [React Testing Library 16](https://testing-library.com/docs/react-testing-library/intro/) (v16.3.3)
-- **Visual QA**: [Chromatic](https://www.chromatic.com/) (v18.13.0)
+- **Visual QA**: [Chromatic](https://www.chromatic.com/) (v18.13.3)
 
 ## Architecture & Structure
 

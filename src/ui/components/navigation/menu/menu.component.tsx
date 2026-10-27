@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { MenuItemType, MenuType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const renderMenuItem = (item: MenuItemType, index: number) => {
   const key = item.id ?? index;
@@ -39,7 +40,7 @@ const renderMenuItem = (item: MenuItemType, index: number) => {
   } else if (item.href) {
     content = (
       <a
-        href={item.href}
+        href={sanitizeUrl(item.href)}
         onClick={item.onClick}
         className={cls({
           active: item.active,

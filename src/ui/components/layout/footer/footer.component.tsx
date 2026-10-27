@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { FooterType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Footer = ({
   sections = [],
@@ -29,7 +30,7 @@ const Footer = ({
           {section.links?.map((link, linkIdx) => (
             <a
               key={link.id ?? linkIdx}
-              href={link.href}
+              href={link.href ? sanitizeUrl(link.href) : undefined}
               onClick={link.onClick}
               className='link link-hover'
             >

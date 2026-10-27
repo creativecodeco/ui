@@ -10,6 +10,7 @@ import Button from './button.component';
 const meta: Meta<typeof Button> = {
   title: '@creativecodeco-ui/Display/Button',
   component: Button,
+  tags: ['autodocs'],
   argTypes: {
     isLink: {
       description: 'Is Link',
