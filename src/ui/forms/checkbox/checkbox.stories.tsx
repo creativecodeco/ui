@@ -49,6 +49,7 @@ const meta: Meta<typeof Checkbox> = {
       description: 'Color',
       type: 'string',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -62,7 +63,7 @@ const meta: Meta<typeof Checkbox> = {
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: {
         type: {
@@ -121,6 +122,14 @@ export const Disabled: Story = {
   args: {
     label: 'Eres humano?',
     disabled: true
+  }
+};
+
+export const ColorNeutral: Story = {
+  args: {
+    label: 'Eres humano?',
+    color: 'neutral',
+    checked: true
   }
 };
 
@@ -204,6 +213,13 @@ export const SizeMd: Story = {
 export const SizeLg: Story = {
   args: {
     size: 'lg',
+    checked: true
+  }
+};
+
+export const SizeXl: Story = {
+  args: {
+    size: 'xl',
     checked: true
   }
 };

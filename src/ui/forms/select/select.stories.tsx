@@ -19,7 +19,7 @@ const meta: Meta<typeof Select> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     ghost: { control: 'boolean' },
     disabled: { control: 'boolean' }
   }
@@ -39,6 +39,18 @@ export const Default: Story = {
       { value: 'react', label: 'React 19' },
       { value: 'nextjs', label: 'Next.js' },
       { value: 'remix', label: 'Remix' }
+    ]
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    id: 'ghost-select',
+    label: 'Ghost Select',
+    ghost: true,
+    options: [
+      { value: 'react', label: 'React 19' },
+      { value: 'nextjs', label: 'Next.js' }
     ]
   }
 };

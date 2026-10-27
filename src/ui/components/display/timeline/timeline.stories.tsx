@@ -4,7 +4,12 @@ import Timeline from './timeline.component';
 const meta: Meta<typeof Timeline> = {
   title: '@creativecodeco-ui/Display/Timeline',
   component: Timeline,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    vertical: { control: 'boolean' },
+    compact: { control: 'boolean' },
+    snapIcon: { control: 'boolean' }
+  }
 };
 
 export default meta;

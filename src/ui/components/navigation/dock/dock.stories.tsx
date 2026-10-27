@@ -6,7 +6,7 @@ const meta: Meta<typeof Dock> = {
   component: Dock,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 };
 

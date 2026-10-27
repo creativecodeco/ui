@@ -6,4 +6,5 @@ export interface TextAreaType
   color?: ColorType;
   size?: SizeType;
   bordered?: boolean;
+  ghost?: boolean;
 }

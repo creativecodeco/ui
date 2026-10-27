@@ -19,4 +19,17 @@ describe('<Stat />', () => {
     expect(screen.getByText('31K')).toBeInTheDocument();
     expect(screen.getByText('Jan 1st - Feb 1st')).toBeInTheDocument();
   });
+
+  it('renders stat actions when provided', () => {
+    const { container } = render(
+      <Stat
+        title='Balance'
+        value='$100'
+        color='neutral'
+        actions={<button>Withdraw</button>}
+      />
+    );
+    expect(container.querySelector('.stat-actions')).toBeInTheDocument();
+    expect(screen.getByText('Withdraw')).toBeInTheDocument();
+  });
 });

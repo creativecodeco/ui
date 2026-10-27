@@ -6,7 +6,7 @@ const meta: Meta<typeof AvatarGroup> = {
   component: AvatarGroup,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 };
 

@@ -19,7 +19,7 @@ const meta: Meta<typeof Status> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     animate: { control: 'select', options: ['none', 'ping', 'bounce'] }
   }
 };
@@ -41,6 +41,26 @@ export const PingAnimation: Story = {
     animate: 'ping',
     label: 'Server is down'
   }
+};
+
+export const BounceAnimation: Story = {
+  args: {
+    color: 'info',
+    animate: 'bounce',
+    label: 'New messages'
+  }
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div className='flex items-center gap-4'>
+      <Status size='xs' color='primary' />
+      <Status size='sm' color='primary' />
+      <Status size='md' color='primary' />
+      <Status size='lg' color='primary' />
+      <Status size='xl' color='primary' />
+    </div>
+  )
 };
 
 export const Colors: Story = {

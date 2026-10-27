@@ -1,5 +1,13 @@
+.badge-size-xl {
+  @apply badge-xl;
+}
+
 .badge-size-lg {
   @apply badge-lg;
+}
+
+.badge-size-md {
+  @apply badge-md;
 }
 
 .badge-size-sm {
@@ -20,6 +28,14 @@
 
 .badge-color-accent {
   @apply badge-accent;
+}
+
+.badge-color-neutral {
+  @apply badge-neutral;
+}
+
+.badge-color-ghost {
+  @apply badge-ghost;
 }
 
 .badge-color-success {

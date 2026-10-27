@@ -10,7 +10,7 @@ const meta: Meta<typeof Aura> = {
       control: 'select',
       options: ['rainbow', 'holo', 'dual', 'silver', 'gold']
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     glow: { control: 'boolean' }
   }
 };
@@ -44,6 +44,28 @@ export const Variants: Story = {
       </Aura>
       <Aura variant='gold' glow>
         <button className='btn'>Gold</button>
+      </Aura>
+    </div>
+  )
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div className='flex flex-wrap items-center gap-6 p-4'>
+      <Aura size='xs' glow>
+        <button className='btn btn-xs'>XS</button>
+      </Aura>
+      <Aura size='sm' glow>
+        <button className='btn btn-sm'>SM</button>
+      </Aura>
+      <Aura size='md' glow>
+        <button className='btn btn-md'>MD</button>
+      </Aura>
+      <Aura size='lg' glow>
+        <button className='btn btn-lg'>LG</button>
+      </Aura>
+      <Aura size='xl' glow>
+        <button className='btn btn-xl'>XL</button>
       </Aura>
     </div>
   )

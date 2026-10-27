@@ -76,8 +76,16 @@
   @apply btn-ghost;
 }
 
+.button-size-xl {
+  @apply btn-xl;
+}
+
 .button-size-lg {
   @apply btn-lg;
+}
+
+.button-size-md {
+  @apply btn-md;
 }
 
 .button-size-sm {

@@ -8,6 +8,7 @@ const Tabs = ({
   activeId: controlledActiveId,
   onChange,
   variant = 'bordered',
+  position,
   size = 'md',
   className
 }: TabsType) => {
@@ -64,13 +65,12 @@ const Tabs = ({
       <div
         role='tablist'
         className={cls('tabs flex-wrap', className, {
-          'tabs-bordered': variant === 'bordered',
-          'tabs-lifted': variant === 'lifted',
-          'tabs-boxed': variant === 'boxed',
-          'tabs-xs': size === 'xs',
-          'tabs-sm': size === 'sm',
-          'tabs-md': size === 'md',
-          'tabs-lg': size === 'lg'
+          'tabs-border': variant === 'bordered' || variant === 'border',
+          'tabs-lift': variant === 'lifted' || variant === 'lift',
+          'tabs-box': variant === 'boxed' || variant === 'box',
+          'tabs-top': position === 'top',
+          'tabs-bottom': position === 'bottom',
+          [`tabs-${size}`]: Boolean(size)
         })}
       >
         {items.map((item, index) => {

@@ -5,6 +5,8 @@ export interface CollapseType {
   children: React.ReactNode;
   /** Open / expanded boolean state */
   open?: boolean;
+  /** Force closed boolean state */
+  close?: boolean;
   /** Callback fired on toggle change */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Indicator icon style (arrow or plus) */

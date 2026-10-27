@@ -6,6 +6,8 @@ import type { AlertType } from '@/types';
 const Alert = ({
   children,
   status = 'info',
+  variant,
+  vertical,
   title,
   icon: Icon,
   onClose,
@@ -23,7 +25,12 @@ const Alert = ({
         'alert-info': status === 'info',
         'alert-success': status === 'success',
         'alert-warning': status === 'warning',
-        'alert-error': status === 'error'
+        'alert-error': status === 'error',
+        'alert-soft': variant === 'soft',
+        'alert-outline': variant === 'outline',
+        'alert-dash': variant === 'dash',
+        'alert-vertical': vertical === true,
+        'alert-horizontal': vertical === false
       })}
     >
       {renderedIcon}

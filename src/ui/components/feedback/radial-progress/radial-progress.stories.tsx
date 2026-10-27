@@ -10,6 +10,7 @@ const meta: Meta<typeof RadialProgress> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',

@@ -10,10 +10,11 @@ const meta: Meta<typeof Spinner> = {
       control: 'select',
       options: ['spinner', 'dots', 'ring', 'ball', 'bars', 'infinity']
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -43,4 +44,29 @@ export const Dots: Story = {
     size: 'lg',
     color: 'secondary'
   }
+};
+
+export const Variants: Story = {
+  render: () => (
+    <div className='flex items-center gap-6'>
+      <Spinner variant='spinner' color='primary' />
+      <Spinner variant='dots' color='secondary' />
+      <Spinner variant='ring' color='accent' />
+      <Spinner variant='ball' color='info' />
+      <Spinner variant='bars' color='success' />
+      <Spinner variant='infinity' color='warning' />
+    </div>
+  )
+};
+
+export const Sizes: Story = {
+  render: () => (
+    <div className='flex items-center gap-4'>
+      <Spinner size='xs' color='primary' />
+      <Spinner size='sm' color='primary' />
+      <Spinner size='md' color='primary' />
+      <Spinner size='lg' color='primary' />
+      <Spinner size='xl' color='primary' />
+    </div>
+  )
 };

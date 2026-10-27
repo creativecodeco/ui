@@ -15,6 +15,15 @@ describe('<Drawer />', () => {
     expect(screen.getByText('Drawer Content')).toBeInTheDocument();
   });
 
+  it('renders drawer-content wrapper', () => {
+    const { container } = render(
+      <Drawer isOpen={true} onClose={() => {}}>
+        Drawer Content
+      </Drawer>
+    );
+    expect(container.querySelector('.drawer-content')).toBeInTheDocument();
+  });
+
   it('calls onClose when close button is clicked', () => {
     const handleClose = jest.fn();
     render(

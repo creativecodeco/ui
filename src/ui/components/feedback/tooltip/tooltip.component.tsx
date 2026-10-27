@@ -14,14 +14,14 @@ const Tooltip = ({
     <div
       data-tip={typeof content === 'string' ? content : undefined}
       className={cls('tooltip', className, {
-        'tooltip-top': position === 'top',
-        'tooltip-bottom': position === 'bottom',
-        'tooltip-left': position === 'left',
-        'tooltip-right': position === 'right',
+        [`tooltip-${position}`]: Boolean(position),
         'tooltip-open': open,
         [`tooltip-${color}`]: color
       })}
     >
+      {typeof content !== 'string' && content && (
+        <div className='tooltip-content'>{content}</div>
+      )}
       {children}
     </div>
   );

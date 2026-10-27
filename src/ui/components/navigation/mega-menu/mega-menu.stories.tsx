@@ -6,7 +6,7 @@ const meta: Meta<typeof MegaMenu> = {
   component: MegaMenu,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     variant: { control: 'select', options: ['default', 'wide', 'full'] },
     vertical: { control: 'boolean' }
   }

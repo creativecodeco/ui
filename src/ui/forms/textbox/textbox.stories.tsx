@@ -16,12 +16,28 @@ const meta: Meta<typeof TextBox> = {
     isError: { description: 'TextBox has error', type: 'boolean' },
     error: { description: 'Error message', type: 'string' },
     disabled: { description: 'Disabled', type: 'boolean' },
+    ghost: { description: 'Ghost Style', type: 'boolean' },
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
+    },
+    color: {
+      description: 'Color',
+      type: 'string',
+      options: [
+        'neutral',
+        'primary',
+        'secondary',
+        'accent',
+        'info',
+        'success',
+        'warning',
+        'error'
+      ],
+      control: { type: 'select' }
     },
     leftIcon: {
       description: 'Left Icon',
@@ -60,6 +76,12 @@ export const SizeMd: Story = { args: { name: 'txtSizeMd', size: 'md' } };
 
 export const SizeLg: Story = { args: { name: 'txtSizeLg', size: 'lg' } };
 
+export const SizeXl: Story = { args: { name: 'txtSizeXl', size: 'xl' } };
+
+export const Ghost: Story = {
+  args: { name: 'txtGhost', ghost: true, placeholder: 'Ghost input...' }
+};
+
 export const LeftIcon: Story = {
   args: { name: 'txtLeftIcon', leftIcon: Icons.FaPhoneAlt }
 };
@@ -75,6 +97,10 @@ export const RightIconButton: Story = {
     rightButton: true,
     onClick: () => alert('Click')
   }
+};
+
+export const ColorNeutral: Story = {
+  args: { name: 'txtColorNeutral', color: 'neutral' }
 };
 
 export const ColorPrimary: Story = {

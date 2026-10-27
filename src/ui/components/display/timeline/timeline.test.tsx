@@ -16,7 +16,13 @@ describe('<Timeline />', () => {
   });
 
   it('applies vertical/horizontal classes', () => {
-    const { container } = render(<Timeline items={items} vertical={false} />);
-    expect(container.querySelector('ul')).toHaveClass('timeline-horizontal');
+    const { container } = render(
+      <Timeline items={items} vertical={false} compact snapIcon />
+    );
+    expect(container.querySelector('ul')).toHaveClass(
+      'timeline-horizontal',
+      'timeline-compact',
+      'timeline-snap-icon'
+    );
   });
 });

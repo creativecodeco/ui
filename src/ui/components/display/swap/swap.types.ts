@@ -3,6 +3,8 @@ export interface SwapType {
   onContent: React.ReactNode;
   /** Content shown when swap state is OFF (unchecked) */
   offContent: React.ReactNode;
+  /** Optional content shown when swap state is indeterminate */
+  indeterminateContent?: React.ReactNode;
   /** Active / checked boolean state */
   active?: boolean;
   /** Callback fired when toggle changes */

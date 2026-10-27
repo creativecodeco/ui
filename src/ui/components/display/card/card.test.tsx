@@ -20,12 +20,31 @@ describe('<Card />', () => {
   });
 
   it('renders subtitle and actions', () => {
-    render(
-      <Card subtitle='Sub header' actions={<button>Action</button>}>
+    const { container } = render(
+      <Card subtitle='Sub header' compact actions={<button>Action</button>}>
         Body
       </Card>
     );
     expect(screen.getByText('Sub header')).toBeInTheDocument();
     expect(screen.getByText('Action')).toBeInTheDocument();
+    expect(container.querySelector('.card')).toHaveClass(
+      'card-border',
+      'card-sm'
+    );
+  });
+
+  it('applies DaisyUI v5 size, dash, side, and imageFull modifiers', () => {
+    const { container } = render(
+      <Card size='lg' dash side imageFull bordered={false} glass>
+        Content
+      </Card>
+    );
+    expect(container.querySelector('.card')).toHaveClass(
+      'card-lg',
+      'card-dash',
+      'card-side',
+      'image-full',
+      'glass'
+    );
   });
 });

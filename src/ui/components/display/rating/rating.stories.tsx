@@ -9,6 +9,7 @@ const meta: Meta<typeof Rating> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -18,7 +19,7 @@ const meta: Meta<typeof Rating> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     shape: { control: 'select', options: ['star', 'star-2', 'heart'] }
   }
 };

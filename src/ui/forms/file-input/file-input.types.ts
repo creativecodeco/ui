@@ -6,4 +6,5 @@ export interface FileInputType
   color?: ColorType;
   size?: SizeType;
   bordered?: boolean;
+  ghost?: boolean;
 }

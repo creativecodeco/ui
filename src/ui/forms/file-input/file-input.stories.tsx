@@ -6,10 +6,11 @@ const meta: Meta<typeof FileInput> = {
   component: FileInput,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -18,7 +19,8 @@ const meta: Meta<typeof FileInput> = {
         'warning',
         'error'
       ]
-    }
+    },
+    ghost: { control: 'boolean' }
   }
 };
 
@@ -29,5 +31,12 @@ export const Default: Story = {
   args: {
     label: 'Pick a file',
     color: 'primary'
+  }
+};
+
+export const Ghost: Story = {
+  args: {
+    label: 'Upload attachment (ghost)',
+    ghost: true
   }
 };

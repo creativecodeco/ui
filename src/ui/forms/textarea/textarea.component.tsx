@@ -12,6 +12,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaType>(
       color,
       size = 'md',
       bordered = true,
+      ghost = false,
       className,
       rows = 4,
       id,
@@ -32,7 +33,8 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaType>(
           rows={rows}
           aria-invalid={Boolean(isError || error) || undefined}
           className={cls('textarea w-full', className, {
-            'textarea-bordered': bordered,
+            'textarea-bordered': bordered && !ghost,
+            'textarea-ghost': ghost,
             [`textarea-${color}`]: Boolean(color),
             [`textarea-${size}`]: Boolean(size),
             'textarea-error': Boolean(isError || error)

@@ -19,6 +19,7 @@ const Skeleton = ({
       aria-hidden='true'
       style={style}
       className={cls('skeleton', className, {
+        'skeleton-text': variant === 'text',
         'rounded-full': variant === 'circular',
         'h-4 w-full': variant === 'text' && !height,
         'h-32 w-full': variant === 'rectangular' && !height

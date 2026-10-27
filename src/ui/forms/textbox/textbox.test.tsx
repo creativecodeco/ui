@@ -86,4 +86,14 @@ describe('<TextBox />', () => {
       'input input-bordered w-full textbox-size-md textbox-color-primary'
     );
   });
+
+  it('ghost, size xl and color neutral', () => {
+    const { container } = render(
+      <TextBox name='test' ghost size='xl' color='neutral' />
+    );
+
+    expect(container.querySelector('input')?.className).toEqual(
+      'input input-bordered w-full textbox-size-xl input-ghost textbox-color-neutral'
+    );
+  });
 });

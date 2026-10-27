@@ -33,4 +33,9 @@ describe('<AvatarGroup />', () => {
     expect(screen.queryByAltText('User 3')).not.toBeInTheDocument();
     expect(screen.getByText('+2')).toBeInTheDocument();
   });
+
+  it('applies xl size class', () => {
+    const { container } = render(<AvatarGroup avatars={avatars} size='xl' />);
+    expect(container.querySelector('.avatar > div')).toHaveClass('w-20');
+  });
 });

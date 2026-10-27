@@ -14,6 +14,7 @@ const Range = forwardRef<HTMLInputElement, RangeType>(
       label,
       color,
       size = 'md',
+      vertical = false,
       disabled,
       isError,
       error,
@@ -46,6 +47,7 @@ const Range = forwardRef<HTMLInputElement, RangeType>(
           className={cls('range', {
             [`range-${color}`]: Boolean(color),
             [`range-${size}`]: Boolean(size),
+            'range-vertical': vertical,
             'range-error': Boolean(isError || error)
           })}
         />

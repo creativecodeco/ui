@@ -13,14 +13,23 @@ const meta: Meta<typeof Badge> = {
       description: 'Color',
       type: 'string',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
         'success',
         'warning',
         'info',
-        'error'
+        'error',
+        'ghost'
       ],
+      control: { type: 'select' },
+      table: { type: { summary: 'string' } }
+    },
+    variant: {
+      description: 'Style Variant (DaisyUI v5)',
+      type: 'string',
+      options: ['outline', 'dash', 'soft', 'ghost'],
       control: { type: 'select' },
       table: { type: { summary: 'string' } }
     },
@@ -32,7 +41,7 @@ const meta: Meta<typeof Badge> = {
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
     },
@@ -76,7 +85,19 @@ export const SizeXs: Story = createBadgeStory({ size: 'xs' });
 export const SizeSm: Story = createBadgeStory({ size: 'sm' });
 export const SizeMd: Story = createBadgeStory({ size: 'md' });
 export const SizeLg: Story = createBadgeStory({ size: 'lg' });
+export const SizeXl: Story = createBadgeStory({ size: 'xl' });
 
+export const Soft: Story = createBadgeStory({
+  color: 'primary',
+  variant: 'soft'
+});
+export const Dash: Story = createBadgeStory({
+  color: 'primary',
+  variant: 'dash'
+});
+export const Ghost: Story = createBadgeStory({ variant: 'ghost' });
+
+export const ColorNeutral: Story = createBadgeStory({ color: 'neutral' });
 export const ColorPrimary: Story = createBadgeStory({ color: 'primary' });
 export const ColorSecondary: Story = createBadgeStory({ color: 'secondary' });
 export const ColorAccent: Story = createBadgeStory({ color: 'accent' });

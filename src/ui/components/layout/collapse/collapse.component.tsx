@@ -6,6 +6,7 @@ const Collapse = ({
   title,
   children,
   open,
+  close,
   onChange,
   icon = 'arrow',
   className
@@ -15,7 +16,8 @@ const Collapse = ({
       className={cls(
         'collapse border border-base-300 rounded-box',
         {
-          'collapse-open': open === true,
+          'collapse-open': open === true && !close,
+          'collapse-close': close === true || open === false,
           [`collapse-${icon}`]: Boolean(icon)
         },
         className

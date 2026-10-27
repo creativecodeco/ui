@@ -16,10 +16,7 @@ const Pagination = ({
       <button
         type='button'
         className={cls('join-item btn', {
-          'btn-xs': size === 'xs',
-          'btn-sm': size === 'sm',
-          'btn-md': size === 'md',
-          'btn-lg': size === 'lg'
+          [`btn-${size}`]: Boolean(size)
         })}
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage <= 1}
@@ -36,10 +33,7 @@ const Pagination = ({
           aria-current={page === currentPage ? 'page' : undefined}
           className={cls('join-item btn', {
             'btn-active': page === currentPage,
-            'btn-xs': size === 'xs',
-            'btn-sm': size === 'sm',
-            'btn-md': size === 'md',
-            'btn-lg': size === 'lg'
+            [`btn-${size}`]: Boolean(size)
           })}
           onClick={() => onPageChange(page)}
         >
@@ -50,10 +44,7 @@ const Pagination = ({
       <button
         type='button'
         className={cls('join-item btn', {
-          'btn-xs': size === 'xs',
-          'btn-sm': size === 'sm',
-          'btn-md': size === 'md',
-          'btn-lg': size === 'lg'
+          [`btn-${size}`]: Boolean(size)
         })}
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage >= totalPages}

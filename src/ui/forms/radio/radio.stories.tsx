@@ -56,6 +56,7 @@ const meta: Meta<typeof Radio> = {
       description: 'Color',
       type: 'string',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -69,7 +70,7 @@ const meta: Meta<typeof Radio> = {
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: {
         type: {
@@ -134,6 +135,15 @@ export const Disabled: Story = {
     name: 'radio-disabled',
     label: 'Eres humano?',
     disabled: true
+  }
+};
+
+export const ColorNeutral: Story = {
+  args: {
+    name: 'radio-color-neutral',
+    label: 'Eres humano?',
+    color: 'neutral',
+    checked: true
   }
 };
 
@@ -228,6 +238,14 @@ export const SizeLg: Story = {
   args: {
     name: 'radio-size-lg',
     size: 'lg',
+    checked: true
+  }
+};
+
+export const SizeXl: Story = {
+  args: {
+    name: 'radio-size-xl',
+    size: 'xl',
     checked: true
   }
 };

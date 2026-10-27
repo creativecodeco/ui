@@ -29,4 +29,13 @@ describe('<Carousel />', () => {
     const carousel = container.querySelector('.carousel');
     expect(carousel).toHaveClass('carousel-center', 'carousel-vertical');
   });
+
+  it('applies horizontal and start snap classes', () => {
+    const { container } = render(
+      <Carousel items={items} snap='start' fullWidth />
+    );
+    const carousel = container.querySelector('.carousel');
+    expect(carousel).toHaveClass('carousel-start', 'carousel-horizontal');
+    expect(container.querySelector('.carousel-item')).toHaveClass('w-full');
+  });
 });

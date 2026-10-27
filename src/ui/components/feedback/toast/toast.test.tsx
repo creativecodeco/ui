@@ -19,8 +19,14 @@ describe('<Toast />', () => {
   });
 
   it('applies alert color class when color is provided', () => {
-    const { container } = render(<Toast color='success'>Success Toast</Toast>);
+    const { container } = render(
+      <Toast color='neutral' position='middle-center'>
+        Neutral Middle Toast
+      </Toast>
+    );
+    const toastElement = container.querySelector('.toast');
+    expect(toastElement).toHaveClass('toast-middle', 'toast-center');
     const alertElement = container.querySelector('.alert');
-    expect(alertElement).toHaveClass('alert-success');
+    expect(alertElement).toHaveClass('alert-neutral');
   });
 });

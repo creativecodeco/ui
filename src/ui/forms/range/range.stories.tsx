@@ -9,6 +9,7 @@ const meta: Meta<typeof Range> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',
@@ -18,7 +19,8 @@ const meta: Meta<typeof Range> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
+    vertical: { control: 'boolean' }
   }
 };
 
@@ -48,10 +50,20 @@ export const WithError: Story = {
 export const Sizes: Story = {
   render: () => (
     <div className='flex flex-col gap-4 w-72'>
-      <Range size='xs' value={25} label='Extra Small' />
-      <Range size='sm' value={50} label='Small' />
-      <Range size='md' value={75} label='Medium' />
-      <Range size='lg' value={100} label='Large' />
+      <Range size='xs' value={20} label='Extra Small' />
+      <Range size='sm' value={40} label='Small' />
+      <Range size='md' value={60} label='Medium' />
+      <Range size='lg' value={80} label='Large' />
+      <Range size='xl' value={100} label='Extra Large' />
     </div>
   )
+};
+
+export const Vertical: Story = {
+  args: {
+    label: 'Vertical Range',
+    value: 60,
+    vertical: true,
+    color: 'primary'
+  }
 };

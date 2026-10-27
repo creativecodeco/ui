@@ -34,4 +34,17 @@ describe('<Alert />', () => {
     fireEvent.click(screen.getByLabelText('Dismiss alert'));
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
+
+  it('applies DaisyUI v5 variant and vertical classes', () => {
+    render(
+      <Alert status='warning' variant='soft' vertical>
+        Soft vertical alert
+      </Alert>
+    );
+    expect(screen.getByRole('alert')).toHaveClass(
+      'alert-warning',
+      'alert-soft',
+      'alert-vertical'
+    );
+  });
 });

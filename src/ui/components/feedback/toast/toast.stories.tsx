@@ -12,6 +12,9 @@ const meta: Meta<typeof Toast> = {
         'top-start',
         'top-center',
         'top-end',
+        'middle-start',
+        'middle-center',
+        'middle-end',
         'bottom-start',
         'bottom-center',
         'bottom-end'
@@ -20,6 +23,7 @@ const meta: Meta<typeof Toast> = {
     color: {
       control: 'select',
       options: [
+        'neutral',
         'primary',
         'secondary',
         'accent',

@@ -19,7 +19,7 @@ const meta: Meta<typeof Otp> = {
         'error'
       ]
     },
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     joined: { control: 'boolean' },
     disabled: { control: 'boolean' }
   }

@@ -76,4 +76,31 @@ describe('<Badge />', () => {
       'badge badge-primary badge-outline'
     );
   });
+
+  it('DaisyUI v5 variants (soft, dash, ghost) and size xl', () => {
+    const { container: softContainer } = render(
+      <Badge variant='soft' color='primary' size='xl'>
+        Soft
+      </Badge>
+    );
+    expect(softContainer.querySelector('div')?.className).toEqual(
+      'badge badge-primary badge-soft badge-size-xl'
+    );
+
+    const { container: dashContainer } = render(
+      <Badge variant='dash' color='neutral'>
+        Dash
+      </Badge>
+    );
+    expect(dashContainer.querySelector('div')?.className).toEqual(
+      'badge badge-neutral badge-dash'
+    );
+
+    const { container: ghostContainer } = render(
+      <Badge variant='ghost'>Ghost</Badge>
+    );
+    expect(ghostContainer.querySelector('div')?.className).toEqual(
+      'badge badge-ghost'
+    );
+  });
 });

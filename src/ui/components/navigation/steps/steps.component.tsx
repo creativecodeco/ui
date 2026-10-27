@@ -31,12 +31,14 @@ const Steps = ({
               'step-primary': isPrimary,
               'step-secondary': item.color === 'secondary',
               'step-accent': item.color === 'accent',
+              'step-neutral': item.color === 'neutral',
               'step-info': item.color === 'info',
               'step-success': item.color === 'success',
               'step-warning': item.color === 'warning',
               'step-error': item.color === 'error'
             })}
           >
+            {item.icon && <span className='step-icon'>{item.icon}</span>}
             {item.title}
           </li>
         );

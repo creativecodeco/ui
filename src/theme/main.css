@@ -11,7 +11,27 @@
 @plugin "daisyui";
 
 @source inline("{btn,badge,alert,toggle,range,select,textarea,file-input,progress,status,chat-bubble,step,tooltip,checkbox,radio,input,otp,divider,link,text,bg,border}-{primary,secondary,accent,info,success,warning,error,neutral,ghost}");
-@source inline("{btn,badge,toggle,range,select,textarea,file-input,checkbox,radio,input,otp,tab,table,menu,dock,kbd,loading,status}-{xs,sm,md,lg,xl}");
+@source inline("{btn,badge,toggle,range,select,textarea,file-input,checkbox,radio,input,otp,tabs,table,menu,dock,kbd,loading,status,aura,rating,megamenu,card}-{xs,sm,md,lg,xl}");
+@source inline("aura-{rainbow,holo,dual,silver,gold,glow}");
+@source inline("mask-{squircle,heart,hexagon,hexagon-2,decagon,pentagon,diamond,square,circle,star,star-2,triangle,triangle-2,triangle-3,triangle-4}");
+@source inline("stack-{top,bottom,start,end}");
+@source inline("dropdown-{top,bottom,left,right,start,center,end}");
+@source inline("collapse-{arrow,plus,open,close}");
+@source inline("swap-{rotate,flip,active,indeterminate}");
+@source inline("tabs-{border,lift,box,top,bottom}");
+@source inline("card-{border,dash,side}");
+@source inline("alert-{soft,outline,dash,vertical,horizontal}");
+@source inline("badge-{outline,dash,soft,ghost}");
+@source inline("btn-{outline,dash,soft,ghost,link,wide,block,square,circle,active,disabled}");
+@source inline("modal-{top,middle,bottom,start,end}");
+@source inline("toast-{start,center,end,top,middle,bottom}");
+@source inline("tooltip-{top,bottom,left,right,start,center,end,open,content}");
+@source inline("table-{pin-rows,pin-cols,zebra}");
+@source inline("timeline-{vertical,horizontal,compact,snap-icon}");
+@source inline("{input,textarea,file-input,select}-ghost");
+@source inline("range-vertical");
+@source inline("skeleton-text");
+@source inline("fab-{flower,close,main-action}");
 
 :root {
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

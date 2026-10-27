@@ -6,8 +6,12 @@ const meta: Meta<typeof Table> = {
   component: Table,
   tags: ['autodocs'],
   argTypes: {
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     zebra: { control: 'boolean' },
-    compact: { control: 'boolean' }
+    compact: { control: 'boolean' },
+    hover: { control: 'boolean' },
+    pinRows: { control: 'boolean' },
+    pinCols: { control: 'boolean' }
   }
 };
 

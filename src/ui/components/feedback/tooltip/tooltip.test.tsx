@@ -26,4 +26,27 @@ describe('<Tooltip />', () => {
     expect(tooltipElement).toHaveClass('tooltip-bottom');
     expect(tooltipElement).toHaveClass('tooltip-primary');
   });
+
+  it('renders rich JSX tooltip-content when content is ReactNode', () => {
+    const { container } = render(
+      <Tooltip
+        content={<strong>Rich Content</strong>}
+        position='start'
+        color='neutral'
+        open
+      >
+        <span>Target</span>
+      </Tooltip>
+    );
+    const tooltipElement = container.querySelector('.tooltip');
+    expect(tooltipElement).toHaveClass(
+      'tooltip-start',
+      'tooltip-neutral',
+      'tooltip-open'
+    );
+    expect(tooltipElement).not.toHaveAttribute('data-tip');
+    expect(container.querySelector('.tooltip-content')).toHaveTextContent(
+      'Rich Content'
+    );
+  });
 });

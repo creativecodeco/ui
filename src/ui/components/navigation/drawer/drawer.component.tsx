@@ -38,6 +38,7 @@ const Drawer = ({
         onChange={() => undefined}
         aria-label='Toggle drawer'
       />
+      <div className='drawer-content' />
       <div className='drawer-side z-50'>
         <button
           type='button'

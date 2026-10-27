@@ -17,7 +17,7 @@
 ## Configuration
 
 > [!NOTE]
-> **Current Version: `v2.6.0`** — This library is designed for **React 19** (`v19.3.1`), **Tailwind CSS v4** (`v4.3.3`), and **DaisyUI v5** (`v5.7.50`), and requires **Node.js 24 LTS** (`>=24.22.1`) and **npm 12** (`>=12.2.1`). The configuration is primarily CSS-first.
+> **Current Version: `v2.7.0`** — This library is designed for **React 19** (`v19.3.1`), **Tailwind CSS v4** (`v4.3.3`), and **DaisyUI v5** (`v5.7.50`), and requires **Node.js 24 LTS** (`>=24.22.1`) and **npm 12** (`>=12.2.1`). The configuration is primarily CSS-first.
 
 ### Install
 

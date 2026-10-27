@@ -4,7 +4,12 @@ import Carousel from './carousel.component';
 const meta: Meta<typeof Carousel> = {
   title: '@creativecodeco-ui/Display/Carousel',
   component: Carousel,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    snap: { control: 'select', options: ['start', 'center', 'end'] },
+    vertical: { control: 'boolean' },
+    fullWidth: { control: 'boolean' }
+  }
 };
 
 export default meta;

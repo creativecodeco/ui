@@ -6,6 +6,7 @@ const Stat = ({
   title,
   value,
   description,
+  actions,
   icon: Icon,
   color,
   className
@@ -32,6 +33,7 @@ const Stat = ({
       {description && (
         <div className='stat-desc text-xs mt-1'>{description}</div>
       )}
+      {actions && <div className='stat-actions'>{actions}</div>}
     </div>
   );
 };

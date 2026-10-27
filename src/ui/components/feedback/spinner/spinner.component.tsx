@@ -22,6 +22,7 @@ const Spinner = ({
         'loading-sm': size === 'sm',
         'loading-md': size === 'md',
         'loading-lg': size === 'lg',
+        'loading-xl': size === 'xl',
         [`text-${color}`]: color
       })}
     />

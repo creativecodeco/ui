@@ -7,7 +7,7 @@ const meta: Meta<typeof Filter> = {
   component: Filter,
   tags: ['autodocs'],
   argTypes: {
-    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg'] }
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] }
   }
 };
 

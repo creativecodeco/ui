@@ -39,10 +39,39 @@ const meta: Meta<typeof Button> = {
       type: 'boolean',
       table: { type: { summary: 'boolean' } }
     },
+    variant: {
+      description: 'Style Variant (DaisyUI v5)',
+      type: 'string',
+      options: ['outline', 'dash', 'soft', 'ghost', 'link'],
+      control: { type: 'select' },
+      table: { type: { summary: 'string' } }
+    },
+    shape: {
+      description: 'Button Shape',
+      type: 'string',
+      options: ['square', 'circle'],
+      control: { type: 'select' },
+      table: { type: { summary: 'string' } }
+    },
+    wide: {
+      description: 'Wide Button',
+      type: 'boolean',
+      table: { type: { summary: 'boolean' } }
+    },
+    block: {
+      description: 'Full Width Button',
+      type: 'boolean',
+      table: { type: { summary: 'boolean' } }
+    },
+    active: {
+      description: 'Active State',
+      type: 'boolean',
+      table: { type: { summary: 'boolean' } }
+    },
     size: {
       description: 'Size',
       type: 'string',
-      options: ['xs', 'sm', 'md', 'lg'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
       control: { type: 'select' },
       table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
     },
@@ -117,6 +146,27 @@ export const SizeXs: Story = createBtnStory({ size: 'xs' });
 export const SizeSm: Story = createBtnStory({ size: 'sm' });
 export const SizeMd: Story = createBtnStory({ size: 'md' });
 export const SizeLg: Story = createBtnStory({ size: 'lg' });
+export const SizeXl: Story = createBtnStory({ size: 'xl' });
+
+export const Soft: Story = createBtnStory({
+  color: 'primary',
+  variant: 'soft'
+});
+export const Dash: Story = createBtnStory({
+  color: 'primary',
+  variant: 'dash'
+});
+export const GhostVariant: Story = createBtnStory({ variant: 'ghost' });
+export const Wide: Story = createBtnStory({ wide: true, color: 'primary' });
+export const Block: Story = createBtnStory({ block: true, color: 'primary' });
+export const Square: Story = createBtnStory({
+  shape: 'square',
+  children: '✕'
+});
+export const Circle: Story = createBtnStory({
+  shape: 'circle',
+  children: '✕'
+});
 
 export const ColorPrimary: Story = createBtnStory({ color: 'primary' });
 export const ColorSecondary: Story = createBtnStory({ color: 'secondary' });

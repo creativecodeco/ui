@@ -10,6 +10,10 @@
   @apply radio-accent;
 }
 
+.radio-color-neutral {
+  @apply radio-neutral;
+}
+
 .radio-color-success {
   @apply radio-success;
 }
@@ -40,4 +44,8 @@
 
 .radio-size-lg {
   @apply radio-lg;
+}
+
+.radio-size-xl {
+  @apply radio-xl;
 }

@@ -17,6 +17,7 @@ const Toast = ({
         'toast-center': position.endsWith('-center'),
         'toast-end': position.endsWith('-end'),
         'toast-top': position.startsWith('top'),
+        'toast-middle': position.startsWith('middle'),
         'toast-bottom': position.startsWith('bottom')
       })}
     >

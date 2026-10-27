@@ -23,3 +23,14 @@ export const Default: Story = {
     ]
   }
 };
+
+export const WithIcons: Story = {
+  args: {
+    activeStep: 2,
+    items: [
+      { title: 'Step 1', icon: '★', color: 'primary' },
+      { title: 'Step 2', icon: '✓', color: 'primary' },
+      { title: 'Step 3', icon: '●', color: 'neutral' }
+    ]
+  }
+};

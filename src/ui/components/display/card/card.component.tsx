@@ -10,8 +10,12 @@ const Card = ({
   image,
   imageAlt = 'Card image',
   actions,
+  size,
   compact,
   bordered = true,
+  dash = false,
+  side = false,
+  imageFull = false,
   glass,
   className
 }: CardType) => {
@@ -20,8 +24,12 @@ const Card = ({
   return (
     <div
       className={cls('card bg-base-100 shadow-xl', className, {
-        'card-compact': compact,
-        'card-bordered': bordered,
+        [`card-${size}`]: Boolean(size),
+        'card-sm': compact && !size,
+        'card-border': bordered && !dash,
+        'card-dash': dash,
+        'card-side': side,
+        'image-full': imageFull,
         glass: glass
       })}
     >

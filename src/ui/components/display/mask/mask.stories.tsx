@@ -20,7 +20,12 @@ const meta: Meta<typeof Mask> = {
         'circle',
         'star',
         'star-2',
-        'triangle'
+        'triangle',
+        'triangle-2',
+        'triangle-3',
+        'triangle-4',
+        'half-1',
+        'half-2'
       ]
     }
   }
