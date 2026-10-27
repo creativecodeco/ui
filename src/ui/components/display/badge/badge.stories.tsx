@@ -10,8 +10,8 @@ const meta: Meta<typeof Badge> = {
   tags: ['autodocs'],
   argTypes: {
     color: {
-      description: 'Color',
-      type: 'string',
+      description: 'Badge color token',
+      control: 'select',
       options: [
         'neutral',
         'primary',
@@ -22,42 +22,32 @@ const meta: Meta<typeof Badge> = {
         'info',
         'error',
         'ghost'
-      ],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+      ]
     },
     variant: {
-      description: 'Style Variant (DaisyUI v5)',
-      type: 'string',
-      options: ['outline', 'dash', 'soft', 'ghost'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+      description: 'Badge style variant',
+      control: 'select',
+      options: ['outline', 'dash', 'soft', 'ghost']
     },
     outline: {
-      description: 'Is Outline',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
+      description: 'Outline style',
+      control: 'boolean'
     },
     size: {
-      description: 'Size',
-      type: 'string',
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
+      description: 'Badge size',
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl']
     },
     icon: {
-      description: 'Left Icon',
-      type: 'function',
+      description: 'Badge icon component',
       options: Object.keys(Icons),
       mapping: Icons,
-      control: { type: 'select' }
+      control: 'select'
     },
     iconPosition: {
-      description: 'Icon Position',
-      type: 'string',
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
+      description: 'Badge icon placement',
+      control: 'inline-radio',
+      options: ['left', 'right']
     }
   },
   args: {

@@ -12,14 +12,9 @@ const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
-    isLink: {
-      description: 'Is Link',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
+    isLink: { control: 'boolean', description: 'Render as link style' },
     color: {
-      description: 'Color',
-      type: 'string',
+      control: 'select',
       options: [
         'primary',
         'secondary',
@@ -30,79 +25,27 @@ const meta: Meta<typeof Button> = {
         'error',
         'ghost',
         'neutral'
-      ],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+      ]
     },
-    outline: {
-      description: 'Is Outline',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
+    outline: { control: 'boolean' },
     variant: {
-      description: 'Style Variant (DaisyUI v5)',
-      type: 'string',
-      options: ['outline', 'dash', 'soft', 'ghost', 'link'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
+      control: 'select',
+      options: ['outline', 'dash', 'soft', 'ghost', 'link']
     },
-    shape: {
-      description: 'Button Shape',
-      type: 'string',
-      options: ['square', 'circle'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' } }
-    },
-    wide: {
-      description: 'Wide Button',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    block: {
-      description: 'Full Width Button',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    active: {
-      description: 'Active State',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    size: {
-      description: 'Size',
-      type: 'string',
-      options: ['xs', 'sm', 'md', 'lg', 'xl'],
-      control: { type: 'select' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'md' } }
-    },
+    shape: { control: 'select', options: ['square', 'circle'] },
+    wide: { control: 'boolean' },
+    block: { control: 'boolean' },
+    active: { control: 'boolean' },
+    size: { control: 'select', options: ['xs', 'sm', 'md', 'lg', 'xl'] },
     icon: {
-      description: 'Left Icon',
-      type: 'function',
       options: Object.keys(Icons),
       mapping: Icons,
       control: { type: 'select' }
     },
-    iconPosition: {
-      description: 'Icon Position',
-      type: 'string',
-      options: ['left', 'right'],
-      control: { type: 'radio' },
-      table: { type: { summary: 'string' }, defaultValue: { summary: 'left' } }
-    },
-    disabled: {
-      description: 'Disabled',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    loading: {
-      description: 'Loading',
-      type: 'boolean',
-      table: { type: { summary: 'boolean' } }
-    },
-    loadingLabel: {
-      description: 'Loading Label',
-      type: 'string'
-    }
+    iconPosition: { control: 'radio', options: ['left', 'right'] },
+    disabled: { control: 'boolean' },
+    loading: { control: 'boolean' },
+    loadingLabel: { control: 'text' }
   },
   args: {
     size: 'md',
