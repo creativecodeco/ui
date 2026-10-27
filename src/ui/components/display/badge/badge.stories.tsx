@@ -7,6 +7,7 @@ import Badge from './badge.component';
 const meta: Meta<typeof Badge> = {
   title: '@creativecodeco-ui/Display/Badge',
   component: Badge,
+  tags: ['autodocs'],
   argTypes: {
     color: {
       description: 'Color',

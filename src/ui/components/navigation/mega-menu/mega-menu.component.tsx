@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { MegaMenuType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const MegaMenu = ({
   items = [],
@@ -28,6 +29,7 @@ const MegaMenu = ({
           <div
             tabIndex={0}
             role='button'
+            aria-haspopup='true'
             className={cls('btn btn-ghost', {
               'megamenu-active': item.active
             })}
@@ -36,7 +38,7 @@ const MegaMenu = ({
           </div>
           <div
             tabIndex={0}
-            className='dropdown-content bg-base-100 rounded-box z-10 p-6 shadow-lg border border-base-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 min-w-max'
+            className='dropdown-content bg-base-100 rounded-box z-10 p-6 shadow-lg border border-base-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-screen max-w-md sm:max-w-2xl md:min-w-max'
           >
             {item.columns.map((col, colIdx) => (
               <div key={col.id ?? colIdx}>
@@ -49,7 +51,7 @@ const MegaMenu = ({
                   {col.links.map((link, linkIdx) => (
                     <li key={link.id ?? linkIdx}>
                       <a
-                        href={link.href ?? '#'}
+                        href={sanitizeUrl(link.href ?? '#')}
                         onClick={link.onClick}
                         className='flex flex-col items-start'
                       >

@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { HeroType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Hero = ({
   title,
@@ -11,17 +12,20 @@ const Hero = ({
   children,
   className
 }: HeroType) => {
-  const bgStyle =
+  const safeImage =
     typeof image === 'string'
-      ? { backgroundImage: `url(${image})` }
-      : undefined;
+      ? sanitizeUrl(image, '').replace(/["'()\\]/g, '')
+      : '';
+  const bgStyle = safeImage
+    ? { backgroundImage: `url("${safeImage}")` }
+    : undefined;
 
   return (
     <div
       className={cls('hero min-h-64 rounded-xl overflow-hidden', className)}
       style={bgStyle}
     >
-      {overlay && <div className='hero-overlay bg-opacity-60 bg-black' />}
+      {overlay && <div className='hero-overlay bg-neutral/60' />}
       <div
         className={cls('hero-content text-center', {
           'text-neutral-content': overlay

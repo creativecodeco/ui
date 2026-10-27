@@ -24,8 +24,10 @@ const Swap = ({
     >
       <input
         type='checkbox'
+        aria-label='Toggle swap state'
         checked={active}
         onChange={onChange}
+        readOnly={active !== undefined && !onChange}
         disabled={disabled}
       />
       <div className='swap-on'>{onContent}</div>

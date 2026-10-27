@@ -1,7 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useRef } from 'react';
 import cls from 'classnames';
 
-import type { TextBoxRef, TextBoxType } from '@/types/ui/forms';
+import type { TextBoxRef, TextBoxType } from '@/types';
 
 const TextBox = forwardRef<TextBoxRef, TextBoxType>(
   (
@@ -17,6 +17,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
       rightIcon: RightIcon,
       rightButton,
       onClick,
+      className,
       ...otherProps
     },
     ref
@@ -51,6 +52,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
             className={cls(
               'input input-bordered w-full',
               `textbox-size-${size}`,
+              className,
               {
                 'input-error': isError,
                 'textbox-with-left-icon': LeftIcon,
@@ -73,7 +75,7 @@ const TextBox = forwardRef<TextBoxRef, TextBoxType>(
             />
           )}
         </div>
-        {isError && <p className='text-red-500 flex items-center'>{error}</p>}
+        {isError && <p className='text-error flex items-center'>{error}</p>}
       </label>
     );
   }

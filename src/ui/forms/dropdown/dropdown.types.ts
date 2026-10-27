@@ -1,4 +1,4 @@
-import type { TextBoxType } from '../textbox/textbox.types';
+import type { TextBoxType } from '@/types';
 
 export interface DropdownOption {
   value: string | number;

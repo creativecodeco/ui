@@ -9,4 +9,5 @@ export interface BadgeType {
   size?: SizeType;
   icon?: IconType;
   iconPosition?: PositionType;
+  className?: string;
 }

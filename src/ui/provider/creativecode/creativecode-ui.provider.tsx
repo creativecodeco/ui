@@ -1,12 +1,19 @@
-import { Fragment, PropsWithChildren, useEffect } from 'react';
+import { Fragment, type PropsWithChildren, useEffect } from 'react';
 
-export default function CreativeCodeUIProvider({
-  children
-}: PropsWithChildren<unknown>) {
+export interface CreativeCodeUIProviderType extends PropsWithChildren {
+  theme?: string;
+}
+
+const CreativeCodeUIProvider = ({
+  children,
+  theme = 'creativecode'
+}: CreativeCodeUIProviderType) => {
   useEffect(() => {
     const html = document.querySelector('html');
-    html?.setAttribute('data-theme', 'creativecode');
-  }, []);
+    html?.setAttribute('data-theme', theme);
+  }, [theme]);
 
   return <Fragment>{children}</Fragment>;
-}
+};
+
+export default CreativeCodeUIProvider;

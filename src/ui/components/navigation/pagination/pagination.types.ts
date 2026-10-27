@@ -5,4 +5,5 @@ export interface PaginationType {
   totalPages: number;
   onPageChange: (page: number) => void;
   size?: SizeType;
+  className?: string;
 }

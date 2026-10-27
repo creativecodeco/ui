@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { CardType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Card = ({
   children,
@@ -14,6 +15,8 @@ const Card = ({
   glass,
   className
 }: CardType) => {
+  const safeImage = image ? sanitizeUrl(image, '') : '';
+
   return (
     <div
       className={cls('card bg-base-100 shadow-xl', className, {
@@ -22,9 +25,9 @@ const Card = ({
         glass: glass
       })}
     >
-      {image && (
+      {safeImage && (
         <figure>
-          <img src={image} alt={imageAlt} />
+          <img src={safeImage} alt={imageAlt} />
         </figure>
       )}
       <div className='card-body'>

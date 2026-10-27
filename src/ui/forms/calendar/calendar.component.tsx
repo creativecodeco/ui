@@ -83,7 +83,7 @@ const Calendar = ({
   return (
     <div
       className={cls(
-        'cally bg-base-100 border border-base-300 shadow-lg rounded-box p-4 w-72',
+        'cally bg-base-100 border border-base-300 shadow-lg rounded-box p-4 w-72 max-w-full',
         className
       )}
       role='group'

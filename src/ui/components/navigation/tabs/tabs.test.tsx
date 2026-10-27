@@ -37,4 +37,23 @@ describe('<Tabs />', () => {
     expect(handleChange).not.toHaveBeenCalled();
     expect(screen.getByText('Content 1')).toBeInTheDocument();
   });
+
+  it('supports keyboard navigation (ArrowRight, ArrowLeft, Home, End)', () => {
+    const handleChange = jest.fn();
+    render(<Tabs items={items} onChange={handleChange} />);
+    const firstTab = screen.getByText('Tab One');
+    const secondTab = screen.getByText('Tab Two');
+
+    fireEvent.keyDown(firstTab, { key: 'ArrowRight' });
+    expect(handleChange).toHaveBeenLastCalledWith('tab2');
+
+    fireEvent.keyDown(secondTab, { key: 'ArrowLeft' });
+    expect(handleChange).toHaveBeenLastCalledWith('tab1');
+
+    fireEvent.keyDown(firstTab, { key: 'End' });
+    expect(handleChange).toHaveBeenLastCalledWith('tab2');
+
+    fireEvent.keyDown(secondTab, { key: 'Home' });
+    expect(handleChange).toHaveBeenLastCalledWith('tab1');
+  });
 });

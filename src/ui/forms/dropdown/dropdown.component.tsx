@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState
 } from 'react';
+import cls from 'classnames';
 import { FaSortDown } from 'react-icons/fa';
 import { useOnClickOutside } from 'usehooks-ts';
 
@@ -21,6 +22,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
       onChange,
       onTextChange,
       value,
+      className,
       ...otherProps
     },
     ref
@@ -98,7 +100,7 @@ const Dropdown = forwardRef<TextBoxRef, DropdownType>(
     );
 
     return (
-      <div className='block dropdown'>
+      <div className={cls('block dropdown', className)}>
         <TextBox
           name={name}
           tabIndex={0}

@@ -13,8 +13,9 @@ const Progress = ({
     <progress
       value={value}
       max={max}
+      aria-label='Progress'
       className={cls(
-        'progress',
+        'progress w-full',
         {
           [`progress-${color}`]: Boolean(color),
           [`progress-${size}`]: Boolean(size)

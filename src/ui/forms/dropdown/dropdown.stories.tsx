@@ -6,6 +6,7 @@ import Dropdown from './dropdown.component';
 const meta: Meta<typeof Dropdown> = {
   title: '@creativecodeco-ui/Form/Dropdown',
   component: Dropdown,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Unique Name',

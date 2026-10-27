@@ -20,6 +20,7 @@ export interface CheckboxType extends CheckboxItemType, ErrorType {
   disabled?: boolean;
 
   onChange?: (value: CheckboxItemType) => void;
+  className?: string;
 }
 
 export type CheckboxRef = HTMLInputElement;

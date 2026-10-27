@@ -11,11 +11,12 @@ const Accordion = ({
   join,
   options,
   iconType = 'arrow',
-  multiple
+  multiple,
+  className
 }: AccordionType) => {
   return (
     <div
-      className={cls('flex flex-wrap', {
+      className={cls('flex flex-wrap', className, {
         'join join-vertical w-full': join,
         'gap-2': !join
       })}

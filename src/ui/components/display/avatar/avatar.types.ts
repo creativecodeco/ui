@@ -7,4 +7,5 @@ export interface AvatarType {
   isOnline?: boolean;
   rounded?: boolean;
   ring?: boolean;
+  className?: string;
 }

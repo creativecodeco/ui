@@ -12,4 +12,5 @@ export interface ToastType {
   children: React.ReactNode;
   position?: ToastPositionType;
   color?: ColorType;
+  className?: string;
 }

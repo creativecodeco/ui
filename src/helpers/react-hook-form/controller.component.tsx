@@ -4,9 +4,9 @@ import {
   Controller as RHFController
 } from 'react-hook-form';
 
-import type { ControllerType } from '@/types/helpers/controller.types';
+import type { ControllerType } from '@/types';
 
-export default function Controller<
+const Controller = <
   TFieldValues extends FieldValues = FieldValues,
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 >({
@@ -17,7 +17,9 @@ export default function Controller<
   shouldUnregister,
   rules,
   ...rest
-}: ControllerType<TFieldValues, TName>) {
+}: ControllerType<TFieldValues, TName>) => {
+  const Component = Input as React.ComponentType<Record<string, unknown>>;
+
   return (
     <RHFController
       control={control}
@@ -26,8 +28,15 @@ export default function Controller<
       shouldUnregister={shouldUnregister}
       rules={rules}
       render={({ field, fieldState: { error } }) => (
-        <Input {...field} isError={!!error} error={error?.message} {...rest} />
+        <Component
+          {...field}
+          isError={Boolean(error)}
+          error={error?.message}
+          {...rest}
+        />
       )}
     />
   );
-}
+};
+
+export default Controller;

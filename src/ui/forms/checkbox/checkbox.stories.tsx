@@ -5,6 +5,7 @@ import Checkbox from './checkbox.component';
 const meta: Meta<typeof Checkbox> = {
   title: '@creativecodeco-ui/Form/Checkbox',
   component: Checkbox,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Unique Name',

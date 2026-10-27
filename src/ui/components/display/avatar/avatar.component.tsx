@@ -10,7 +10,8 @@ const Avatar = ({
   rounded = false,
   size = 'md',
   src,
-  withStatus = false
+  withStatus = false,
+  className
 }: AvatarType) => {
   const isUri = useMemo(() => isValidUrl(src), [src]);
 
@@ -19,7 +20,7 @@ const Avatar = ({
   return (
     <div
       data-testid='avatar'
-      className={cls('avatar', {
+      className={cls('avatar', className, {
         'avatar-online': withStatus && isOnline,
         'avatar-offline': withStatus && !isOnline,
         'avatar-placeholder': !isUri

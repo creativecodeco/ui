@@ -7,4 +7,5 @@ export interface AlertType {
   title?: React.ReactNode;
   icon?: IconType;
   onClose?: () => void;
+  className?: string;
 }

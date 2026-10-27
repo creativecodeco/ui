@@ -21,7 +21,13 @@ const Collapse = ({
         className
       )}
     >
-      <input type='checkbox' checked={open} onChange={onChange} />
+      <input
+        type='checkbox'
+        aria-label={typeof title === 'string' ? title : 'Toggle collapse'}
+        checked={open}
+        onChange={onChange}
+        readOnly={open !== undefined && !onChange}
+      />
       <div className='collapse-title text-base font-medium'>{title}</div>
       <div className='collapse-content text-sm'>{children}</div>
     </div>

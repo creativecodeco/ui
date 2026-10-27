@@ -36,4 +36,15 @@ describe('<Drawer />', () => {
     fireEvent.click(screen.getByTestId('drawer-overlay'));
     expect(handleClose).toHaveBeenCalledTimes(1);
   });
+
+  it('calls onClose when Escape key is pressed', () => {
+    const handleClose = jest.fn();
+    render(
+      <Drawer isOpen={true} onClose={handleClose}>
+        Content
+      </Drawer>
+    );
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
 });

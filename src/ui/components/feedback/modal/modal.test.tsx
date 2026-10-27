@@ -49,4 +49,15 @@ describe('<Modal />', () => {
     );
     expect(screen.getByText('Confirm')).toBeInTheDocument();
   });
+
+  it('calls onClose when Escape key is pressed', () => {
+    const handleClose = jest.fn();
+    render(
+      <Modal isOpen={true} onClose={handleClose}>
+        Modal Content
+      </Modal>
+    );
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(handleClose).toHaveBeenCalledTimes(1);
+  });
 });

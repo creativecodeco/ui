@@ -8,4 +8,5 @@ export interface ModalType {
   actions?: React.ReactNode;
   size?: SizeType;
   closeOnBackdropClick?: boolean;
+  className?: string;
 }

@@ -6,6 +6,7 @@ import TextBox from './textbox.component';
 const meta: Meta<typeof TextBox> = {
   title: '@creativecodeco-ui/Form/TextBox',
   component: TextBox,
+  tags: ['autodocs'],
   argTypes: {
     name: {
       description: 'Unique Name',

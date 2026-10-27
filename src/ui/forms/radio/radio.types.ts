@@ -19,10 +19,7 @@ export interface RadioType extends RadioItemType, ErrorType {
   disabled?: boolean;
 
   onChange?: (value: RadioItemType) => void;
+  className?: string;
 }
 
 export type RadioRef = HTMLInputElement;
-
-export interface RadioListType extends RadioType {
-  options: Omit<RadioType, 'name'>[];
-}

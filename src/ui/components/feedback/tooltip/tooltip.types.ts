@@ -6,4 +6,5 @@ export interface TooltipType {
   position?: 'top' | 'bottom' | 'left' | 'right';
   color?: ColorType;
   open?: boolean;
+  className?: string;
 }

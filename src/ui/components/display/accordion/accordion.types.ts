@@ -3,12 +3,12 @@ export interface AccordionType {
   iconType?: 'arrow' | 'plus';
   join?: boolean;
   multiple?: boolean;
-
   options: AccordionOption[];
+  className?: string;
 }
 
 export interface AccordionOption {
   key?: string;
-  header: React.ReactElement;
-  body: React.ReactElement;
+  header: React.ReactNode;
+  body: React.ReactNode;
 }

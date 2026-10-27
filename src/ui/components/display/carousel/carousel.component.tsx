@@ -1,6 +1,7 @@
 import cls from 'classnames';
 
 import type { CarouselType } from '@/types';
+import { sanitizeUrl } from '@/utils';
 
 const Carousel = ({
   items,
@@ -30,7 +31,7 @@ const Carousel = ({
             >
               {item.src ? (
                 <img
-                  src={item.src}
+                  src={sanitizeUrl(item.src, '')}
                   alt={item.alt || `Slide ${index + 1}`}
                   className={cls({ 'w-full object-cover': fullWidth })}
                 />
